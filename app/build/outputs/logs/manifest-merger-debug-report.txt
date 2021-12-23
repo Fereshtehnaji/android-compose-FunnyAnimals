@@ -1,0 +1,454 @@
+-- Merging decision tree log ---
+manifest
+ADDED from D:\Fereshteh\Flutter\FunnyAnimals\app\src\main\AndroidManifest.xml:2:1-23:12
+INJECTED from D:\Fereshteh\Flutter\FunnyAnimals\app\src\main\AndroidManifest.xml:2:1-23:12
+INJECTED from D:\Fereshteh\Flutter\FunnyAnimals\app\src\main\AndroidManifest.xml:2:1-23:12
+INJECTED from D:\Fereshteh\Flutter\FunnyAnimals\app\src\main\AndroidManifest.xml:2:1-23:12
+MERGED from [androidx.compose.ui:ui-tooling:1.0.5] C:\Users\Feriyal\.gradle\caches\transforms-3\b8c5261b98333531182ce84123e46af5\transformed\jetified-ui-tooling-1.0.5\AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.navigation:navigation-compose:2.4.0-rc01] C:\Users\Feriyal\.gradle\caches\transforms-3\56a23526762cff6dd665c66a96a0c769\transformed\jetified-navigation-compose-2.4.0-rc01\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity-compose:1.4.0] C:\Users\Feriyal\.gradle\caches\transforms-3\fa88e7f306a4235743bf98dab4884a6a\transformed\jetified-activity-compose-1.4.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.compose.material:material:1.0.5] C:\Users\Feriyal\.gradle\caches\transforms-3\942343035836be1a5ef7886551b96e8f\transformed\jetified-material-1.0.5\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.compose.material:material-ripple:1.0.5] C:\Users\Feriyal\.gradle\caches\transforms-3\ba25f77cee96e89a75ee083ecd93ed89\transformed\jetified-material-ripple-1.0.5\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.compose.foundation:foundation:1.0.5] C:\Users\Feriyal\.gradle\caches\transforms-3\155ed167ee5fd29f9f48c19288cf2cfb\transformed\jetified-foundation-1.0.5\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.compose.material:material-icons-extended:1.0.5] C:\Users\Feriyal\.gradle\caches\transforms-3\833e5ba36d1e149ba7c2f98830367712\transformed\jetified-material-icons-extended-1.0.5\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.compose.material:material-icons-core:1.0.5] C:\Users\Feriyal\.gradle\caches\transforms-3\6be4652a2296bc52f8641bb992f760b3\transformed\jetified-material-icons-core-1.0.5\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.compose.runtime:runtime-livedata:1.0.5] C:\Users\Feriyal\.gradle\caches\transforms-3\e14246bdd90d32b394fe5ff2ce7152b4\transformed\jetified-runtime-livedata-1.0.5\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.compose.animation:animation:1.0.5] C:\Users\Feriyal\.gradle\caches\transforms-3\8a77c2fff873a55aba9de41ae40b43e8\transformed\jetified-animation-1.0.5\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-compose:2.4.0] C:\Users\Feriyal\.gradle\caches\transforms-3\c714f3a8b958076fab3c85ba06bef5ab\transformed\jetified-lifecycle-viewmodel-compose-2.4.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.compose.ui:ui-tooling-data:1.0.5] C:\Users\Feriyal\.gradle\caches\transforms-3\0223003cd4f5d0021d513fb1100be592\transformed\jetified-ui-tooling-data-1.0.5\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.compose.foundation:foundation-layout:1.0.5] C:\Users\Feriyal\.gradle\caches\transforms-3\800b413399d7ec3c25efbb4a2903cc3e\transformed\jetified-foundation-layout-1.0.5\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.compose.animation:animation-core:1.0.5] C:\Users\Feriyal\.gradle\caches\transforms-3\c64b131325bab4ebf05fbd0e4674ec17\transformed\jetified-animation-core-1.0.5\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.compose.ui:ui:1.0.5] C:\Users\Feriyal\.gradle\caches\transforms-3\567a3bc4ba698418aaa77a90c368b850\transformed\jetified-ui-1.0.5\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.navigation:navigation-dynamic-features-fragment:2.3.5] C:\Users\Feriyal\.gradle\caches\transforms-3\f3f47c311db33404a51b4e36523d267a\transformed\jetified-navigation-dynamic-features-fragment-2.3.5\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.navigation:navigation-fragment-ktx:2.3.5] C:\Users\Feriyal\.gradle\caches\transforms-3\144c72475a2a8ff174cf74eaf09bab6c\transformed\navigation-fragment-ktx-2.3.5\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.fragment:fragment-ktx:1.2.4] C:\Users\Feriyal\.gradle\caches\transforms-3\442b178e79d65a2d146230c06692afd8\transformed\jetified-fragment-ktx-1.2.4\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.navigation:navigation-fragment:2.3.5] C:\Users\Feriyal\.gradle\caches\transforms-3\99f0850493c4b5df5e022e970240b51d\transformed\navigation-fragment-2.3.5\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.navigation:navigation-ui-ktx:2.3.5] C:\Users\Feriyal\.gradle\caches\transforms-3\0e003e90334eb435f34388324bfada59\transformed\navigation-ui-ktx-2.3.5\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.navigation:navigation-ui:2.3.5] C:\Users\Feriyal\.gradle\caches\transforms-3\a7e707143e04748ff197328d4315ae56\transformed\navigation-ui-2.3.5\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.navigation:navigation-dynamic-features-runtime:2.3.5] C:\Users\Feriyal\.gradle\caches\transforms-3\c269039bd8294505825e78b45d4f9122\transformed\jetified-navigation-dynamic-features-runtime-2.3.5\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.navigation:navigation-runtime-ktx:2.4.0-rc01] C:\Users\Feriyal\.gradle\caches\transforms-3\6bddad5de481ede19752f8c4f7853d23\transformed\navigation-runtime-ktx-2.4.0-rc01\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.navigation:navigation-runtime:2.4.0-rc01] C:\Users\Feriyal\.gradle\caches\transforms-3\54a269e3596a90d4d928966336646dbf\transformed\navigation-runtime-2.4.0-rc01\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity-ktx:1.4.0] C:\Users\Feriyal\.gradle\caches\transforms-3\06d3d0eae273e44943f2e442700b5686\transformed\jetified-activity-ktx-1.4.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.navigation:navigation-common-ktx:2.4.0-rc01] C:\Users\Feriyal\.gradle\caches\transforms-3\640bc19542bdcfe3a3e954dfbdd570a3\transformed\navigation-common-ktx-2.4.0-rc01\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.navigation:navigation-common:2.4.0-rc01] C:\Users\Feriyal\.gradle\caches\transforms-3\d3cf966992c55202b71f8300e12f9ca4\transformed\navigation-common-2.4.0-rc01\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0] C:\Users\Feriyal\.gradle\caches\transforms-3\a36ad3ec7cc70f9a1e7f0d31a56b0347\transformed\jetified-lifecycle-viewmodel-ktx-2.4.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.compose.runtime:runtime-rxjava2:1.0.5] C:\Users\Feriyal\.gradle\caches\transforms-3\9de51ae8498bb1bf49bab3a137f2d7c8\transformed\jetified-runtime-rxjava2-1.0.5\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.compose.ui:ui-text:1.0.5] C:\Users\Feriyal\.gradle\caches\transforms-3\72e907f59e29cb28db199921e3e602f6\transformed\jetified-ui-text-1.0.5\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.compose.runtime:runtime-saveable:1.0.5] C:\Users\Feriyal\.gradle\caches\transforms-3\88bc577bb756f032caf4f64fbabdfc60\transformed\jetified-runtime-saveable-1.0.5\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.compose.ui:ui-graphics:1.0.5] C:\Users\Feriyal\.gradle\caches\transforms-3\1e224170ba9c690036d7925c20f41cef\transformed\jetified-ui-graphics-1.0.5\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.compose.ui:ui-unit:1.0.5] C:\Users\Feriyal\.gradle\caches\transforms-3\73075e3437ae6c438f43b5b7d7bb73ef\transformed\jetified-ui-unit-1.0.5\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.compose.ui:ui-geometry:1.0.5] C:\Users\Feriyal\.gradle\caches\transforms-3\71d6d7d5f092c8e5a9c1469f0ea472c2\transformed\jetified-ui-geometry-1.0.5\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.compose.ui:ui-tooling-preview:1.0.5] C:\Users\Feriyal\.gradle\caches\transforms-3\e7a3f4c60275fcd51ee2a9c1e966dbc6\transformed\jetified-ui-tooling-preview-1.0.5\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.compose.runtime:runtime:1.0.5] C:\Users\Feriyal\.gradle\caches\transforms-3\4145815930760ae23a975a0229abd403\transformed\jetified-runtime-1.0.5\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.3.1] C:\Users\Feriyal\.gradle\caches\transforms-3\1fa4eb1892c3cd4b2f8a6948aa82f8a1\transformed\jetified-lifecycle-runtime-ktx-2.3.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-ktx:2.4.0] C:\Users\Feriyal\.gradle\caches\transforms-3\f27e96bb09a2992d3a4403f2ad57f743\transformed\jetified-lifecycle-livedata-ktx-2.4.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.databinding:viewbinding:4.1.3] C:\Users\Feriyal\.gradle\caches\transforms-3\350b21f6fcdc6e0ddcc12113018a568b\transformed\jetified-viewbinding-4.1.3\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core-ktx:1.7.0] C:\Users\Feriyal\.gradle\caches\transforms-3\8576c2f7733e039b1b75ff67dac5ba83\transformed\jetified-core-ktx-1.7.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.material:material:1.4.0] C:\Users\Feriyal\.gradle\caches\transforms-3\d754e7ce487b25c354202c6c0ee944ea\transformed\material-1.4.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.2] C:\Users\Feriyal\.gradle\caches\transforms-3\f0f2ba9c10b49d57e45f64286213a4ec\transformed\constraintlayout-2.1.2\AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.appcompat:appcompat:1.4.0] C:\Users\Feriyal\.gradle\caches\transforms-3\a3ac3e09c2eac1a7e99912ab6a7cac93\transformed\appcompat-1.4.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\Feriyal\.gradle\caches\transforms-3\ee25fd95129bfc0f3314ca38d2a92d9d\transformed\jetified-viewpager2-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\Feriyal\.gradle\caches\transforms-3\c6b83f410097499266e89a04ff3f38b4\transformed\fragment-1.3.6\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity:1.4.0] C:\Users\Feriyal\.gradle\caches\transforms-3\4c7df63f4a0b3da69fd2ad9f62b3c911\transformed\jetified-activity-1.4.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.4.0] C:\Users\Feriyal\.gradle\caches\transforms-3\4bbeab71c284577cf6a668442e8fa934\transformed\jetified-lifecycle-viewmodel-savedstate-2.4.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.compose.ui:ui-util:1.0.5] C:\Users\Feriyal\.gradle\caches\transforms-3\c1ee5c18dbeb5f28e85d65a96f548d7a\transformed\jetified-ui-util-1.0.5\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\Feriyal\.gradle\caches\transforms-3\8e0668c944e848ee7a73e7fb22164800\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\Feriyal\.gradle\caches\transforms-3\86e2150c8ae61001ce3e07baf53463a5\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\Feriyal\.gradle\caches\transforms-3\37f9fc278a2bcab62dd772af6f3dea6d\transformed\loader-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.4.0] C:\Users\Feriyal\.gradle\caches\transforms-3\d719620a7c62415da39759d30c0188fa\transformed\lifecycle-viewmodel-2.4.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.4.0] C:\Users\Feriyal\.gradle\caches\transforms-3\b58102a32fd48b45d73d46e39fbcd534\transformed\jetified-lifecycle-livedata-core-ktx-2.4.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.savedstate:savedstate-ktx:1.1.0] C:\Users\Feriyal\.gradle\caches\transforms-3\1c5a58a69d0c5cbeca0023e03366b0c4\transformed\jetified-savedstate-ktx-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat-resources:1.4.0] C:\Users\Feriyal\.gradle\caches\transforms-3\096991da7e1b3028d199d21b32336dc8\transformed\jetified-appcompat-resources-1.4.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.emoji2:emoji2-views-helper:1.0.0] C:\Users\Feriyal\.gradle\caches\transforms-3\fd4d7dd5fbf1c95161401978b091bd00\transformed\jetified-emoji2-views-helper-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.emoji2:emoji2:1.0.0] C:\Users\Feriyal\.gradle\caches\transforms-3\3d24b7c5ded344cd4260b8f2ad9ed030\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:17:1-37:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\Feriyal\.gradle\caches\transforms-3\610a39cb58290685344793c2d56257da\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\Feriyal\.gradle\caches\transforms-3\687c508d7989048b355ba4a08e643a1f\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\Feriyal\.gradle\caches\transforms-3\c2c6e7869899aa64a8c0c010152e7b5f\transformed\vectordrawable-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.autofill:autofill:1.0.0] C:\Users\Feriyal\.gradle\caches\transforms-3\c7ac6a06d1f90a539ba970fe4ebc4c73\transformed\jetified-autofill-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Feriyal\.gradle\caches\transforms-3\7a36ba30cd034b855c647b05620087a3\transformed\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\Feriyal\.gradle\caches\transforms-3\b71368cd98b445c16b7f93ac9ec0f42e\transformed\recyclerview-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] C:\Users\Feriyal\.gradle\caches\transforms-3\c114330023c601cafd96363cdd8a74c5\transformed\drawerlayout-1.1.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.customview:customview:1.1.0] C:\Users\Feriyal\.gradle\caches\transforms-3\1d9879108b64d5d4e1cf27f6864ff4e1\transformed\customview-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.transition:transition:1.3.0] C:\Users\Feriyal\.gradle\caches\transforms-3\6c543ba82523133f25bd8e7c7fec1bf3\transformed\transition-1.3.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.core:core:1.7.0] C:\Users\Feriyal\.gradle\caches\transforms-3\ae3d7ae4493d11c21b25c5d58a0c4179\transformed\core-1.7.0\AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Feriyal\.gradle\caches\transforms-3\41ee7f70fb8bba34357d12d368bcaaeb\transformed\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate:1.1.0] C:\Users\Feriyal\.gradle\caches\transforms-3\55e7dbe2558111b07436aba7c31b4c61\transformed\jetified-savedstate-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\Feriyal\.gradle\caches\transforms-3\80bec63e8947271c9b0a886b1f15b8fe\transformed\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.profileinstaller:profileinstaller:1.0.4] C:\Users\Feriyal\.gradle\caches\transforms-3\b4463cb3966d51c068a5babba2df18dd\transformed\jetified-profileinstaller-1.0.4\AndroidManifest.xml:17:1-48:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Feriyal\.gradle\caches\transforms-3\3c965fb7c62115ae030ef97f95a5a9cd\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Feriyal\.gradle\caches\transforms-3\c55501271c534953631a61ceacf50e00\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:17:1-37:12
+MERGED from [androidx.startup:startup-runtime:1.0.0] C:\Users\Feriyal\.gradle\caches\transforms-3\190c9e4c712be3363d2037bc73a1c97d\transformed\jetified-startup-runtime-1.0.0\AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.4.0] C:\Users\Feriyal\.gradle\caches\transforms-3\4bb0ae2f33a3591907a0bb5af3fcdaac\transformed\lifecycle-livedata-2.4.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.4.0] C:\Users\Feriyal\.gradle\caches\transforms-3\f9b1a382026a1d73d4ef6a9c991756b4\transformed\lifecycle-livedata-core-2.4.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.4.0] C:\Users\Feriyal\.gradle\caches\transforms-3\314b86d499c0f99a2629be2bceea5c8f\transformed\lifecycle-runtime-2.4.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\Feriyal\.gradle\caches\transforms-3\85d195d6d4f64c57cac122595823a93a\transformed\core-runtime-2.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Feriyal\.gradle\caches\transforms-3\4eb6d43331fedb845a732f1730677542\transformed\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\Feriyal\.gradle\caches\transforms-3\d89294d0291b700a71770368c435a9dd\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\Feriyal\.gradle\caches\transforms-3\3131160bd9b9c5ee736ffecccf49310e\transformed\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\Feriyal\.gradle\caches\transforms-3\50e23588a4a510355e1a6fe921988462\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] C:\Users\Feriyal\.gradle\caches\transforms-3\4b70631049ea16bfc8054fd79ea8a80f\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\Feriyal\.gradle\caches\transforms-3\d42e124c92f0135374ed9e9de717598a\transformed\jetified-annotation-experimental-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.play:core:1.9.1] C:\Users\Feriyal\.gradle\caches\transforms-3\8e313dac7b9ff1f33c4b834bdfe51384\transformed\jetified-core-1.9.1\AndroidManifest.xml:2:1-23:12
+INJECTED from D:\Fereshteh\Flutter\FunnyAnimals\app\src\main\AndroidManifest.xml:2:1-23:12
+INJECTED from D:\Fereshteh\Flutter\FunnyAnimals\app\src\main\AndroidManifest.xml:2:1-23:12
+INJECTED from D:\Fereshteh\Flutter\FunnyAnimals\app\src\main\AndroidManifest.xml:2:1-23:12
+	package
+		ADDED from D:\Fereshteh\Flutter\FunnyAnimals\app\src\main\AndroidManifest.xml:3:5-36
+		INJECTED from D:\Fereshteh\Flutter\FunnyAnimals\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Fereshteh\Flutter\FunnyAnimals\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from D:\Fereshteh\Flutter\FunnyAnimals\app\src\main\AndroidManifest.xml
+		ADDED from D:\Fereshteh\Flutter\FunnyAnimals\app\src\main\AndroidManifest.xml:2:1-23:12
+		INJECTED from D:\Fereshteh\Flutter\FunnyAnimals\app\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from D:\Fereshteh\Flutter\FunnyAnimals\app\src\main\AndroidManifest.xml
+		ADDED from D:\Fereshteh\Flutter\FunnyAnimals\app\src\main\AndroidManifest.xml:2:1-23:12
+		INJECTED from D:\Fereshteh\Flutter\FunnyAnimals\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from D:\Fereshteh\Flutter\FunnyAnimals\app\src\main\AndroidManifest.xml:2:11-69
+application
+ADDED from D:\Fereshteh\Flutter\FunnyAnimals\app\src\main\AndroidManifest.xml:5:5-21:19
+MERGED from [androidx.compose.ui:ui-tooling:1.0.5] C:\Users\Feriyal\.gradle\caches\transforms-3\b8c5261b98333531182ce84123e46af5\transformed\jetified-ui-tooling-1.0.5\AndroidManifest.xml:24:5-28:19
+MERGED from [androidx.compose.ui:ui-tooling:1.0.5] C:\Users\Feriyal\.gradle\caches\transforms-3\b8c5261b98333531182ce84123e46af5\transformed\jetified-ui-tooling-1.0.5\AndroidManifest.xml:24:5-28:19
+MERGED from [com.google.android.material:material:1.4.0] C:\Users\Feriyal\.gradle\caches\transforms-3\d754e7ce487b25c354202c6c0ee944ea\transformed\material-1.4.0\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.4.0] C:\Users\Feriyal\.gradle\caches\transforms-3\d754e7ce487b25c354202c6c0ee944ea\transformed\material-1.4.0\AndroidManifest.xml:22:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.2] C:\Users\Feriyal\.gradle\caches\transforms-3\f0f2ba9c10b49d57e45f64286213a4ec\transformed\constraintlayout-2.1.2\AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.2] C:\Users\Feriyal\.gradle\caches\transforms-3\f0f2ba9c10b49d57e45f64286213a4ec\transformed\constraintlayout-2.1.2\AndroidManifest.xml:9:5-20
+MERGED from [androidx.emoji2:emoji2:1.0.0] C:\Users\Feriyal\.gradle\caches\transforms-3\3d24b7c5ded344cd4260b8f2ad9ed030\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:25:5-35:19
+MERGED from [androidx.emoji2:emoji2:1.0.0] C:\Users\Feriyal\.gradle\caches\transforms-3\3d24b7c5ded344cd4260b8f2ad9ed030\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:25:5-35:19
+MERGED from [androidx.core:core:1.7.0] C:\Users\Feriyal\.gradle\caches\transforms-3\ae3d7ae4493d11c21b25c5d58a0c4179\transformed\core-1.7.0\AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.7.0] C:\Users\Feriyal\.gradle\caches\transforms-3\ae3d7ae4493d11c21b25c5d58a0c4179\transformed\core-1.7.0\AndroidManifest.xml:24:5-89
+MERGED from [androidx.profileinstaller:profileinstaller:1.0.4] C:\Users\Feriyal\.gradle\caches\transforms-3\b4463cb3966d51c068a5babba2df18dd\transformed\jetified-profileinstaller-1.0.4\AndroidManifest.xml:25:5-46:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.0.4] C:\Users\Feriyal\.gradle\caches\transforms-3\b4463cb3966d51c068a5babba2df18dd\transformed\jetified-profileinstaller-1.0.4\AndroidManifest.xml:25:5-46:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Feriyal\.gradle\caches\transforms-3\3c965fb7c62115ae030ef97f95a5a9cd\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Feriyal\.gradle\caches\transforms-3\3c965fb7c62115ae030ef97f95a5a9cd\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Feriyal\.gradle\caches\transforms-3\c55501271c534953631a61ceacf50e00\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:25:5-35:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Feriyal\.gradle\caches\transforms-3\c55501271c534953631a61ceacf50e00\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:25:5-35:19
+MERGED from [androidx.startup:startup-runtime:1.0.0] C:\Users\Feriyal\.gradle\caches\transforms-3\190c9e4c712be3363d2037bc73a1c97d\transformed\jetified-startup-runtime-1.0.0\AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.startup:startup-runtime:1.0.0] C:\Users\Feriyal\.gradle\caches\transforms-3\190c9e4c712be3363d2037bc73a1c97d\transformed\jetified-startup-runtime-1.0.0\AndroidManifest.xml:25:5-31:19
+MERGED from [com.google.android.play:core:1.9.1] C:\Users\Feriyal\.gradle\caches\transforms-3\8e313dac7b9ff1f33c4b834bdfe51384\transformed\jetified-core-1.9.1\AndroidManifest.xml:10:3-21:17
+MERGED from [com.google.android.play:core:1.9.1] C:\Users\Feriyal\.gradle\caches\transforms-3\8e313dac7b9ff1f33c4b834bdfe51384\transformed\jetified-core-1.9.1\AndroidManifest.xml:10:3-21:17
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.7.0] C:\Users\Feriyal\.gradle\caches\transforms-3\ae3d7ae4493d11c21b25c5d58a0c4179\transformed\core-1.7.0\AndroidManifest.xml:24:18-86
+	android:supportsRtl
+		ADDED from D:\Fereshteh\Flutter\FunnyAnimals\app\src\main\AndroidManifest.xml:10:9-35
+	android:label
+		ADDED from D:\Fereshteh\Flutter\FunnyAnimals\app\src\main\AndroidManifest.xml:8:9-41
+	android:roundIcon
+		ADDED from D:\Fereshteh\Flutter\FunnyAnimals\app\src\main\AndroidManifest.xml:9:9-54
+	android:icon
+		ADDED from D:\Fereshteh\Flutter\FunnyAnimals\app\src\main\AndroidManifest.xml:7:9-43
+	android:allowBackup
+		ADDED from D:\Fereshteh\Flutter\FunnyAnimals\app\src\main\AndroidManifest.xml:6:9-35
+	android:theme
+		ADDED from D:\Fereshteh\Flutter\FunnyAnimals\app\src\main\AndroidManifest.xml:11:9-50
+activity#com.naji.funnyAnimals.ui.MainActivity
+ADDED from D:\Fereshteh\Flutter\FunnyAnimals\app\src\main\AndroidManifest.xml:12:9-20:20
+	android:exported
+		ADDED from D:\Fereshteh\Flutter\FunnyAnimals\app\src\main\AndroidManifest.xml:14:13-36
+	android:name
+		ADDED from D:\Fereshteh\Flutter\FunnyAnimals\app\src\main\AndroidManifest.xml:13:13-65
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from D:\Fereshteh\Flutter\FunnyAnimals\app\src\main\AndroidManifest.xml:15:13-19:29
+action#android.intent.action.MAIN
+ADDED from D:\Fereshteh\Flutter\FunnyAnimals\app\src\main\AndroidManifest.xml:16:17-69
+	android:name
+		ADDED from D:\Fereshteh\Flutter\FunnyAnimals\app\src\main\AndroidManifest.xml:16:25-66
+category#android.intent.category.LAUNCHER
+ADDED from D:\Fereshteh\Flutter\FunnyAnimals\app\src\main\AndroidManifest.xml:18:17-77
+	android:name
+		ADDED from D:\Fereshteh\Flutter\FunnyAnimals\app\src\main\AndroidManifest.xml:18:27-74
+uses-sdk
+INJECTED from D:\Fereshteh\Flutter\FunnyAnimals\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\Fereshteh\Flutter\FunnyAnimals\app\src\main\AndroidManifest.xml
+INJECTED from D:\Fereshteh\Flutter\FunnyAnimals\app\src\main\AndroidManifest.xml
+MERGED from [androidx.compose.ui:ui-tooling:1.0.5] C:\Users\Feriyal\.gradle\caches\transforms-3\b8c5261b98333531182ce84123e46af5\transformed\jetified-ui-tooling-1.0.5\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.ui:ui-tooling:1.0.5] C:\Users\Feriyal\.gradle\caches\transforms-3\b8c5261b98333531182ce84123e46af5\transformed\jetified-ui-tooling-1.0.5\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-compose:2.4.0-rc01] C:\Users\Feriyal\.gradle\caches\transforms-3\56a23526762cff6dd665c66a96a0c769\transformed\jetified-navigation-compose-2.4.0-rc01\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-compose:2.4.0-rc01] C:\Users\Feriyal\.gradle\caches\transforms-3\56a23526762cff6dd665c66a96a0c769\transformed\jetified-navigation-compose-2.4.0-rc01\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity-compose:1.4.0] C:\Users\Feriyal\.gradle\caches\transforms-3\fa88e7f306a4235743bf98dab4884a6a\transformed\jetified-activity-compose-1.4.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity-compose:1.4.0] C:\Users\Feriyal\.gradle\caches\transforms-3\fa88e7f306a4235743bf98dab4884a6a\transformed\jetified-activity-compose-1.4.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.material:material:1.0.5] C:\Users\Feriyal\.gradle\caches\transforms-3\942343035836be1a5ef7886551b96e8f\transformed\jetified-material-1.0.5\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.material:material:1.0.5] C:\Users\Feriyal\.gradle\caches\transforms-3\942343035836be1a5ef7886551b96e8f\transformed\jetified-material-1.0.5\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.material:material-ripple:1.0.5] C:\Users\Feriyal\.gradle\caches\transforms-3\ba25f77cee96e89a75ee083ecd93ed89\transformed\jetified-material-ripple-1.0.5\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.material:material-ripple:1.0.5] C:\Users\Feriyal\.gradle\caches\transforms-3\ba25f77cee96e89a75ee083ecd93ed89\transformed\jetified-material-ripple-1.0.5\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.foundation:foundation:1.0.5] C:\Users\Feriyal\.gradle\caches\transforms-3\155ed167ee5fd29f9f48c19288cf2cfb\transformed\jetified-foundation-1.0.5\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.foundation:foundation:1.0.5] C:\Users\Feriyal\.gradle\caches\transforms-3\155ed167ee5fd29f9f48c19288cf2cfb\transformed\jetified-foundation-1.0.5\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.material:material-icons-extended:1.0.5] C:\Users\Feriyal\.gradle\caches\transforms-3\833e5ba36d1e149ba7c2f98830367712\transformed\jetified-material-icons-extended-1.0.5\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.material:material-icons-extended:1.0.5] C:\Users\Feriyal\.gradle\caches\transforms-3\833e5ba36d1e149ba7c2f98830367712\transformed\jetified-material-icons-extended-1.0.5\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.material:material-icons-core:1.0.5] C:\Users\Feriyal\.gradle\caches\transforms-3\6be4652a2296bc52f8641bb992f760b3\transformed\jetified-material-icons-core-1.0.5\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.material:material-icons-core:1.0.5] C:\Users\Feriyal\.gradle\caches\transforms-3\6be4652a2296bc52f8641bb992f760b3\transformed\jetified-material-icons-core-1.0.5\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.runtime:runtime-livedata:1.0.5] C:\Users\Feriyal\.gradle\caches\transforms-3\e14246bdd90d32b394fe5ff2ce7152b4\transformed\jetified-runtime-livedata-1.0.5\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.runtime:runtime-livedata:1.0.5] C:\Users\Feriyal\.gradle\caches\transforms-3\e14246bdd90d32b394fe5ff2ce7152b4\transformed\jetified-runtime-livedata-1.0.5\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.animation:animation:1.0.5] C:\Users\Feriyal\.gradle\caches\transforms-3\8a77c2fff873a55aba9de41ae40b43e8\transformed\jetified-animation-1.0.5\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.animation:animation:1.0.5] C:\Users\Feriyal\.gradle\caches\transforms-3\8a77c2fff873a55aba9de41ae40b43e8\transformed\jetified-animation-1.0.5\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-compose:2.4.0] C:\Users\Feriyal\.gradle\caches\transforms-3\c714f3a8b958076fab3c85ba06bef5ab\transformed\jetified-lifecycle-viewmodel-compose-2.4.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-compose:2.4.0] C:\Users\Feriyal\.gradle\caches\transforms-3\c714f3a8b958076fab3c85ba06bef5ab\transformed\jetified-lifecycle-viewmodel-compose-2.4.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.ui:ui-tooling-data:1.0.5] C:\Users\Feriyal\.gradle\caches\transforms-3\0223003cd4f5d0021d513fb1100be592\transformed\jetified-ui-tooling-data-1.0.5\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.ui:ui-tooling-data:1.0.5] C:\Users\Feriyal\.gradle\caches\transforms-3\0223003cd4f5d0021d513fb1100be592\transformed\jetified-ui-tooling-data-1.0.5\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.foundation:foundation-layout:1.0.5] C:\Users\Feriyal\.gradle\caches\transforms-3\800b413399d7ec3c25efbb4a2903cc3e\transformed\jetified-foundation-layout-1.0.5\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.foundation:foundation-layout:1.0.5] C:\Users\Feriyal\.gradle\caches\transforms-3\800b413399d7ec3c25efbb4a2903cc3e\transformed\jetified-foundation-layout-1.0.5\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.animation:animation-core:1.0.5] C:\Users\Feriyal\.gradle\caches\transforms-3\c64b131325bab4ebf05fbd0e4674ec17\transformed\jetified-animation-core-1.0.5\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.animation:animation-core:1.0.5] C:\Users\Feriyal\.gradle\caches\transforms-3\c64b131325bab4ebf05fbd0e4674ec17\transformed\jetified-animation-core-1.0.5\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.ui:ui:1.0.5] C:\Users\Feriyal\.gradle\caches\transforms-3\567a3bc4ba698418aaa77a90c368b850\transformed\jetified-ui-1.0.5\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.ui:ui:1.0.5] C:\Users\Feriyal\.gradle\caches\transforms-3\567a3bc4ba698418aaa77a90c368b850\transformed\jetified-ui-1.0.5\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-dynamic-features-fragment:2.3.5] C:\Users\Feriyal\.gradle\caches\transforms-3\f3f47c311db33404a51b4e36523d267a\transformed\jetified-navigation-dynamic-features-fragment-2.3.5\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-dynamic-features-fragment:2.3.5] C:\Users\Feriyal\.gradle\caches\transforms-3\f3f47c311db33404a51b4e36523d267a\transformed\jetified-navigation-dynamic-features-fragment-2.3.5\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-fragment-ktx:2.3.5] C:\Users\Feriyal\.gradle\caches\transforms-3\144c72475a2a8ff174cf74eaf09bab6c\transformed\navigation-fragment-ktx-2.3.5\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-fragment-ktx:2.3.5] C:\Users\Feriyal\.gradle\caches\transforms-3\144c72475a2a8ff174cf74eaf09bab6c\transformed\navigation-fragment-ktx-2.3.5\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment-ktx:1.2.4] C:\Users\Feriyal\.gradle\caches\transforms-3\442b178e79d65a2d146230c06692afd8\transformed\jetified-fragment-ktx-1.2.4\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment-ktx:1.2.4] C:\Users\Feriyal\.gradle\caches\transforms-3\442b178e79d65a2d146230c06692afd8\transformed\jetified-fragment-ktx-1.2.4\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-fragment:2.3.5] C:\Users\Feriyal\.gradle\caches\transforms-3\99f0850493c4b5df5e022e970240b51d\transformed\navigation-fragment-2.3.5\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-fragment:2.3.5] C:\Users\Feriyal\.gradle\caches\transforms-3\99f0850493c4b5df5e022e970240b51d\transformed\navigation-fragment-2.3.5\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-ui-ktx:2.3.5] C:\Users\Feriyal\.gradle\caches\transforms-3\0e003e90334eb435f34388324bfada59\transformed\navigation-ui-ktx-2.3.5\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-ui-ktx:2.3.5] C:\Users\Feriyal\.gradle\caches\transforms-3\0e003e90334eb435f34388324bfada59\transformed\navigation-ui-ktx-2.3.5\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-ui:2.3.5] C:\Users\Feriyal\.gradle\caches\transforms-3\a7e707143e04748ff197328d4315ae56\transformed\navigation-ui-2.3.5\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-ui:2.3.5] C:\Users\Feriyal\.gradle\caches\transforms-3\a7e707143e04748ff197328d4315ae56\transformed\navigation-ui-2.3.5\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-dynamic-features-runtime:2.3.5] C:\Users\Feriyal\.gradle\caches\transforms-3\c269039bd8294505825e78b45d4f9122\transformed\jetified-navigation-dynamic-features-runtime-2.3.5\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-dynamic-features-runtime:2.3.5] C:\Users\Feriyal\.gradle\caches\transforms-3\c269039bd8294505825e78b45d4f9122\transformed\jetified-navigation-dynamic-features-runtime-2.3.5\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-runtime-ktx:2.4.0-rc01] C:\Users\Feriyal\.gradle\caches\transforms-3\6bddad5de481ede19752f8c4f7853d23\transformed\navigation-runtime-ktx-2.4.0-rc01\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-runtime-ktx:2.4.0-rc01] C:\Users\Feriyal\.gradle\caches\transforms-3\6bddad5de481ede19752f8c4f7853d23\transformed\navigation-runtime-ktx-2.4.0-rc01\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-runtime:2.4.0-rc01] C:\Users\Feriyal\.gradle\caches\transforms-3\54a269e3596a90d4d928966336646dbf\transformed\navigation-runtime-2.4.0-rc01\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-runtime:2.4.0-rc01] C:\Users\Feriyal\.gradle\caches\transforms-3\54a269e3596a90d4d928966336646dbf\transformed\navigation-runtime-2.4.0-rc01\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity-ktx:1.4.0] C:\Users\Feriyal\.gradle\caches\transforms-3\06d3d0eae273e44943f2e442700b5686\transformed\jetified-activity-ktx-1.4.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity-ktx:1.4.0] C:\Users\Feriyal\.gradle\caches\transforms-3\06d3d0eae273e44943f2e442700b5686\transformed\jetified-activity-ktx-1.4.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-common-ktx:2.4.0-rc01] C:\Users\Feriyal\.gradle\caches\transforms-3\640bc19542bdcfe3a3e954dfbdd570a3\transformed\navigation-common-ktx-2.4.0-rc01\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-common-ktx:2.4.0-rc01] C:\Users\Feriyal\.gradle\caches\transforms-3\640bc19542bdcfe3a3e954dfbdd570a3\transformed\navigation-common-ktx-2.4.0-rc01\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-common:2.4.0-rc01] C:\Users\Feriyal\.gradle\caches\transforms-3\d3cf966992c55202b71f8300e12f9ca4\transformed\navigation-common-2.4.0-rc01\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-common:2.4.0-rc01] C:\Users\Feriyal\.gradle\caches\transforms-3\d3cf966992c55202b71f8300e12f9ca4\transformed\navigation-common-2.4.0-rc01\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0] C:\Users\Feriyal\.gradle\caches\transforms-3\a36ad3ec7cc70f9a1e7f0d31a56b0347\transformed\jetified-lifecycle-viewmodel-ktx-2.4.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0] C:\Users\Feriyal\.gradle\caches\transforms-3\a36ad3ec7cc70f9a1e7f0d31a56b0347\transformed\jetified-lifecycle-viewmodel-ktx-2.4.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.runtime:runtime-rxjava2:1.0.5] C:\Users\Feriyal\.gradle\caches\transforms-3\9de51ae8498bb1bf49bab3a137f2d7c8\transformed\jetified-runtime-rxjava2-1.0.5\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.runtime:runtime-rxjava2:1.0.5] C:\Users\Feriyal\.gradle\caches\transforms-3\9de51ae8498bb1bf49bab3a137f2d7c8\transformed\jetified-runtime-rxjava2-1.0.5\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.ui:ui-text:1.0.5] C:\Users\Feriyal\.gradle\caches\transforms-3\72e907f59e29cb28db199921e3e602f6\transformed\jetified-ui-text-1.0.5\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.ui:ui-text:1.0.5] C:\Users\Feriyal\.gradle\caches\transforms-3\72e907f59e29cb28db199921e3e602f6\transformed\jetified-ui-text-1.0.5\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.runtime:runtime-saveable:1.0.5] C:\Users\Feriyal\.gradle\caches\transforms-3\88bc577bb756f032caf4f64fbabdfc60\transformed\jetified-runtime-saveable-1.0.5\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.runtime:runtime-saveable:1.0.5] C:\Users\Feriyal\.gradle\caches\transforms-3\88bc577bb756f032caf4f64fbabdfc60\transformed\jetified-runtime-saveable-1.0.5\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.ui:ui-graphics:1.0.5] C:\Users\Feriyal\.gradle\caches\transforms-3\1e224170ba9c690036d7925c20f41cef\transformed\jetified-ui-graphics-1.0.5\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.ui:ui-graphics:1.0.5] C:\Users\Feriyal\.gradle\caches\transforms-3\1e224170ba9c690036d7925c20f41cef\transformed\jetified-ui-graphics-1.0.5\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.ui:ui-unit:1.0.5] C:\Users\Feriyal\.gradle\caches\transforms-3\73075e3437ae6c438f43b5b7d7bb73ef\transformed\jetified-ui-unit-1.0.5\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.ui:ui-unit:1.0.5] C:\Users\Feriyal\.gradle\caches\transforms-3\73075e3437ae6c438f43b5b7d7bb73ef\transformed\jetified-ui-unit-1.0.5\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.ui:ui-geometry:1.0.5] C:\Users\Feriyal\.gradle\caches\transforms-3\71d6d7d5f092c8e5a9c1469f0ea472c2\transformed\jetified-ui-geometry-1.0.5\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.ui:ui-geometry:1.0.5] C:\Users\Feriyal\.gradle\caches\transforms-3\71d6d7d5f092c8e5a9c1469f0ea472c2\transformed\jetified-ui-geometry-1.0.5\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.ui:ui-tooling-preview:1.0.5] C:\Users\Feriyal\.gradle\caches\transforms-3\e7a3f4c60275fcd51ee2a9c1e966dbc6\transformed\jetified-ui-tooling-preview-1.0.5\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.ui:ui-tooling-preview:1.0.5] C:\Users\Feriyal\.gradle\caches\transforms-3\e7a3f4c60275fcd51ee2a9c1e966dbc6\transformed\jetified-ui-tooling-preview-1.0.5\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.runtime:runtime:1.0.5] C:\Users\Feriyal\.gradle\caches\transforms-3\4145815930760ae23a975a0229abd403\transformed\jetified-runtime-1.0.5\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.runtime:runtime:1.0.5] C:\Users\Feriyal\.gradle\caches\transforms-3\4145815930760ae23a975a0229abd403\transformed\jetified-runtime-1.0.5\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.3.1] C:\Users\Feriyal\.gradle\caches\transforms-3\1fa4eb1892c3cd4b2f8a6948aa82f8a1\transformed\jetified-lifecycle-runtime-ktx-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.3.1] C:\Users\Feriyal\.gradle\caches\transforms-3\1fa4eb1892c3cd4b2f8a6948aa82f8a1\transformed\jetified-lifecycle-runtime-ktx-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-ktx:2.4.0] C:\Users\Feriyal\.gradle\caches\transforms-3\f27e96bb09a2992d3a4403f2ad57f743\transformed\jetified-lifecycle-livedata-ktx-2.4.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-ktx:2.4.0] C:\Users\Feriyal\.gradle\caches\transforms-3\f27e96bb09a2992d3a4403f2ad57f743\transformed\jetified-lifecycle-livedata-ktx-2.4.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.databinding:viewbinding:4.1.3] C:\Users\Feriyal\.gradle\caches\transforms-3\350b21f6fcdc6e0ddcc12113018a568b\transformed\jetified-viewbinding-4.1.3\AndroidManifest.xml:20:5-44
+MERGED from [androidx.databinding:viewbinding:4.1.3] C:\Users\Feriyal\.gradle\caches\transforms-3\350b21f6fcdc6e0ddcc12113018a568b\transformed\jetified-viewbinding-4.1.3\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core-ktx:1.7.0] C:\Users\Feriyal\.gradle\caches\transforms-3\8576c2f7733e039b1b75ff67dac5ba83\transformed\jetified-core-ktx-1.7.0\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.core:core-ktx:1.7.0] C:\Users\Feriyal\.gradle\caches\transforms-3\8576c2f7733e039b1b75ff67dac5ba83\transformed\jetified-core-ktx-1.7.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.android.material:material:1.4.0] C:\Users\Feriyal\.gradle\caches\transforms-3\d754e7ce487b25c354202c6c0ee944ea\transformed\material-1.4.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.4.0] C:\Users\Feriyal\.gradle\caches\transforms-3\d754e7ce487b25c354202c6c0ee944ea\transformed\material-1.4.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.2] C:\Users\Feriyal\.gradle\caches\transforms-3\f0f2ba9c10b49d57e45f64286213a4ec\transformed\constraintlayout-2.1.2\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.2] C:\Users\Feriyal\.gradle\caches\transforms-3\f0f2ba9c10b49d57e45f64286213a4ec\transformed\constraintlayout-2.1.2\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.appcompat:appcompat:1.4.0] C:\Users\Feriyal\.gradle\caches\transforms-3\a3ac3e09c2eac1a7e99912ab6a7cac93\transformed\appcompat-1.4.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.4.0] C:\Users\Feriyal\.gradle\caches\transforms-3\a3ac3e09c2eac1a7e99912ab6a7cac93\transformed\appcompat-1.4.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\Feriyal\.gradle\caches\transforms-3\ee25fd95129bfc0f3314ca38d2a92d9d\transformed\jetified-viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\Feriyal\.gradle\caches\transforms-3\ee25fd95129bfc0f3314ca38d2a92d9d\transformed\jetified-viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\Feriyal\.gradle\caches\transforms-3\c6b83f410097499266e89a04ff3f38b4\transformed\fragment-1.3.6\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\Feriyal\.gradle\caches\transforms-3\c6b83f410097499266e89a04ff3f38b4\transformed\fragment-1.3.6\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.4.0] C:\Users\Feriyal\.gradle\caches\transforms-3\4c7df63f4a0b3da69fd2ad9f62b3c911\transformed\jetified-activity-1.4.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.4.0] C:\Users\Feriyal\.gradle\caches\transforms-3\4c7df63f4a0b3da69fd2ad9f62b3c911\transformed\jetified-activity-1.4.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.4.0] C:\Users\Feriyal\.gradle\caches\transforms-3\4bbeab71c284577cf6a668442e8fa934\transformed\jetified-lifecycle-viewmodel-savedstate-2.4.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.4.0] C:\Users\Feriyal\.gradle\caches\transforms-3\4bbeab71c284577cf6a668442e8fa934\transformed\jetified-lifecycle-viewmodel-savedstate-2.4.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.ui:ui-util:1.0.5] C:\Users\Feriyal\.gradle\caches\transforms-3\c1ee5c18dbeb5f28e85d65a96f548d7a\transformed\jetified-ui-util-1.0.5\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.ui:ui-util:1.0.5] C:\Users\Feriyal\.gradle\caches\transforms-3\c1ee5c18dbeb5f28e85d65a96f548d7a\transformed\jetified-ui-util-1.0.5\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\Feriyal\.gradle\caches\transforms-3\8e0668c944e848ee7a73e7fb22164800\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\Feriyal\.gradle\caches\transforms-3\8e0668c944e848ee7a73e7fb22164800\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\Feriyal\.gradle\caches\transforms-3\86e2150c8ae61001ce3e07baf53463a5\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\Feriyal\.gradle\caches\transforms-3\86e2150c8ae61001ce3e07baf53463a5\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\Feriyal\.gradle\caches\transforms-3\37f9fc278a2bcab62dd772af6f3dea6d\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\Feriyal\.gradle\caches\transforms-3\37f9fc278a2bcab62dd772af6f3dea6d\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.4.0] C:\Users\Feriyal\.gradle\caches\transforms-3\d719620a7c62415da39759d30c0188fa\transformed\lifecycle-viewmodel-2.4.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.4.0] C:\Users\Feriyal\.gradle\caches\transforms-3\d719620a7c62415da39759d30c0188fa\transformed\lifecycle-viewmodel-2.4.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.4.0] C:\Users\Feriyal\.gradle\caches\transforms-3\b58102a32fd48b45d73d46e39fbcd534\transformed\jetified-lifecycle-livedata-core-ktx-2.4.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.4.0] C:\Users\Feriyal\.gradle\caches\transforms-3\b58102a32fd48b45d73d46e39fbcd534\transformed\jetified-lifecycle-livedata-core-ktx-2.4.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate-ktx:1.1.0] C:\Users\Feriyal\.gradle\caches\transforms-3\1c5a58a69d0c5cbeca0023e03366b0c4\transformed\jetified-savedstate-ktx-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate-ktx:1.1.0] C:\Users\Feriyal\.gradle\caches\transforms-3\1c5a58a69d0c5cbeca0023e03366b0c4\transformed\jetified-savedstate-ktx-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.4.0] C:\Users\Feriyal\.gradle\caches\transforms-3\096991da7e1b3028d199d21b32336dc8\transformed\jetified-appcompat-resources-1.4.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.4.0] C:\Users\Feriyal\.gradle\caches\transforms-3\096991da7e1b3028d199d21b32336dc8\transformed\jetified-appcompat-resources-1.4.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.emoji2:emoji2-views-helper:1.0.0] C:\Users\Feriyal\.gradle\caches\transforms-3\fd4d7dd5fbf1c95161401978b091bd00\transformed\jetified-emoji2-views-helper-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.emoji2:emoji2-views-helper:1.0.0] C:\Users\Feriyal\.gradle\caches\transforms-3\fd4d7dd5fbf1c95161401978b091bd00\transformed\jetified-emoji2-views-helper-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.emoji2:emoji2:1.0.0] C:\Users\Feriyal\.gradle\caches\transforms-3\3d24b7c5ded344cd4260b8f2ad9ed030\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.emoji2:emoji2:1.0.0] C:\Users\Feriyal\.gradle\caches\transforms-3\3d24b7c5ded344cd4260b8f2ad9ed030\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\Feriyal\.gradle\caches\transforms-3\610a39cb58290685344793c2d56257da\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\Feriyal\.gradle\caches\transforms-3\610a39cb58290685344793c2d56257da\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\Feriyal\.gradle\caches\transforms-3\687c508d7989048b355ba4a08e643a1f\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\Feriyal\.gradle\caches\transforms-3\687c508d7989048b355ba4a08e643a1f\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\Feriyal\.gradle\caches\transforms-3\c2c6e7869899aa64a8c0c010152e7b5f\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\Feriyal\.gradle\caches\transforms-3\c2c6e7869899aa64a8c0c010152e7b5f\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.autofill:autofill:1.0.0] C:\Users\Feriyal\.gradle\caches\transforms-3\c7ac6a06d1f90a539ba970fe4ebc4c73\transformed\jetified-autofill-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.autofill:autofill:1.0.0] C:\Users\Feriyal\.gradle\caches\transforms-3\c7ac6a06d1f90a539ba970fe4ebc4c73\transformed\jetified-autofill-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Feriyal\.gradle\caches\transforms-3\7a36ba30cd034b855c647b05620087a3\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Feriyal\.gradle\caches\transforms-3\7a36ba30cd034b855c647b05620087a3\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\Feriyal\.gradle\caches\transforms-3\b71368cd98b445c16b7f93ac9ec0f42e\transformed\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\Feriyal\.gradle\caches\transforms-3\b71368cd98b445c16b7f93ac9ec0f42e\transformed\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] C:\Users\Feriyal\.gradle\caches\transforms-3\c114330023c601cafd96363cdd8a74c5\transformed\drawerlayout-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] C:\Users\Feriyal\.gradle\caches\transforms-3\c114330023c601cafd96363cdd8a74c5\transformed\drawerlayout-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.1.0] C:\Users\Feriyal\.gradle\caches\transforms-3\1d9879108b64d5d4e1cf27f6864ff4e1\transformed\customview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.1.0] C:\Users\Feriyal\.gradle\caches\transforms-3\1d9879108b64d5d4e1cf27f6864ff4e1\transformed\customview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.3.0] C:\Users\Feriyal\.gradle\caches\transforms-3\6c543ba82523133f25bd8e7c7fec1bf3\transformed\transition-1.3.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.3.0] C:\Users\Feriyal\.gradle\caches\transforms-3\6c543ba82523133f25bd8e7c7fec1bf3\transformed\transition-1.3.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.7.0] C:\Users\Feriyal\.gradle\caches\transforms-3\ae3d7ae4493d11c21b25c5d58a0c4179\transformed\core-1.7.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.7.0] C:\Users\Feriyal\.gradle\caches\transforms-3\ae3d7ae4493d11c21b25c5d58a0c4179\transformed\core-1.7.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Feriyal\.gradle\caches\transforms-3\41ee7f70fb8bba34357d12d368bcaaeb\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Feriyal\.gradle\caches\transforms-3\41ee7f70fb8bba34357d12d368bcaaeb\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.1.0] C:\Users\Feriyal\.gradle\caches\transforms-3\55e7dbe2558111b07436aba7c31b4c61\transformed\jetified-savedstate-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.1.0] C:\Users\Feriyal\.gradle\caches\transforms-3\55e7dbe2558111b07436aba7c31b4c61\transformed\jetified-savedstate-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\Feriyal\.gradle\caches\transforms-3\80bec63e8947271c9b0a886b1f15b8fe\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\Feriyal\.gradle\caches\transforms-3\80bec63e8947271c9b0a886b1f15b8fe\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.0.4] C:\Users\Feriyal\.gradle\caches\transforms-3\b4463cb3966d51c068a5babba2df18dd\transformed\jetified-profileinstaller-1.0.4\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.profileinstaller:profileinstaller:1.0.4] C:\Users\Feriyal\.gradle\caches\transforms-3\b4463cb3966d51c068a5babba2df18dd\transformed\jetified-profileinstaller-1.0.4\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Feriyal\.gradle\caches\transforms-3\3c965fb7c62115ae030ef97f95a5a9cd\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Feriyal\.gradle\caches\transforms-3\3c965fb7c62115ae030ef97f95a5a9cd\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Feriyal\.gradle\caches\transforms-3\c55501271c534953631a61ceacf50e00\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Feriyal\.gradle\caches\transforms-3\c55501271c534953631a61ceacf50e00\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.0.0] C:\Users\Feriyal\.gradle\caches\transforms-3\190c9e4c712be3363d2037bc73a1c97d\transformed\jetified-startup-runtime-1.0.0\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.0.0] C:\Users\Feriyal\.gradle\caches\transforms-3\190c9e4c712be3363d2037bc73a1c97d\transformed\jetified-startup-runtime-1.0.0\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.4.0] C:\Users\Feriyal\.gradle\caches\transforms-3\4bb0ae2f33a3591907a0bb5af3fcdaac\transformed\lifecycle-livedata-2.4.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.4.0] C:\Users\Feriyal\.gradle\caches\transforms-3\4bb0ae2f33a3591907a0bb5af3fcdaac\transformed\lifecycle-livedata-2.4.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.4.0] C:\Users\Feriyal\.gradle\caches\transforms-3\f9b1a382026a1d73d4ef6a9c991756b4\transformed\lifecycle-livedata-core-2.4.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.4.0] C:\Users\Feriyal\.gradle\caches\transforms-3\f9b1a382026a1d73d4ef6a9c991756b4\transformed\lifecycle-livedata-core-2.4.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.4.0] C:\Users\Feriyal\.gradle\caches\transforms-3\314b86d499c0f99a2629be2bceea5c8f\transformed\lifecycle-runtime-2.4.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.4.0] C:\Users\Feriyal\.gradle\caches\transforms-3\314b86d499c0f99a2629be2bceea5c8f\transformed\lifecycle-runtime-2.4.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\Feriyal\.gradle\caches\transforms-3\85d195d6d4f64c57cac122595823a93a\transformed\core-runtime-2.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\Feriyal\.gradle\caches\transforms-3\85d195d6d4f64c57cac122595823a93a\transformed\core-runtime-2.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Feriyal\.gradle\caches\transforms-3\4eb6d43331fedb845a732f1730677542\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Feriyal\.gradle\caches\transforms-3\4eb6d43331fedb845a732f1730677542\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\Feriyal\.gradle\caches\transforms-3\d89294d0291b700a71770368c435a9dd\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\Feriyal\.gradle\caches\transforms-3\d89294d0291b700a71770368c435a9dd\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\Feriyal\.gradle\caches\transforms-3\3131160bd9b9c5ee736ffecccf49310e\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\Feriyal\.gradle\caches\transforms-3\3131160bd9b9c5ee736ffecccf49310e\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\Feriyal\.gradle\caches\transforms-3\50e23588a4a510355e1a6fe921988462\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\Feriyal\.gradle\caches\transforms-3\50e23588a4a510355e1a6fe921988462\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\Feriyal\.gradle\caches\transforms-3\4b70631049ea16bfc8054fd79ea8a80f\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\Feriyal\.gradle\caches\transforms-3\4b70631049ea16bfc8054fd79ea8a80f\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\Feriyal\.gradle\caches\transforms-3\d42e124c92f0135374ed9e9de717598a\transformed\jetified-annotation-experimental-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\Feriyal\.gradle\caches\transforms-3\d42e124c92f0135374ed9e9de717598a\transformed\jetified-annotation-experimental-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.play:core:1.9.1] C:\Users\Feriyal\.gradle\caches\transforms-3\8e313dac7b9ff1f33c4b834bdfe51384\transformed\jetified-core-1.9.1\AndroidManifest.xml:4:3-70
+MERGED from [com.google.android.play:core:1.9.1] C:\Users\Feriyal\.gradle\caches\transforms-3\8e313dac7b9ff1f33c4b834bdfe51384\transformed\jetified-core-1.9.1\AndroidManifest.xml:4:3-70
+INJECTED from D:\Fereshteh\Flutter\FunnyAnimals\app\src\main\AndroidManifest.xml
+INJECTED from D:\Fereshteh\Flutter\FunnyAnimals\app\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from D:\Fereshteh\Flutter\FunnyAnimals\app\src\main\AndroidManifest.xml
+		ADDED from D:\Fereshteh\Flutter\FunnyAnimals\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Fereshteh\Flutter\FunnyAnimals\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from D:\Fereshteh\Flutter\FunnyAnimals\app\src\main\AndroidManifest.xml
+		ADDED from D:\Fereshteh\Flutter\FunnyAnimals\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Fereshteh\Flutter\FunnyAnimals\app\src\main\AndroidManifest.xml
+activity#androidx.compose.ui.tooling.PreviewActivity
+ADDED from [androidx.compose.ui:ui-tooling:1.0.5] C:\Users\Feriyal\.gradle\caches\transforms-3\b8c5261b98333531182ce84123e46af5\transformed\jetified-ui-tooling-1.0.5\AndroidManifest.xml:25:9-27:39
+	android:exported
+		ADDED from [androidx.compose.ui:ui-tooling:1.0.5] C:\Users\Feriyal\.gradle\caches\transforms-3\b8c5261b98333531182ce84123e46af5\transformed\jetified-ui-tooling-1.0.5\AndroidManifest.xml:27:13-36
+	android:name
+		ADDED from [androidx.compose.ui:ui-tooling:1.0.5] C:\Users\Feriyal\.gradle\caches\transforms-3\b8c5261b98333531182ce84123e46af5\transformed\jetified-ui-tooling-1.0.5\AndroidManifest.xml:26:13-71
+provider#androidx.startup.InitializationProvider
+ADDED from [androidx.emoji2:emoji2:1.0.0] C:\Users\Feriyal\.gradle\caches\transforms-3\3d24b7c5ded344cd4260b8f2ad9ed030\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.0.4] C:\Users\Feriyal\.gradle\caches\transforms-3\b4463cb3966d51c068a5babba2df18dd\transformed\jetified-profileinstaller-1.0.4\AndroidManifest.xml:26:9-34:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.0.4] C:\Users\Feriyal\.gradle\caches\transforms-3\b4463cb3966d51c068a5babba2df18dd\transformed\jetified-profileinstaller-1.0.4\AndroidManifest.xml:26:9-34:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Feriyal\.gradle\caches\transforms-3\c55501271c534953631a61ceacf50e00\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:26:9-34:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Feriyal\.gradle\caches\transforms-3\c55501271c534953631a61ceacf50e00\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:26:9-34:20
+MERGED from [androidx.startup:startup-runtime:1.0.0] C:\Users\Feriyal\.gradle\caches\transforms-3\190c9e4c712be3363d2037bc73a1c97d\transformed\jetified-startup-runtime-1.0.0\AndroidManifest.xml:26:9-30:34
+MERGED from [androidx.startup:startup-runtime:1.0.0] C:\Users\Feriyal\.gradle\caches\transforms-3\190c9e4c712be3363d2037bc73a1c97d\transformed\jetified-startup-runtime-1.0.0\AndroidManifest.xml:26:9-30:34
+	tools:node
+		ADDED from [androidx.emoji2:emoji2:1.0.0] C:\Users\Feriyal\.gradle\caches\transforms-3\3d24b7c5ded344cd4260b8f2ad9ed030\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:30:13-31
+	android:authorities
+		ADDED from [androidx.emoji2:emoji2:1.0.0] C:\Users\Feriyal\.gradle\caches\transforms-3\3d24b7c5ded344cd4260b8f2ad9ed030\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:28:13-68
+	android:exported
+		ADDED from [androidx.emoji2:emoji2:1.0.0] C:\Users\Feriyal\.gradle\caches\transforms-3\3d24b7c5ded344cd4260b8f2ad9ed030\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:29:13-37
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.0.0] C:\Users\Feriyal\.gradle\caches\transforms-3\3d24b7c5ded344cd4260b8f2ad9ed030\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:27:13-67
+meta-data#androidx.emoji2.text.EmojiCompatInitializer
+ADDED from [androidx.emoji2:emoji2:1.0.0] C:\Users\Feriyal\.gradle\caches\transforms-3\3d24b7c5ded344cd4260b8f2ad9ed030\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
+	android:value
+		ADDED from [androidx.emoji2:emoji2:1.0.0] C:\Users\Feriyal\.gradle\caches\transforms-3\3d24b7c5ded344cd4260b8f2ad9ed030\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:33:17-49
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.0.0] C:\Users\Feriyal\.gradle\caches\transforms-3\3d24b7c5ded344cd4260b8f2ad9ed030\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:32:17-75
+meta-data#androidx.profileinstaller.ProfileInstallerInitializer
+ADDED from [androidx.profileinstaller:profileinstaller:1.0.4] C:\Users\Feriyal\.gradle\caches\transforms-3\b4463cb3966d51c068a5babba2df18dd\transformed\jetified-profileinstaller-1.0.4\AndroidManifest.xml:31:13-33:52
+	android:value
+		ADDED from [androidx.profileinstaller:profileinstaller:1.0.4] C:\Users\Feriyal\.gradle\caches\transforms-3\b4463cb3966d51c068a5babba2df18dd\transformed\jetified-profileinstaller-1.0.4\AndroidManifest.xml:33:17-49
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.0.4] C:\Users\Feriyal\.gradle\caches\transforms-3\b4463cb3966d51c068a5babba2df18dd\transformed\jetified-profileinstaller-1.0.4\AndroidManifest.xml:32:17-85
+receiver#androidx.profileinstaller.ProfileInstallReceiver
+ADDED from [androidx.profileinstaller:profileinstaller:1.0.4] C:\Users\Feriyal\.gradle\caches\transforms-3\b4463cb3966d51c068a5babba2df18dd\transformed\jetified-profileinstaller-1.0.4\AndroidManifest.xml:36:9-45:20
+	android:enabled
+		ADDED from [androidx.profileinstaller:profileinstaller:1.0.4] C:\Users\Feriyal\.gradle\caches\transforms-3\b4463cb3966d51c068a5babba2df18dd\transformed\jetified-profileinstaller-1.0.4\AndroidManifest.xml:39:13-35
+	android:exported
+		ADDED from [androidx.profileinstaller:profileinstaller:1.0.4] C:\Users\Feriyal\.gradle\caches\transforms-3\b4463cb3966d51c068a5babba2df18dd\transformed\jetified-profileinstaller-1.0.4\AndroidManifest.xml:40:13-36
+	android:permission
+		ADDED from [androidx.profileinstaller:profileinstaller:1.0.4] C:\Users\Feriyal\.gradle\caches\transforms-3\b4463cb3966d51c068a5babba2df18dd\transformed\jetified-profileinstaller-1.0.4\AndroidManifest.xml:41:13-57
+	android:directBootAware
+		ADDED from [androidx.profileinstaller:profileinstaller:1.0.4] C:\Users\Feriyal\.gradle\caches\transforms-3\b4463cb3966d51c068a5babba2df18dd\transformed\jetified-profileinstaller-1.0.4\AndroidManifest.xml:38:13-44
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.0.4] C:\Users\Feriyal\.gradle\caches\transforms-3\b4463cb3966d51c068a5babba2df18dd\transformed\jetified-profileinstaller-1.0.4\AndroidManifest.xml:37:13-76
+intent-filter#action:name:androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.0.4] C:\Users\Feriyal\.gradle\caches\transforms-3\b4463cb3966d51c068a5babba2df18dd\transformed\jetified-profileinstaller-1.0.4\AndroidManifest.xml:42:13-44:29
+action#androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.0.4] C:\Users\Feriyal\.gradle\caches\transforms-3\b4463cb3966d51c068a5babba2df18dd\transformed\jetified-profileinstaller-1.0.4\AndroidManifest.xml:43:17-91
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.0.4] C:\Users\Feriyal\.gradle\caches\transforms-3\b4463cb3966d51c068a5babba2df18dd\transformed\jetified-profileinstaller-1.0.4\AndroidManifest.xml:43:25-88
+meta-data#androidx.lifecycle.ProcessLifecycleInitializer
+ADDED from [androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Feriyal\.gradle\caches\transforms-3\c55501271c534953631a61ceacf50e00\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
+	android:value
+		ADDED from [androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Feriyal\.gradle\caches\transforms-3\c55501271c534953631a61ceacf50e00\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
+	android:name
+		ADDED from [androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Feriyal\.gradle\caches\transforms-3\c55501271c534953631a61ceacf50e00\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
+uses-permission#android.permission.FOREGROUND_SERVICE
+ADDED from [com.google.android.play:core:1.9.1] C:\Users\Feriyal\.gradle\caches\transforms-3\8e313dac7b9ff1f33c4b834bdfe51384\transformed\jetified-core-1.9.1\AndroidManifest.xml:8:3-74
+	android:name
+		ADDED from [com.google.android.play:core:1.9.1] C:\Users\Feriyal\.gradle\caches\transforms-3\8e313dac7b9ff1f33c4b834bdfe51384\transformed\jetified-core-1.9.1\AndroidManifest.xml:8:20-72
+activity#com.google.android.play.core.missingsplits.PlayCoreMissingSplitsActivity
+ADDED from [com.google.android.play:core:1.9.1] C:\Users\Feriyal\.gradle\caches\transforms-3\8e313dac7b9ff1f33c4b834bdfe51384\transformed\jetified-core-1.9.1\AndroidManifest.xml:12:5-271
+	android:process
+		ADDED from [com.google.android.play:core:1.9.1] C:\Users\Feriyal\.gradle\caches\transforms-3\8e313dac7b9ff1f33c4b834bdfe51384\transformed\jetified-core-1.9.1\AndroidManifest.xml:12:152-203
+	android:enabled
+		ADDED from [com.google.android.play:core:1.9.1] C:\Users\Feriyal\.gradle\caches\transforms-3\8e313dac7b9ff1f33c4b834bdfe51384\transformed\jetified-core-1.9.1\AndroidManifest.xml:12:103-126
+	android:stateNotNeeded
+		ADDED from [com.google.android.play:core:1.9.1] C:\Users\Feriyal\.gradle\caches\transforms-3\8e313dac7b9ff1f33c4b834bdfe51384\transformed\jetified-core-1.9.1\AndroidManifest.xml:12:240-269
+	android:launchMode
+		ADDED from [com.google.android.play:core:1.9.1] C:\Users\Feriyal\.gradle\caches\transforms-3\8e313dac7b9ff1f33c4b834bdfe51384\transformed\jetified-core-1.9.1\AndroidManifest.xml:12:204-239
+	android:exported
+		ADDED from [com.google.android.play:core:1.9.1] C:\Users\Feriyal\.gradle\caches\transforms-3\8e313dac7b9ff1f33c4b834bdfe51384\transformed\jetified-core-1.9.1\AndroidManifest.xml:12:127-151
+	android:name
+		ADDED from [com.google.android.play:core:1.9.1] C:\Users\Feriyal\.gradle\caches\transforms-3\8e313dac7b9ff1f33c4b834bdfe51384\transformed\jetified-core-1.9.1\AndroidManifest.xml:12:15-102
+activity#com.google.android.play.core.common.PlayCoreDialogWrapperActivity
+ADDED from [com.google.android.play:core:1.9.1] C:\Users\Feriyal\.gradle\caches\transforms-3\8e313dac7b9ff1f33c4b834bdfe51384\transformed\jetified-core-1.9.1\AndroidManifest.xml:13:5-226
+	android:enabled
+		ADDED from [com.google.android.play:core:1.9.1] C:\Users\Feriyal\.gradle\caches\transforms-3\8e313dac7b9ff1f33c4b834bdfe51384\transformed\jetified-core-1.9.1\AndroidManifest.xml:13:96-119
+	android:stateNotNeeded
+		ADDED from [com.google.android.play:core:1.9.1] C:\Users\Feriyal\.gradle\caches\transforms-3\8e313dac7b9ff1f33c4b834bdfe51384\transformed\jetified-core-1.9.1\AndroidManifest.xml:13:145-174
+	android:exported
+		ADDED from [com.google.android.play:core:1.9.1] C:\Users\Feriyal\.gradle\caches\transforms-3\8e313dac7b9ff1f33c4b834bdfe51384\transformed\jetified-core-1.9.1\AndroidManifest.xml:13:120-144
+	android:theme
+		ADDED from [com.google.android.play:core:1.9.1] C:\Users\Feriyal\.gradle\caches\transforms-3\8e313dac7b9ff1f33c4b834bdfe51384\transformed\jetified-core-1.9.1\AndroidManifest.xml:13:175-224
+	android:name
+		ADDED from [com.google.android.play:core:1.9.1] C:\Users\Feriyal\.gradle\caches\transforms-3\8e313dac7b9ff1f33c4b834bdfe51384\transformed\jetified-core-1.9.1\AndroidManifest.xml:13:15-95
+service#com.google.android.play.core.assetpacks.AssetPackExtractionService
+ADDED from [com.google.android.play:core:1.9.1] C:\Users\Feriyal\.gradle\caches\transforms-3\8e313dac7b9ff1f33c4b834bdfe51384\transformed\jetified-core-1.9.1\AndroidManifest.xml:16:5-18:15
+	android:enabled
+		ADDED from [com.google.android.play:core:1.9.1] C:\Users\Feriyal\.gradle\caches\transforms-3\8e313dac7b9ff1f33c4b834bdfe51384\transformed\jetified-core-1.9.1\AndroidManifest.xml:16:96-119
+	android:exported
+		ADDED from [com.google.android.play:core:1.9.1] C:\Users\Feriyal\.gradle\caches\transforms-3\8e313dac7b9ff1f33c4b834bdfe51384\transformed\jetified-core-1.9.1\AndroidManifest.xml:16:120-143
+	android:name
+		ADDED from [com.google.android.play:core:1.9.1] C:\Users\Feriyal\.gradle\caches\transforms-3\8e313dac7b9ff1f33c4b834bdfe51384\transformed\jetified-core-1.9.1\AndroidManifest.xml:16:14-95
+meta-data#com.google.android.play.core.assetpacks.versionCode
+ADDED from [com.google.android.play:core:1.9.1] C:\Users\Feriyal\.gradle\caches\transforms-3\8e313dac7b9ff1f33c4b834bdfe51384\transformed\jetified-core-1.9.1\AndroidManifest.xml:17:7-108
+	android:value
+		ADDED from [com.google.android.play:core:1.9.1] C:\Users\Feriyal\.gradle\caches\transforms-3\8e313dac7b9ff1f33c4b834bdfe51384\transformed\jetified-core-1.9.1\AndroidManifest.xml:17:85-106
+	android:name
+		ADDED from [com.google.android.play:core:1.9.1] C:\Users\Feriyal\.gradle\caches\transforms-3\8e313dac7b9ff1f33c4b834bdfe51384\transformed\jetified-core-1.9.1\AndroidManifest.xml:17:18-84
+service#com.google.android.play.core.assetpacks.ExtractionForegroundService
+ADDED from [com.google.android.play:core:1.9.1] C:\Users\Feriyal\.gradle\caches\transforms-3\8e313dac7b9ff1f33c4b834bdfe51384\transformed\jetified-core-1.9.1\AndroidManifest.xml:19:5-147
+	android:enabled
+		ADDED from [com.google.android.play:core:1.9.1] C:\Users\Feriyal\.gradle\caches\transforms-3\8e313dac7b9ff1f33c4b834bdfe51384\transformed\jetified-core-1.9.1\AndroidManifest.xml:19:97-120
+	android:exported
+		ADDED from [com.google.android.play:core:1.9.1] C:\Users\Feriyal\.gradle\caches\transforms-3\8e313dac7b9ff1f33c4b834bdfe51384\transformed\jetified-core-1.9.1\AndroidManifest.xml:19:121-145
+	android:name
+		ADDED from [com.google.android.play:core:1.9.1] C:\Users\Feriyal\.gradle\caches\transforms-3\8e313dac7b9ff1f33c4b834bdfe51384\transformed\jetified-core-1.9.1\AndroidManifest.xml:19:14-96

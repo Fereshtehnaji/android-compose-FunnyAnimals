@@ -1,0 +1,2 @@
+com/naji/funnyAnimals/BuildConfig.java
+ com.naji.funnyAnimals.BuildConfig
