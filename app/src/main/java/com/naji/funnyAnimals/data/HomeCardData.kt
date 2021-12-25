@@ -1,21 +1,34 @@
 package com.naji.funnyAnimals.data
 
+import androidx.compose.ui.graphics.Color
 import com.naji.funnyAnimals.R
 import com.naji.funnyAnimals.ui.theme.*
-import androidx.compose.ui.graphics.Color
 
 data class CardHome(
     val title: String, val description: String, val icon: Int,
     val background: Color,
-    val route : String
+    val backgroundIcon: Color,
+    val route: String
 )
 
-object HomeCardData{
+object HomeCardData {
     val HomeCardList = listOf(
-        CardHome("حیوانات اهلی","صدای حیوانات اهلی", R.drawable.animal_sheep, Teal200,"DomesticAnimal"),
-        CardHome("حیوانات وحشی","",R.drawable.animal_bear, Teal100,"WildAnimal"),
-        CardHome("حشرات","آشنایی با دنیای حشرات",R.drawable.animal_leopard, Teal50,"WildAnimal"),
-        CardHome("حیوانات دریایی","آشنایی یا آبزیان",R.drawable.animal_fish, LightBlue100,"WildAnimal")
+        CardHome(
+            "حیوانات", "آشنایی با حیوانات",
+            R.drawable.animal_sheep, Green50, Green100, "DomesticAnimal"
+        ),
+        CardHome(
+            "پرندگان", "آشنایی با پرندگان",
+            R.drawable.bird_parrot, Orange50, Orange100, "WildAnimal"
+        ),
+        CardHome(
+            "حشرات", "آشنایی با حشرات",
+            R.drawable.animal_leopard, Orange50, Orange100, "WildAnimal"
+        ),
+        CardHome(
+            "دریایی", "آشنایی با آبزیان",
+            R.drawable.animal_fish, Cyan50, Cyan100, "WildAnimal"
+        )
     )
 
 }
