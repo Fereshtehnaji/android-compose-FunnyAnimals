@@ -53,7 +53,7 @@ fun AnimalAppTheme(
     MaterialTheme(
         colors = if (darkTheme) DarkColors else LightColors,
         typography = JetnewsTypography,
-        shapes = JetnewsShapes,
+//        shapes = JetnewsShapes,
         content = content
     )
 }
