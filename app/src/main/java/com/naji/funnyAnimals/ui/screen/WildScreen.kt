@@ -1,7 +1,6 @@
 package com.naji.funnyAnimals.ui.screen
 
 import android.content.Context
-import android.media.MediaPlayer
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
@@ -25,7 +24,6 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.naji.funnyAnimals.R
 import com.naji.funnyAnimals.data.Animal
 import com.naji.funnyAnimals.data.AnimalData
 import com.naji.funnyAnimals.ui.util.MusicManager
@@ -92,13 +90,30 @@ fun AnimalItem(animal: Animal, viewModel: WildAnimalViewModel) {
 
 
         val infiniteTransition = rememberInfiniteTransition()
-        val angle by infiniteTransition.animateFloat(
-            initialValue = 0F,
-            targetValue = if (isClicked) 360F else 0F,
+
+        val shake by infiniteTransition.animateFloat(
+            initialValue = -30F,
+            targetValue = 30F,
             animationSpec = infiniteRepeatable(
-                animation = tween(2000, easing = LinearEasing)
+                animation = tween(1000, easing = LinearEasing),
+                repeatMode = RepeatMode.Reverse
             )
         )
+
+
+        val rotationAngle by animateFloatAsState(
+            targetValue = if (isClicked) 360F else 0f,
+            animationSpec = tween(durationMillis = 2500),
+            finishedListener = {
+                isClicked = false
+                animal.animate = isClicked
+                viewModel.clickOnItem(animal)
+            }
+
+        )
+
+
+        val angle = if (isClicked) rotationAngle else shake
         Image(
             painter = painterResource(animal.picture),
             contentDescription = "this is sample picture",
@@ -110,7 +125,7 @@ fun AnimalItem(animal: Animal, viewModel: WildAnimalViewModel) {
                     isClicked = !isClicked
                     animal.animate = isClicked
                     playSound(context = context, animal.sound)
-                    viewModel.clickOnItem(animal)
+//                    viewModel.clickOnItem(animal)
                 }
                 .rotate(angle)
 
@@ -130,7 +145,6 @@ fun playSound(context: Context, sound: Int) {
 
     MusicManager.getInstance(context).play(sound)
 }
-
 
 
 @Composable
