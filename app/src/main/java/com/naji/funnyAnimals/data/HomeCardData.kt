@@ -24,7 +24,7 @@ object HomeCardData {
         ),
         CardHome(
             "حشرات", "آشنایی با حشرات",
-            R.drawable.animal_leopard, Orange50, Orange100,Orange500, HomeGroup.BUG.nameType
+            R.drawable.bug_be, Orange50, Orange100,Orange500, HomeGroup.BUG.nameType
         ),
         CardHome(
             "دریایی", "آشنایی با آبزیان",
