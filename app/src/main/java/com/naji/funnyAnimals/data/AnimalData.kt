@@ -65,4 +65,4 @@ object AnimalData {
         )
 }
 
-data class Animal(val picture: Int, val name: String, val sound: Int, var animate: Boolean)
+data class Animal(val picture: Int, val name: String, val sound: Int, var isClicked: Boolean)
