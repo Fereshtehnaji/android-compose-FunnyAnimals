@@ -61,4 +61,19 @@ class MusicManager private constructor(context: Context) {
         }
     }
 
+    @Synchronized
+    fun stop() {
+        if (mMediaPlayer != null) {
+            // stop the stream in case it's still playing
+            try {
+                mMediaPlayer!!.stop()
+            } catch (e: Exception) {
+            }
+
+            mMediaPlayer!!.release()
+            mMediaPlayer = null
+        }
+
+
+    }
 }
