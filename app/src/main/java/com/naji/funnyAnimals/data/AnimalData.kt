@@ -5,7 +5,7 @@ import com.naji.funnyAnimals.R
 
 object AnimalData {
 
-    val AnimalSample = mutableStateListOf(
+    val AnimalData = mutableStateListOf(
         Animal(R.drawable.animal_sheep, "گوسفند",R.raw.animal_sheep_fa, false),
         Animal(R.drawable.animal_white_sheep, "گوسفند سفید",R.raw.animal_sheep_fa, false),
         Animal(R.drawable.animal_alligator, "تمساح",R.raw.animal_cat_fa, false),
