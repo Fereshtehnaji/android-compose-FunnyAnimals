@@ -7,9 +7,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.naji.funnyAnimals.data.Animal
+import com.naji.funnyAnimals.data.TYPE
 
 @Composable
-fun AnimalGrid(animals: List<Animal>, viewModel: WildAnimalViewModel) {
+fun AnimalGrid(animals: List<Animal>, viewModel: WildAnimalViewModel, type:TYPE) {
 
     val numberOfItemsByRow = GetScreenWidth() / SCREEN_CONST
 
@@ -23,11 +24,22 @@ fun AnimalGrid(animals: List<Animal>, viewModel: WildAnimalViewModel) {
             ) {
 
                 for (animal in rowItems) {
-                    AnimalItem(animal = animal, viewModel)
+                    AnimalItem(animal = animal, viewModel,type)
                 }
             }
             Spacer(Modifier.height(14.dp))
         }
 
     }
+}
+
+
+@Composable
+fun AnimalGrid2(animals: List<Animal>) {
+
+//        LazyVerticalGrid(cells = GridCells.Fixed(4)) {
+//            itemsIndexed(animals) { row, item->
+//                AnimalItem(animal = item)
+//            }
+//        }
 }
