@@ -34,6 +34,35 @@ object AnimalData {
         Animal(R.drawable.animal_zebra, "گورخر",R.raw.animal_cat_fa, false),
 
         )
+
+    val BugData = mutableStateListOf(
+        Animal(R.drawable.bug_antt, "مورچه",R.raw.animal_sheep_fa, false),
+        Animal(R.drawable.bug_be, "زنبور",R.raw.animal_sheep_fa, false),
+        Animal(R.drawable.bug_centiped, "هزارپا",R.raw.animal_cat_fa, false),
+        Animal(R.drawable.bug_cockroach, "سوسک سیاه",R.raw.animal_cat_fa, false),
+        Animal(R.drawable.bug_cricket, "جیرجیرک",R.raw.animal_cat_fa, false),
+        Animal(R.drawable.bug_dragonfly, "سنجاقک",R.raw.animal_cat_fa, false),
+        Animal(R.drawable.bug_fly, "مگس",R.raw.animal_cat_fa, false),
+        Animal(R.drawable.bug_locust, "ملخ", R.raw.animal_cat_fa,false),
+        Animal(R.drawable.bug_silkworm, "کرم ابریشم", R.raw.animal_cat_fa,false),
+        Animal(R.drawable.bug_snail, "حلزون", R.raw.animal_cat_fa,false),
+        Animal(R.drawable.bug_spider, "عنکبوت", R.raw.animal_fox_fa,false),
+
+
+        )
+
+
+    val BirdData = mutableStateListOf(
+        Animal(R.drawable.bird_parrot, "طوطی",R.raw.animal_sheep_fa, false),
+        Animal(R.drawable.bird_goose, "غاز",R.raw.animal_sheep_fa, false),
+
+        )
+
+    val AquaticData = mutableStateListOf(
+        Animal(R.drawable.bird_parrot, "طوطی",R.raw.animal_sheep_fa, false),
+        Animal(R.drawable.bird_goose, "غاز",R.raw.animal_sheep_fa, false),
+
+        )
 }
 
 data class Animal(val picture: Int, val name: String, val sound: Int, var animate: Boolean)
