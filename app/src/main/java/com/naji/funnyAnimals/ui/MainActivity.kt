@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
             navController = navController,
             startDestination = HomeGroup.HOME.nameType
         ) {
-            composable("Home") {
+            composable(HomeGroup.HOME.nameType) {
                 HomeScreen(navController = navController)
             }
 
