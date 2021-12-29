@@ -5,7 +5,7 @@ import com.naji.funnyAnimals.R
 
 object AnimalData {
 
-    val AnimalData = mutableStateListOf(
+    val AnimalData = listOf(
         Animal(R.drawable.animal_sheep, "گوسفند",R.raw.animal_sheep_fa, false),
         Animal(R.drawable.animal_white_sheep, "گوسفند سفید",R.raw.animal_sheep_fa, false),
         Animal(R.drawable.animal_alligator, "تمساح",R.raw.animal_cat_fa, false),
@@ -35,7 +35,7 @@ object AnimalData {
 
         )
 
-    val BugData = mutableStateListOf(
+    val BugData = listOf(
         Animal(R.drawable.bug_antt, "مورچه",R.raw.animal_sheep_fa, false),
         Animal(R.drawable.bug_be, "زنبور",R.raw.animal_sheep_fa, false),
         Animal(R.drawable.bug_centiped, "هزارپا",R.raw.animal_cat_fa, false),
@@ -52,13 +52,13 @@ object AnimalData {
         )
 
 
-    val BirdData = mutableStateListOf(
+    val BirdData = listOf(
         Animal(R.drawable.bird_parrot, "طوطی",R.raw.animal_sheep_fa, false),
         Animal(R.drawable.bird_goose, "غاز",R.raw.animal_sheep_fa, false),
 
         )
 
-    val AquaticData = mutableStateListOf(
+    val AquaticData = listOf(
         Animal(R.drawable.bird_parrot, "طوطی",R.raw.animal_sheep_fa, false),
         Animal(R.drawable.bird_goose, "غاز",R.raw.animal_sheep_fa, false),
 
