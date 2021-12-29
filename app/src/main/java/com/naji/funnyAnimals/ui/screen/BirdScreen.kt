@@ -12,5 +12,5 @@ fun BirdScreen(viewModel: WildAnimalViewModel){
 
     val animalList by viewModel.getAnimalList().observeAsState()
 
-    animalList?.let { AnimalGrid(animals = it, viewModel,TYPE.BUG) }
+    animalList?.let { AnimalGrid(animals = it, viewModel,TYPE.BIRD) }
 }
