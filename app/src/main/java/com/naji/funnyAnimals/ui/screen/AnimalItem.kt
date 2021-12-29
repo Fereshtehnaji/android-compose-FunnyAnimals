@@ -48,7 +48,7 @@ fun AnimalItem(animal: Animal, viewModel: WildAnimalViewModel, type: TYPE) {
 fun ShowImage(animal: Animal, viewModel: WildAnimalViewModel, type: TYPE) {
     val context = LocalContext.current
 
-    var isClicked by remember { mutableStateOf(animal.isClicked) }
+    var isClicked by remember { mutableStateOf(false) }
     isClicked = animal.isClicked
 
 
