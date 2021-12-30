@@ -10,11 +10,13 @@ import com.naji.funnyAnimals.data.Animal
 import com.naji.funnyAnimals.data.TYPE
 
 @Composable
-fun AnimalGrid(animals: List<Animal>, viewModel: WildAnimalViewModel, type:TYPE) {
+fun AnimalGrid(animals: List<Animal>, viewModel: WildAnimalViewModel, type: TYPE) {
 
     val numberOfItemsByRow = GetScreenWidth() / SCREEN_CONST
 
-    LazyColumn(modifier = Modifier.padding(all = 8.dp)) {
+    LazyColumn(
+        modifier = Modifier.padding(all = 8.dp)
+    ) {
 
 
         items(items = animals.chunked(numberOfItemsByRow)) { rowItems ->
@@ -24,7 +26,7 @@ fun AnimalGrid(animals: List<Animal>, viewModel: WildAnimalViewModel, type:TYPE)
             ) {
 
                 for (animal in rowItems) {
-                    AnimalItem(animal = animal, viewModel,type)
+                    AnimalItem(animal = animal, viewModel, type)
                 }
             }
             Spacer(Modifier.height(14.dp))

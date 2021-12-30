@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity() {
 
             composable(HomeGroup.AQUATIC.nameType) {
                 val viewModel = viewModel<WildAnimalViewModel>()
-                AnimalScreen(viewModel)
+                AquaticScreen(viewModel)
             }
         }
     }

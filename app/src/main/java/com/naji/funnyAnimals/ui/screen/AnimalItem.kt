@@ -75,7 +75,7 @@ fun ShowImage(animal: Animal, viewModel: WildAnimalViewModel, type: TYPE) {
 
         if (isClicked)
             Image(
-                painter = painterResource(R.drawable.animal_fox_lable),
+                painter = painterResource(R.drawable.label_animal_fox),
                 contentDescription = "this is sample picture",
                 modifier = Modifier
                     .size(70.dp, 70.dp)
