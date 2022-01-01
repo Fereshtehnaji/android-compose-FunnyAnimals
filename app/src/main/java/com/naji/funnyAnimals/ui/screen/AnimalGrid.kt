@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.naji.funnyAnimals.data.Animal
@@ -15,7 +16,7 @@ fun AnimalGrid(animals: List<Animal>, viewModel: WildAnimalViewModel, type: TYPE
     val numberOfItemsByRow = GetScreenWidth() / SCREEN_CONST
 
     LazyColumn(
-        modifier = Modifier.padding(all = 8.dp)
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
 
 
