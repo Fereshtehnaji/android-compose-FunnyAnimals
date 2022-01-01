@@ -1,6 +1,5 @@
 package com.naji.funnyAnimals.ui.screen
 
-import android.widget.Toast
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.fillMaxSize
@@ -11,26 +10,33 @@ import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.naji.funnyAnimals.R
 import com.naji.funnyAnimals.data.AnimalData
 import com.naji.funnyAnimals.data.TYPE
+import com.naji.funnyAnimals.ui.util.HandleResourceOnLifeCycle
 
 
 const val SCREEN_CONST = 120
 
 
 @Composable
-fun AnimalScreen(viewModel: WildAnimalViewModel) {
+fun AnimalScreen(
+    viewModel: WildAnimalViewModel,
+    lifecycleOwner: LifecycleOwner = LocalLifecycleOwner.current
+) {
     val context = LocalContext.current
+    HandleResourceOnLifeCycle(lifecycleOwner, {}, { stopSound(context) })
 
     viewModel.init(TYPE.ANIMAL)
 
     val animalList by viewModel.getAnimalList().observeAsState()
 
-    Surface() {
+    Surface {
         Image(
             painter = painterResource(id = R.drawable.back_icon),
             contentDescription = null,
@@ -40,10 +46,7 @@ fun AnimalScreen(viewModel: WildAnimalViewModel) {
         )
         animalList?.let { AnimalGrid(animals = it, viewModel, TYPE.ANIMAL) }
     }
-    BackHandler(enabled = true) {
-        Toast.makeText(context, "haaaaaahaaaaaaaa", Toast.LENGTH_LONG).show()
-        // execute your custom logic here
-    }
+
 }
 
 
@@ -52,10 +55,11 @@ fun AnimalScreen(viewModel: WildAnimalViewModel) {
 @Composable
 fun PreviewAnimalGrid() {
     AnimalGrid(animals = AnimalData.AnimalData, viewModel<WildAnimalViewModel>(), TYPE.ANIMAL)
-
 }
 
-@Composable
-public fun BackHandler(enabled: Boolean = true, onBack: () -> Unit) {
 
-}
+
+
+
+
+

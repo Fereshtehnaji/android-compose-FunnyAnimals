@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
@@ -48,22 +49,22 @@ class MainActivity : AppCompatActivity() {
 
             composable(HomeGroup.BIRD.nameType) {
                 val viewModel = viewModel<WildAnimalViewModel>()
-                BirdScreen(viewModel)
+                BirdScreen(viewModel, LocalLifecycleOwner.current)
             }
 
             composable(HomeGroup.ANIMAL.nameType) {
                 val viewModel = viewModel<WildAnimalViewModel>()
-                AnimalScreen(viewModel)
+                AnimalScreen(viewModel, LocalLifecycleOwner.current)
             }
 
             composable(HomeGroup.BUG.nameType) {
                 val viewModel = viewModel<WildAnimalViewModel>()
-                BugScreen(viewModel)
+                BugScreen(viewModel, LocalLifecycleOwner.current)
             }
 
             composable(HomeGroup.AQUATIC.nameType) {
                 val viewModel = viewModel<WildAnimalViewModel>()
-                AquaticScreen(viewModel)
+                AquaticScreen(viewModel, LocalLifecycleOwner.current)
             }
         }
     }
