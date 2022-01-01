@@ -5,16 +5,15 @@ import androidx.compose.animation.core.*
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -52,16 +51,16 @@ fun ShowImage(animal: Animal, viewModel: WildAnimalViewModel, type: TYPE) {
     isClicked = animal.isClicked
 
 
-    val angle = GetAngle(context = context, isClicked = isClicked)
+    val angle = GetAngle(isClicked = isClicked)
+    val imageSize = dimensionResource(id = R.dimen._70sdp)
 
-
-    Box {
+    Box(contentAlignment = Alignment.Center) {
         Image(
             painter = painterResource(animal.picture),
             contentDescription = "this is sample picture",
             modifier = Modifier
-                .size(60.dp)
-                .clip(CircleShape)
+                .size(imageSize)
+//                .clip(CircleShape)
                 .clickable {
                     stopSound(context = context)
                     isClicked = !isClicked
@@ -75,11 +74,11 @@ fun ShowImage(animal: Animal, viewModel: WildAnimalViewModel, type: TYPE) {
 
         if (isClicked)
             Image(
-                painter = painterResource(R.drawable.label_animal_fox),
+                painter = painterResource(animal.label),
                 contentDescription = "this is sample picture",
                 modifier = Modifier
                     .size(70.dp, 70.dp)
-                    .padding(top = 5.dp),
+                    .padding(top = 25.dp),
 
                 )
     }
@@ -97,7 +96,7 @@ fun stopSound(context: Context) {
 }
 
 @Composable
-fun GetAngle(context: Context, isClicked: Boolean): Float {
+fun GetAngle(isClicked: Boolean): Float {
     val infiniteTransition = rememberInfiniteTransition()
 
     val shake by infiniteTransition.animateFloat(
@@ -114,7 +113,6 @@ fun GetAngle(context: Context, isClicked: Boolean): Float {
         targetValue = if (isClicked) 360F else 0f,
         animationSpec = tween(durationMillis = 2500),
         finishedListener = {
-//            stopSound(context = context)
         }
 
     )
