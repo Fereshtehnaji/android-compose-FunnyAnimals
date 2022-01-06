@@ -19,7 +19,7 @@ import com.naji.funnyAnimals.ui.util.HandleResourceOnLifeCycle
 
 @Composable
 fun AquaticScreen(
-    viewModel: WildAnimalViewModel,
+    viewModel: ViewModel,
     lifecycleOwner: LifecycleOwner = LocalLifecycleOwner.current
 ) {
 

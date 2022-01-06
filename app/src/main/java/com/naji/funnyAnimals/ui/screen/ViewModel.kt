@@ -7,7 +7,7 @@ import com.naji.funnyAnimals.data.Animal
 import com.naji.funnyAnimals.data.AnimalData
 import com.naji.funnyAnimals.data.TYPE
 
-class WildAnimalViewModel : ViewModel() {
+class ViewModel : ViewModel() {
 
     private var _animalItems = MutableLiveData(listOf<Animal>())
     val animalItems: LiveData<List<Animal>> = _animalItems

@@ -12,7 +12,7 @@ import com.naji.funnyAnimals.ui.util.HandleResourceOnLifeCycle
 
 
 @Composable
-fun BirdScreen(viewModel: WildAnimalViewModel,
+fun BirdScreen(viewModel: ViewModel,
                lifecycleOwner: LifecycleOwner = LocalLifecycleOwner.current){
 
     val context = LocalContext.current

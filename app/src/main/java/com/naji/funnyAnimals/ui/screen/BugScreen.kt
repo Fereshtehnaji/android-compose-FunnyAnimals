@@ -11,7 +11,7 @@ import com.naji.funnyAnimals.data.TYPE
 import com.naji.funnyAnimals.ui.util.HandleResourceOnLifeCycle
 
 @Composable
-fun BugScreen(viewModel: WildAnimalViewModel,
+fun BugScreen(viewModel: ViewModel,
               lifecycleOwner: LifecycleOwner = LocalLifecycleOwner.current) {
 
     val context = LocalContext.current
