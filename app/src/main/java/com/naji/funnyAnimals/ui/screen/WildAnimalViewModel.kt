@@ -1,5 +1,6 @@
 package com.naji.funnyAnimals.ui.screen
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.naji.funnyAnimals.data.Animal
@@ -8,9 +9,45 @@ import com.naji.funnyAnimals.data.TYPE
 
 class WildAnimalViewModel : ViewModel() {
 
+    private var _animalItems = MutableLiveData(listOf<Animal>())
+    val animalItems: LiveData<List<Animal>> = _animalItems
+
+
+    private fun playSound(item: Animal) {
+
+    }
+
+    private fun stopSound(item: Animal) {
+
+    }
+
+    private fun changeAnimation(animal: Animal) {
+
+        val animals: MutableList<Animal>? = _animalItems.value?.toMutableList()
+
+        animals?.forEachIndexed { index, it ->
+            val mutableItem = it.copy()
+            mutableItem.isClicked = it == animal
+            animals[index] = mutableItem
+            _animalItems.value = animals
+        }
+
+    }
+
+    private fun showLabel(item: Animal) {
+
+    }
+
+    fun clickHandler(item: Animal) {
+        stopSound(item)
+        playSound(item)
+        changeAnimation(item)
+        showLabel(item)
+    }
+
 
     fun init(type: TYPE) {
-        updateAnimals(getAnimalListFromRepo(type = type))
+        _animalItems.value = getAnimalListFromRepo(type)
     }
 
 
@@ -24,26 +61,6 @@ class WildAnimalViewModel : ViewModel() {
         }
     }
 
-    private val animalLiveData = MutableLiveData<List<Animal>>()
-
-    fun getAnimalList(): MutableLiveData<List<Animal>> {
-        return animalLiveData
-    }
-
-    private fun updateAnimals(animals: List<Animal>) {
-        animalLiveData.value = animals
-    }
 
 
-    fun clickOnItem(animal: Animal, type: TYPE) {
-        val animalList = getAnimalListFromRepo(type = type)
-        for (it in animalList) {
-            if (it != animal)
-                it.isClicked = false
-            else
-                it.isClicked = animal.isClicked
-        }
-
-        updateAnimals(animalList)
-    }
 }

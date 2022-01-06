@@ -16,6 +16,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.naji.funnyAnimals.R
+import com.naji.funnyAnimals.data.Animal
 import com.naji.funnyAnimals.data.AnimalData
 import com.naji.funnyAnimals.data.TYPE
 import com.naji.funnyAnimals.ui.util.HandleResourceOnLifeCycle
@@ -32,10 +33,6 @@ fun AnimalScreen(
     val context = LocalContext.current
     HandleResourceOnLifeCycle(lifecycleOwner, {}, { stopSound(context) })
 
-    viewModel.init(TYPE.ANIMAL)
-
-    val animalList by viewModel.getAnimalList().observeAsState()
-
     Surface {
         Image(
             painter = painterResource(id = R.drawable.back_icon),
@@ -44,7 +41,12 @@ fun AnimalScreen(
                 .fillMaxSize(),
             contentScale = ContentScale.Crop
         )
-        animalList?.let { AnimalGrid(animals = it, viewModel, TYPE.ANIMAL) }
+
+        viewModel.init(TYPE.ANIMAL)
+
+        val items: List<Animal> by viewModel.animalItems.observeAsState(listOf())
+
+        AnimalGrid(animals = items, onClickHandler = { viewModel.clickHandler(it) })
     }
 
 }
@@ -54,7 +56,7 @@ fun AnimalScreen(
 @Preview
 @Composable
 fun PreviewAnimalGrid() {
-    AnimalGrid(animals = AnimalData.AnimalData, viewModel<WildAnimalViewModel>(), TYPE.ANIMAL)
+    AnimalGrid(animals = AnimalData.AnimalData, onClickHandler = {})
 }
 
 

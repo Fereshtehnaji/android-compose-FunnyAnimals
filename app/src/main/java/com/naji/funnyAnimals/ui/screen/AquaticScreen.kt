@@ -13,19 +13,20 @@ import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.compose.ui.res.painterResource
 import androidx.lifecycle.LifecycleOwner
 import com.naji.funnyAnimals.R
+import com.naji.funnyAnimals.data.Animal
 import com.naji.funnyAnimals.data.TYPE
 import com.naji.funnyAnimals.ui.util.HandleResourceOnLifeCycle
 
 @Composable
-fun AquaticScreen(viewModel: WildAnimalViewModel,
-                  lifecycleOwner: LifecycleOwner = LocalLifecycleOwner.current) {
+fun AquaticScreen(
+    viewModel: WildAnimalViewModel,
+    lifecycleOwner: LifecycleOwner = LocalLifecycleOwner.current
+) {
 
     val context = LocalContext.current
-    HandleResourceOnLifeCycle(lifecycleOwner, {}, {stopSound(context)})
+    HandleResourceOnLifeCycle(lifecycleOwner, {}, { stopSound(context) })
 
-    viewModel.init(TYPE.Aquatic)
 
-    val animalList by viewModel.getAnimalList().observeAsState()
     Surface {
         Image(
             painter = painterResource(id = R.drawable.back_aquatic),
@@ -34,6 +35,10 @@ fun AquaticScreen(viewModel: WildAnimalViewModel,
                 .fillMaxSize(),
             contentScale = ContentScale.Crop
         )
-        animalList?.let { AnimalGrid(animals = it, viewModel, TYPE.Aquatic) }
+
+        viewModel.init(TYPE.Aquatic)
+        val items: List<Animal> by viewModel.animalItems.observeAsState(listOf())
+
+        AnimalGrid(animals = items, onClickHandler = { viewModel.clickHandler(it) })
     }
 }

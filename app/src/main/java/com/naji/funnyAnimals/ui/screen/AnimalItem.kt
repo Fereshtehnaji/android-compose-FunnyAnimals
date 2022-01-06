@@ -7,7 +7,8 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.rotate
@@ -19,40 +20,33 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.naji.funnyAnimals.R
 import com.naji.funnyAnimals.data.Animal
-import com.naji.funnyAnimals.data.TYPE
 import com.naji.funnyAnimals.ui.util.MusicManager
 
 @Composable
-fun AnimalItem(animal: Animal, viewModel: WildAnimalViewModel, type: TYPE) {
+fun AnimalItem(animal: Animal, onClickHandler: (Animal) -> Unit) {
+
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier.padding(all = 8.dp)
     ) {
 
-        ShowImage(animal, viewModel, type)
-
+        ShowImage(animal, onClickHandler)
 
         Spacer(modifier = Modifier.height(4.dp))
-        Text(
-            text = " ${animal.name}",
-            color = MaterialTheme.colors.secondaryVariant,
-            style = MaterialTheme.typography.subtitle2,
-            modifier = Modifier.defaultMinSize(40.dp),
-            textAlign = TextAlign.Center
-        )
+
+        ShowNameText(animal)
+
     }
 }
 
 @Composable
-fun ShowImage(animal: Animal, viewModel: WildAnimalViewModel, type: TYPE) {
+fun ShowImage(animal: Animal, onClickHandler: (Animal) -> Unit) {
+
     val context = LocalContext.current
-
-    var isClicked by remember { mutableStateOf(false) }
-    isClicked = animal.isClicked
-
-
-    val angle = GetAngle(isClicked = isClicked)
     val imageSize = dimensionResource(id = R.dimen._70sdp)
+
+
+    val angle = GetAnimationType(isClicked = animal.isClicked)
 
     Box(contentAlignment = Alignment.Center) {
         Image(
@@ -60,28 +54,31 @@ fun ShowImage(animal: Animal, viewModel: WildAnimalViewModel, type: TYPE) {
             contentDescription = "this is sample picture",
             modifier = Modifier
                 .size(imageSize)
-//                .clip(CircleShape)
                 .clickable {
+
                     stopSound(context = context)
-                    isClicked = !isClicked
-                    animal.isClicked = isClicked
-                    viewModel.clickOnItem(animal, type = type)
-                    playSound(context = context, animal.sound)
+                    playSound(context = context, sound = animal.sound)
+                    onClickHandler(animal)
+
                 }
                 .rotate(angle)
-
         )
 
-        if (isClicked)
-            Image(
-                painter = painterResource(animal.label),
-                contentDescription = "this is sample picture",
-                modifier = Modifier
-                    .size(70.dp, 70.dp)
-                    .padding(top = 25.dp),
 
-                )
+        if (animal.isClicked)
+            ShowLabel(animal.label)
     }
+}
+
+@Composable
+fun ShowNameText(animal: Animal) {
+    Text(
+        text = " ${animal.name}",
+        color = MaterialTheme.colors.secondaryVariant,
+        style = MaterialTheme.typography.subtitle2,
+        modifier = Modifier.defaultMinSize(40.dp),
+        textAlign = TextAlign.Center
+    )
 }
 
 
@@ -95,11 +92,24 @@ fun stopSound(context: Context) {
     MusicManager.getInstance(context).stop()
 }
 
+
 @Composable
-fun GetAngle(isClicked: Boolean): Float {
+fun ShowLabel(label: Int) {
+    Image(
+        painter = painterResource(label),
+        contentDescription = "this is sample picture",
+        modifier = Modifier
+            .size(70.dp, 70.dp)
+            .padding(top = 25.dp),
+
+        )
+}
+
+@Composable
+fun GetAnimationType(isClicked: Boolean): Float {
     val infiniteTransition = rememberInfiniteTransition()
 
-    val shake by infiniteTransition.animateFloat(
+    val shakeAnim by infiniteTransition.animateFloat(
         initialValue = -30F,
         targetValue = 30F,
         animationSpec = infiniteRepeatable(
@@ -109,7 +119,7 @@ fun GetAngle(isClicked: Boolean): Float {
     )
 
 
-    val rotationAngle by animateFloatAsState(
+    val rotateAnim by animateFloatAsState(
         targetValue = if (isClicked) 360F else 0f,
         animationSpec = tween(durationMillis = 2500),
         finishedListener = {
@@ -118,7 +128,7 @@ fun GetAngle(isClicked: Boolean): Float {
     )
 
 
-    return if (isClicked) rotationAngle else shake
+    return if (isClicked) rotateAnim else shakeAnim
 }
 
 

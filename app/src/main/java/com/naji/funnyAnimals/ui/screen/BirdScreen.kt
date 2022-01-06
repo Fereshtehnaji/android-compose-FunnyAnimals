@@ -6,6 +6,7 @@ import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.lifecycle.LifecycleOwner
+import com.naji.funnyAnimals.data.Animal
 import com.naji.funnyAnimals.data.TYPE
 import com.naji.funnyAnimals.ui.util.HandleResourceOnLifeCycle
 
@@ -19,7 +20,8 @@ fun BirdScreen(viewModel: WildAnimalViewModel,
 
     viewModel.init(TYPE.BIRD)
 
-    val animalList by viewModel.getAnimalList().observeAsState()
+    val items: List<Animal> by viewModel.animalItems.observeAsState(listOf())
 
-    animalList?.let { AnimalGrid(animals = it, viewModel,TYPE.BIRD) }
+    AnimalGrid(animals = items, onClickHandler = { viewModel.clickHandler(it) })
+
 }

@@ -5,14 +5,19 @@ import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.material.Scaffold
+import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.naji.funnyAnimals.data.Animal
 import com.naji.funnyAnimals.data.HomeGroup
+import com.naji.funnyAnimals.data.TYPE
 import com.naji.funnyAnimals.ui.screen.*
 import com.naji.funnyAnimals.ui.theme.AnimalAppTheme
 
@@ -68,6 +73,5 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-
 
 }
