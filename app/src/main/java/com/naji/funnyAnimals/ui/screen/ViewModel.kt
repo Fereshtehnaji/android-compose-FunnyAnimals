@@ -57,7 +57,7 @@ class ViewModel : ViewModel() {
             TYPE.ANIMAL -> AnimalData.AnimalData
             TYPE.BIRD -> AnimalData.BirdData
             TYPE.BUG -> AnimalData.BugData
-            TYPE.Aquatic -> AnimalData.AquaticData
+            TYPE.AQUATIC -> AnimalData.AquaticData
         }
     }
 
