@@ -13,6 +13,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.naji.funnyAnimals.data.HomeGroup
+import com.naji.funnyAnimals.data.TYPE
 import com.naji.funnyAnimals.ui.screen.*
 import com.naji.funnyAnimals.ui.theme.AnimalAppTheme
 
@@ -49,21 +50,25 @@ class MainActivity : AppCompatActivity() {
 
             composable(HomeGroup.BIRD.nameType) {
                 val viewModel = viewModel<ViewModel>()
+                viewModel.init(TYPE.BIRD)
                 BirdScreen(viewModel, LocalLifecycleOwner.current)
             }
 
             composable(HomeGroup.ANIMAL.nameType) {
                 val viewModel = viewModel<ViewModel>()
+                viewModel.init(TYPE.ANIMAL)
                 AnimalScreen(viewModel, LocalLifecycleOwner.current)
             }
 
             composable(HomeGroup.BUG.nameType) {
                 val viewModel = viewModel<ViewModel>()
+                viewModel.init(TYPE.BUG)
                 BugScreen(viewModel, LocalLifecycleOwner.current)
             }
 
             composable(HomeGroup.AQUATIC.nameType) {
                 val viewModel = viewModel<ViewModel>()
+                viewModel.init(TYPE.AQUATIC)
                 AquaticScreen(viewModel, LocalLifecycleOwner.current)
             }
         }

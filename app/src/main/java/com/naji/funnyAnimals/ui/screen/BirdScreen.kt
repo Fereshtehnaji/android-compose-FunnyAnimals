@@ -18,8 +18,6 @@ fun BirdScreen(viewModel: ViewModel,
     val context = LocalContext.current
     HandleResourceOnLifeCycle(lifecycleOwner, {}, {stopSound(context)})
 
-    viewModel.init(TYPE.BIRD)
-
     val items: List<Animal> by viewModel.animalItems.observeAsState(listOf())
 
     AnimalGrid(animals = items, onClickHandler = { viewModel.clickHandler(it) })

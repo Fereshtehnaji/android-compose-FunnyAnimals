@@ -36,7 +36,7 @@ fun AquaticScreen(
             contentScale = ContentScale.Crop
         )
 
-        viewModel.init(TYPE.Aquatic)
+
         val items: List<Animal> by viewModel.animalItems.observeAsState(listOf())
 
         AnimalGrid(animals = items, onClickHandler = { viewModel.clickHandler(it) })

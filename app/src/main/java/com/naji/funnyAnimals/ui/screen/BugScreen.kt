@@ -17,7 +17,6 @@ fun BugScreen(viewModel: ViewModel,
     val context = LocalContext.current
     HandleResourceOnLifeCycle(lifecycleOwner, {}, {stopSound(context)})
 
-    viewModel.init(TYPE.BUG)
 
     val items: List<Animal> by viewModel.animalItems.observeAsState(listOf())
 

@@ -41,7 +41,6 @@ fun AnimalScreen(
             contentScale = ContentScale.Crop
         )
 
-        viewModel.init(TYPE.ANIMAL)
 
         val items: List<Animal> by viewModel.animalItems.observeAsState(listOf())
 
