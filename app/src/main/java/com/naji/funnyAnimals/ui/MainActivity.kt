@@ -45,7 +45,10 @@ class MainActivity : AppCompatActivity() {
             startDestination = HomeGroup.HOME.nameType
         ) {
             composable(HomeGroup.HOME.nameType) {
-                HomeScreen(navController = navController)
+                val viewModel = viewModel<ViewModel>()
+                HomeScreen(navController = navController,
+                    LocalLifecycleOwner.current,
+                    viewModel)
             }
 
             composable(HomeGroup.BIRD.nameType) {

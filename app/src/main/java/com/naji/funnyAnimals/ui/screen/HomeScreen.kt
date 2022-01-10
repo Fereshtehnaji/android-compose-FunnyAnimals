@@ -8,37 +8,57 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.MusicNote
+import androidx.compose.material.icons.filled.MusicOff
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.LifecycleOwner
 import androidx.navigation.NavController
 import com.naji.funnyAnimals.R
 import com.naji.funnyAnimals.data.CardHome
 import com.naji.funnyAnimals.data.HomeCardData
 import com.naji.funnyAnimals.ui.theme.Black
-import com.naji.funnyAnimals.ui.theme.Green500
 import com.naji.funnyAnimals.ui.theme.Orange50
 import com.naji.funnyAnimals.ui.theme.Orange500
+import com.naji.funnyAnimals.ui.theme.Orange900
+import com.naji.funnyAnimals.ui.util.HandleResourceOnLifeCycle
 
 
 @Composable
-fun HomeScreen(navController: NavController) {
+fun HomeScreen(
+    navController: NavController,
+    lifecycleOwner: LifecycleOwner = LocalLifecycleOwner.current,
+    viewModel: ViewModel
+) {
+
+    val context = LocalContext.current
+    HandleResourceOnLifeCycle(lifecycleOwner, {}, { stopSound(context) })
+
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
             .padding(30.dp)
             .fillMaxSize()
     ) {
-        Header()
+        val isMusicPlay: Boolean by viewModel.backgroundMusicPlaying.observeAsState(true)
+
+        Header(musicIconClickHandler = { viewModel.musicIconClickHandler(it) }, isMusicPlay)
         Spacer(modifier = Modifier.height(24.dp))
         GridHome(HomeCardData.HomeCardList, navController = navController)
     }
@@ -81,7 +101,10 @@ fun GridHome(cardList: List<CardHome>, navController: NavController) {
 }
 
 @Composable
-fun Header() {
+fun Header(musicIconClickHandler: (Boolean) -> Unit, isMusicPlay: Boolean) {
+
+    val context = LocalContext.current
+
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
@@ -108,16 +131,39 @@ fun Header() {
             textAlign = TextAlign.Center,
         )
         Spacer(modifier = Modifier.height(4.dp))
-        Text(
-            text = stringResource(R.string.home_body),
-            color = Orange500,
-            style = MaterialTheme.typography.body2,
-            textAlign = TextAlign.Center,
-            fontWeight = FontWeight.Bold
+        Row() {
 
-        )
+            val icon = if (isMusicPlay) {
+                playSound(context = context, R.raw.music_back)
+                Icons.Filled.MusicNote
+            } else {
+                stopSound(context = context)
+                Icons.Filled.MusicOff
+            }
+
+            Icon(icon,
+                contentDescription = "music on", tint = Orange900,
+                modifier = Modifier
+                    .clickable {
+                        musicIconClickHandler(isMusicPlay)
+                    }
+
+            )
+
+            Text(
+                text = stringResource(R.string.home_body),
+                color = Orange500,
+                style = MaterialTheme.typography.body2,
+                textAlign = TextAlign.Center,
+                fontWeight = FontWeight.Bold
+
+            )
+
+
+        }
     }
 }
+
 
 @Composable
 fun HomeCard(cardHome: CardHome, navController: NavController) {

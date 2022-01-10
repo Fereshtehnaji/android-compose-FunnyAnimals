@@ -12,14 +12,10 @@ class ViewModel : ViewModel() {
     private var _animalItems = MutableLiveData(listOf<Animal>())
     val animalItems: LiveData<List<Animal>> = _animalItems
 
+    val backgroundMusicPlaying: LiveData<Boolean> by lazy { _backgroundMusicPlaying }
+    private var _backgroundMusicPlaying = MutableLiveData(true)
 
-    private fun playSound(item: Animal) {
 
-    }
-
-    private fun stopSound(item: Animal) {
-
-    }
 
     private fun changeAnimation(animal: Animal) {
 
@@ -39,10 +35,12 @@ class ViewModel : ViewModel() {
     }
 
     fun clickHandler(item: Animal) {
-        stopSound(item)
-        playSound(item)
         changeAnimation(item)
         showLabel(item)
+    }
+
+    fun musicIconClickHandler(isPlay: Boolean) {
+        _backgroundMusicPlaying.value = !isPlay
     }
 
 
@@ -60,7 +58,6 @@ class ViewModel : ViewModel() {
             TYPE.AQUATIC -> AnimalData.AquaticData
         }
     }
-
 
 
 }
