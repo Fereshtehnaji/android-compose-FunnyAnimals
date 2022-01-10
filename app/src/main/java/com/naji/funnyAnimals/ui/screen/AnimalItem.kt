@@ -12,6 +12,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.rotate
+import androidx.compose.ui.draw.scale
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.dimensionResource
@@ -34,7 +35,7 @@ fun AnimalItem(animal: Animal, onClickHandler: (Animal) -> Unit) {
 
         Spacer(modifier = Modifier.height(4.dp))
 
-        ShowNameText(animal)
+//        ShowNameText(animal)
 
     }
 }
@@ -48,27 +49,31 @@ fun ShowImage(animal: Animal, onClickHandler: (Animal) -> Unit) {
 
     val angle = GetAnimationType(isClicked = animal.isClicked)
 
+    val scale = GetScaleAnimation(isClicked = animal.isClicked)
+
     Box(contentAlignment = Alignment.Center) {
         Image(
             painter = painterResource(animal.picture),
             contentDescription = "this is sample picture",
             modifier = Modifier
                 .size(imageSize)
-                .clickable {
-
+                .clickable() {
                     stopSound(context = context)
                     playSound(context = context, sound = animal.sound)
                     onClickHandler(animal)
-
                 }
+
                 .rotate(angle)
+                .scale(scale)
         )
+        Spacer(modifier = Modifier.height(4.dp))
 
 
         if (animal.isClicked)
             ShowLabel(animal.label)
     }
 }
+
 
 @Composable
 fun ShowNameText(animal: Animal) {
@@ -106,14 +111,33 @@ fun ShowLabel(label: Int) {
 }
 
 @Composable
+fun GetScaleAnimation(isClicked: Boolean): Float {
+    val clickedAnimation by animateFloatAsState(
+        targetValue = if (isClicked) 1.5F else 1f,
+        animationSpec = repeatable(
+            iterations = 1,
+            animation = tween(
+                durationMillis = 1000,
+                easing = CubicBezierEasing(0.4f, 0.0f, 0.8f, 0.0f)
+            ),
+            repeatMode = RepeatMode.Reverse
+        ), finishedListener = {
+        }
+    )
+    return clickedAnimation
+}
+
+@Composable
 fun GetAnimationType(isClicked: Boolean): Float {
     val infiniteTransition = rememberInfiniteTransition()
 
-    val shakeAnim by infiniteTransition.animateFloat(
+    val rotateInDegreeAnimation by infiniteTransition.animateFloat(
         initialValue = -30F,
         targetValue = 30F,
         animationSpec = infiniteRepeatable(
-            animation = tween(2500, easing = LinearEasing),
+            animation = tween(
+                1500, easing = FastOutSlowInEasing
+            ),
             repeatMode = RepeatMode.Reverse
         )
     )
@@ -127,8 +151,7 @@ fun GetAnimationType(isClicked: Boolean): Float {
 
     )
 
-
-    return if (isClicked) rotateAnim else shakeAnim
+    return rotateInDegreeAnimation
 }
 
 
