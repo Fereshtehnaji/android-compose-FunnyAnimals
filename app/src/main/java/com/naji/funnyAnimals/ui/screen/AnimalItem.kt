@@ -135,8 +135,8 @@ fun GetAnimationType(isClicked: Boolean): Float {
     val infiniteTransition = rememberInfiniteTransition()
 
     val rotateInDegreeAnimation by infiniteTransition.animateFloat(
-        initialValue = -30F,
-        targetValue = 30F,
+        initialValue = 20F,
+        targetValue = -20F,
         animationSpec = infiniteRepeatable(
             animation = tween(
                 1500, easing = FastOutSlowInEasing
