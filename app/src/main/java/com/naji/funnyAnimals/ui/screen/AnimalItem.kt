@@ -66,8 +66,8 @@ fun ShowImage(animal: Animal, onClickHandler: (Animal) -> Unit) {
                     onClickHandler(animal)
                 }
 
-                .rotate(angle)
                 .scale(scale)
+                .rotate(angle)
         )
         Spacer(modifier = Modifier.height(4.dp))
 
@@ -155,7 +155,7 @@ fun GetAnimationType(isClicked: Boolean): Float {
 
     )
 
-    return rotateInDegreeAnimation
+    return if (isClicked) rotateInDegreeAnimation else 0f
 }
 
 
