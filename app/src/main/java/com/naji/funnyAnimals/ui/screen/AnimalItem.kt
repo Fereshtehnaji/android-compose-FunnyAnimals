@@ -108,7 +108,8 @@ fun ShowLabel(label: Int) {
         contentDescription = "this is sample picture",
         modifier = Modifier
             .size(70.dp, 70.dp)
-            .padding(top = 25.dp),
+            .padding(top = 25.dp)
+            , alignment = Alignment.BottomCenter
 
         )
 }
@@ -120,8 +121,8 @@ fun GetScaleAnimation(isClicked: Boolean): Float {
         animationSpec = repeatable(
             iterations = 1,
             animation = tween(
-                durationMillis = 1000,
-                easing = CubicBezierEasing(0.4f, 0.0f, 0.8f, 0.0f)
+                durationMillis = 500,
+                easing = FastOutSlowInEasing
             ),
             repeatMode = RepeatMode.Reverse
         ), finishedListener = {
