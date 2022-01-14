@@ -52,7 +52,7 @@ object AnimalData {
 
 
     val BirdData = listOf(
-        Animal(R.drawable.birds_parrot, "طوطی",R.raw.animal_sheep_fa,R.drawable.label_animal_fox, false),
+        Animal(R.drawable.bird_parrot, "طوطی",R.raw.animal_sheep_fa,R.drawable.label_animal_fox, false),
         Animal(R.drawable.bird_goose, "غاز",R.raw.animal_sheep_fa, R.drawable.label_animal_fox,false),
         Animal(R.drawable.bird_owl, "جغد",R.raw.bird_owl_en, R.drawable.label_animal_fox,false),
         Animal(R.drawable.bird_pelikan, "پلیکان",R.raw.animal_cat_fa, R.drawable.label_animal_fox,false),
