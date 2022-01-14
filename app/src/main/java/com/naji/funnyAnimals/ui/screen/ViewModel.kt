@@ -1,21 +1,22 @@
 package com.naji.funnyAnimals.ui.screen
 
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import com.naji.funnyAnimals.data.Animal
 import com.naji.funnyAnimals.data.AnimalData
 import com.naji.funnyAnimals.data.TYPE
+import com.naji.funnyAnimals.data.preferences.PreferenceProvider
 
-class ViewModel : ViewModel() {
+class ViewModel(application: Application) : AndroidViewModel(application) {
 
     private var _animalItems = MutableLiveData(listOf<Animal>())
     val animalItems: LiveData<List<Animal>> = _animalItems
 
     val backgroundMusicPlaying: LiveData<Boolean> by lazy { _backgroundMusicPlaying }
-    private var _backgroundMusicPlaying = MutableLiveData(true)
-
-
+    private var _backgroundMusicPlaying: MutableLiveData<Boolean> = MutableLiveData()
+    private val pref = PreferenceProvider(application)
 
     private fun changeAnimation(animal: Animal) {
 
@@ -39,10 +40,20 @@ class ViewModel : ViewModel() {
         showLabel(item)
     }
 
-    fun musicIconClickHandler(isPlay: Boolean) {
-        _backgroundMusicPlaying.value = !isPlay
+    fun musicIconClickHandler() {
+
+        val musicStatus=isMusicPlaying()
+        _backgroundMusicPlaying.value = !musicStatus
+        saveMusicPlayerStatus(!musicStatus)
     }
 
+    fun isMusicPlaying(): Boolean {
+        return pref.getMusicBackgroundStatus()
+    }
+
+    fun saveMusicPlayerStatus(isPlay: Boolean) {
+        pref.saveMusicBackgroundStatus(isPlay)
+    }
 
     fun init(type: TYPE) {
         _animalItems.value = getAnimalListFromRepo(type)

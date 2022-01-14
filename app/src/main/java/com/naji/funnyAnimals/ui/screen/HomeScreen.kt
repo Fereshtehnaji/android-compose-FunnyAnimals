@@ -21,34 +21,29 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.LifecycleOwner
 import androidx.navigation.NavController
 import com.naji.funnyAnimals.R
+import com.naji.funnyAnimals.ServiceCommand
 import com.naji.funnyAnimals.data.CardHome
 import com.naji.funnyAnimals.data.HomeCardData
 import com.naji.funnyAnimals.ui.theme.Black
 import com.naji.funnyAnimals.ui.theme.Orange50
 import com.naji.funnyAnimals.ui.theme.Orange500
 import com.naji.funnyAnimals.ui.theme.Orange900
-import com.naji.funnyAnimals.ui.util.HandleResourceOnLifeCycle
+import com.naji.funnyAnimals.ui.util.startMusicService
 
 
 @Composable
 fun HomeScreen(
     navController: NavController,
-    lifecycleOwner: LifecycleOwner = LocalLifecycleOwner.current,
     viewModel: ViewModel
 ) {
-
-    val context = LocalContext.current
-    HandleResourceOnLifeCycle(lifecycleOwner, {}, { stopSound(context) })
 
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -56,9 +51,11 @@ fun HomeScreen(
             .padding(30.dp)
             .fillMaxSize()
     ) {
-        val isMusicPlay: Boolean by viewModel.backgroundMusicPlaying.observeAsState(true)
 
-        Header(musicIconClickHandler = { viewModel.musicIconClickHandler(it) }, isMusicPlay)
+
+        val isMusicPlay: Boolean by viewModel.backgroundMusicPlaying.observeAsState(initial = viewModel.isMusicPlaying())
+
+        Header(musicIconClickHandler = { viewModel.musicIconClickHandler() }, isMusicPlay)
         Spacer(modifier = Modifier.height(24.dp))
         GridHome(HomeCardData.HomeCardList, navController = navController)
     }
@@ -101,7 +98,7 @@ fun GridHome(cardList: List<CardHome>, navController: NavController) {
 }
 
 @Composable
-fun Header(musicIconClickHandler: (Boolean) -> Unit, isMusicPlay: Boolean) {
+fun Header(musicIconClickHandler: () -> Unit, isMusicPlay: Boolean) {
 
     val context = LocalContext.current
 
@@ -131,13 +128,13 @@ fun Header(musicIconClickHandler: (Boolean) -> Unit, isMusicPlay: Boolean) {
             textAlign = TextAlign.Center,
         )
         Spacer(modifier = Modifier.height(4.dp))
-        Row() {
+        Row {
 
             val icon = if (isMusicPlay) {
-                playSound(context = context, R.raw.music_back)
+                context.startMusicService(ServiceCommand.START.nameType)
                 Icons.Filled.MusicNote
             } else {
-                stopSound(context = context)
+                context.startMusicService(ServiceCommand.STOP.nameType)
                 Icons.Filled.MusicOff
             }
 
@@ -145,7 +142,7 @@ fun Header(musicIconClickHandler: (Boolean) -> Unit, isMusicPlay: Boolean) {
                 contentDescription = "music on", tint = Orange900,
                 modifier = Modifier
                     .clickable {
-                        musicIconClickHandler(isMusicPlay)
+                        musicIconClickHandler()
                     }
 
             )

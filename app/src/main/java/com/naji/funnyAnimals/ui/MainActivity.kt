@@ -1,5 +1,6 @@
 package com.naji.funnyAnimals.ui
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
@@ -16,6 +17,7 @@ import com.naji.funnyAnimals.data.HomeGroup
 import com.naji.funnyAnimals.data.TYPE
 import com.naji.funnyAnimals.ui.screen.*
 import com.naji.funnyAnimals.ui.theme.AnimalAppTheme
+import com.naji.funnyAnimals.ui.util.MusicService
 
 
 @ExperimentalFoundationApi
@@ -46,9 +48,10 @@ class MainActivity : AppCompatActivity() {
         ) {
             composable(HomeGroup.HOME.nameType) {
                 val viewModel = viewModel<ViewModel>()
-                HomeScreen(navController = navController,
-                    LocalLifecycleOwner.current,
-                    viewModel)
+                HomeScreen(
+                    navController = navController,
+                    viewModel
+                )
             }
 
             composable(HomeGroup.BIRD.nameType) {
@@ -77,4 +80,10 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+
+    override fun onDestroy() {
+        super.onDestroy()
+        val intent = Intent(this, MusicService::class.java)
+        stopService(intent)
+    }
 }
