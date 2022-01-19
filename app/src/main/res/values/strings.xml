@@ -3,4 +3,8 @@
     <string name="home_title">آشنایی با حیوانات بامزه</string>
     <string name="home_body">!یک گروه را انتخاب کن</string>
     <string name="content_description_main_icon">Main Icon</string>
+    <string name="animal_title">حیوانات</string>
+    <string name="birds_title">پرندگان</string>
+    <string name="bugs_title">حشرات</string>
+    <string name="ocean_title">دریایی</string>
 </resources>
