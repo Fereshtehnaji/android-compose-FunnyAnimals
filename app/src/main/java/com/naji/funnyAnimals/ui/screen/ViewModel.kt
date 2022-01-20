@@ -6,7 +6,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.naji.funnyAnimals.data.Animal
 import com.naji.funnyAnimals.data.AnimalData
-import com.naji.funnyAnimals.data.TYPE
+import com.naji.funnyAnimals.data.animalenum.TYPE
 import com.naji.funnyAnimals.data.preferences.PreferenceProvider
 
 class ViewModel(application: Application) : AndroidViewModel(application) {

@@ -2,7 +2,7 @@ package com.naji.funnyAnimals.ui.util
 
 import android.content.Context
 import android.content.Intent
-import com.naji.funnyAnimals.ServiceCommand
+import com.naji.funnyAnimals.data.animalenum.ServiceCommand
 
 fun Context.startMusicService(command: String) {
     val intent = Intent(this, MusicService::class.java)

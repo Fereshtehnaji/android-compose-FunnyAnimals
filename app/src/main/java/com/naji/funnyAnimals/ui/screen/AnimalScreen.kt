@@ -22,7 +22,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.LifecycleOwner
-import com.naji.funnyAnimals.ServiceCommand
+import com.naji.funnyAnimals.data.animalenum.ServiceCommand
 import com.naji.funnyAnimals.data.Animal
 import com.naji.funnyAnimals.data.AnimalData
 import com.naji.funnyAnimals.ui.components.AppToolbar

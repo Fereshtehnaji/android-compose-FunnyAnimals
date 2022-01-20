@@ -2,6 +2,7 @@ package com.naji.funnyAnimals.data
 
 import androidx.compose.ui.graphics.Color
 import com.naji.funnyAnimals.R
+import com.naji.funnyAnimals.data.animalenum.HomeGroup
 import com.naji.funnyAnimals.ui.theme.*
 
 data class CardHome(
@@ -20,7 +21,7 @@ object HomeCardData {
         ),
         CardHome(
             "پرندگان", "آشنایی با پرندگان",
-            R.drawable.bird_parrot,Orange50, Orange100,Orange500,HomeGroup.BIRD.nameType
+            R.drawable.bird_parrot,Orange50, Orange100,Orange500, HomeGroup.BIRD.nameType
         ),
         CardHome(
             "حشرات", "آشنایی با حشرات",

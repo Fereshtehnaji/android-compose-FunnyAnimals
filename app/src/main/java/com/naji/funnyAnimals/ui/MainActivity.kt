@@ -15,8 +15,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.naji.funnyAnimals.R
-import com.naji.funnyAnimals.data.HomeGroup
-import com.naji.funnyAnimals.data.TYPE
+import com.naji.funnyAnimals.data.animalenum.HomeGroup
+import com.naji.funnyAnimals.data.animalenum.TYPE
 import com.naji.funnyAnimals.ui.screen.HomeScreen
 import com.naji.funnyAnimals.ui.screen.NavigateScreen
 import com.naji.funnyAnimals.ui.screen.ViewModel

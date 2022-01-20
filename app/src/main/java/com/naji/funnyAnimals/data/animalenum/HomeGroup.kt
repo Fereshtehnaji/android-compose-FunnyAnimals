@@ -1,4 +1,4 @@
-package com.naji.funnyAnimals.data
+package com.naji.funnyAnimals.data.animalenum
 
 enum class HomeGroup(val nameType: String) {
     HOME("home"),

@@ -29,7 +29,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.naji.funnyAnimals.R
-import com.naji.funnyAnimals.ServiceCommand
+import com.naji.funnyAnimals.data.animalenum.ServiceCommand
 import com.naji.funnyAnimals.data.CardHome
 import com.naji.funnyAnimals.data.HomeCardData
 import com.naji.funnyAnimals.ui.theme.Black
