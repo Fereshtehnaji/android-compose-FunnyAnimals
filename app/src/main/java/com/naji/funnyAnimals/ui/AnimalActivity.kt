@@ -25,7 +25,7 @@ import com.naji.funnyAnimals.ui.util.MusicService
 
 
 @ExperimentalFoundationApi
-class MainActivity : AppCompatActivity() {
+class AnimalActivity : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

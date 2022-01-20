@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FunnyAnimals">
         <activity
-            android:name="com.naji.funnyAnimals.ui.MainActivity"
+            android:name="com.naji.funnyAnimals.ui.AnimalActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
