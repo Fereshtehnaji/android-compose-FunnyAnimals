@@ -22,6 +22,8 @@ fun AnimalGrid(animals: List<Animal>, onClickHandler: (Animal) -> Unit) {
 
 
         items(items = animals.chunked(numberOfItemsByRow)) { rowItems ->
+            Spacer(Modifier.height(14.dp))
+
             Row(
                 horizontalArrangement = Arrangement.spacedBy(14.dp),
                 modifier = Modifier.padding(horizontal = 16.dp)
@@ -31,7 +33,6 @@ fun AnimalGrid(animals: List<Animal>, onClickHandler: (Animal) -> Unit) {
                     AnimalItem(animal = animal, onClickHandler)
                 }
             }
-            Spacer(Modifier.height(14.dp))
         }
 
     }
