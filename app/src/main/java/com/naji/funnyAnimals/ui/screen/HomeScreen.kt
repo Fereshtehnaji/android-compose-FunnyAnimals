@@ -40,10 +40,7 @@ import com.naji.funnyAnimals.ui.util.startMusicService
 
 
 @Composable
-fun HomeScreen(
-    navController: NavController,
-    viewModel: ViewModel
-) {
+fun HomeScreen(navController: NavController, viewModel: ViewModel) {
 
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -64,7 +61,7 @@ fun HomeScreen(
 @Composable
 fun GridHome(cardList: List<CardHome>, navController: NavController) {
 
-    LazyColumn() {
+    LazyColumn {
         items(items = cardList.chunked(2)) { rowItems ->
             Row(
                 horizontalArrangement = Arrangement.spacedBy(8.dp),
@@ -73,7 +70,6 @@ fun GridHome(cardList: List<CardHome>, navController: NavController) {
             {
                 for (item in rowItems) {
                     Box(
-
                         modifier = Modifier
                             .animateContentSize()
                             .padding(1.dp)
@@ -82,11 +78,12 @@ fun GridHome(cardList: List<CardHome>, navController: NavController) {
                             .background(
                                 color = item.background,
                                 shape = MaterialTheme.shapes.medium
-                            ),
+                            )
+                            .clickable { navController.navigate(item.route) },
                         Alignment.Center
                     ) {
 
-                        HomeCard(item, navController)
+                        HomeCard(item)
                     }
 
                 }
@@ -163,7 +160,7 @@ fun Header(musicIconClickHandler: () -> Unit, isMusicPlay: Boolean) {
 
 
 @Composable
-fun HomeCard(cardHome: CardHome, navController: NavController) {
+fun HomeCard(cardHome: CardHome) {
 
     val verySmallPadding = dimensionResource(R.dimen._4sdp)
     val smallPadding = dimensionResource(R.dimen._4sdp)
@@ -172,10 +169,11 @@ fun HomeCard(cardHome: CardHome, navController: NavController) {
     val imageSize = dimensionResource(R.dimen._40sdp)
 
 
-    Column(horizontalAlignment = Alignment.CenterHorizontally,
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
             .padding(all = mediumPadding)
-            .clickable { navController.navigate(cardHome.route) }
+
     ) {
         Image(
             painter = painterResource(id = cardHome.icon),

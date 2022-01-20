@@ -8,14 +8,18 @@ import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalLifecycleOwner
+import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.naji.funnyAnimals.R
 import com.naji.funnyAnimals.data.HomeGroup
 import com.naji.funnyAnimals.data.TYPE
-import com.naji.funnyAnimals.ui.screen.*
+import com.naji.funnyAnimals.ui.screen.HomeScreen
+import com.naji.funnyAnimals.ui.screen.NavigateScreen
+import com.naji.funnyAnimals.ui.screen.ViewModel
 import com.naji.funnyAnimals.ui.theme.AnimalAppTheme
 import com.naji.funnyAnimals.ui.util.MusicService
 
@@ -29,7 +33,9 @@ class MainActivity : AppCompatActivity() {
         setContent {
 
             val navController = rememberNavController()
+
             AnimalAppTheme {
+
                 Scaffold {
                     NavigationComponent(navController)
                 }
@@ -42,44 +48,80 @@ class MainActivity : AppCompatActivity() {
 
     @Composable
     fun NavigationComponent(navController: NavHostController) {
+
+        val viewModel = viewModel<ViewModel>()
+
         NavHost(
             navController = navController,
             startDestination = HomeGroup.HOME.nameType
         ) {
+
             composable(HomeGroup.HOME.nameType) {
-                val viewModel = viewModel<ViewModel>()
-                HomeScreen(
-                    navController = navController,
-                    viewModel
-                )
+
+                HomeScreen(navController = navController, viewModel)
+
             }
 
             composable(HomeGroup.BIRD.nameType) {
-                val viewModel = viewModel<ViewModel>()
+
                 viewModel.init(TYPE.BIRD)
-                BirdScreen(viewModel, LocalLifecycleOwner.current)
+                val title = stringResource(id = R.string.birds_title)
+                val backgroundImageId = R.drawable.back_birds4
+
+                NavigateScreen(
+                    viewModel,
+                    LocalLifecycleOwner.current,
+                    { navController.navigateUp() }, title, backgroundImageId
+                )
             }
 
             composable(HomeGroup.ANIMAL.nameType) {
-                val viewModel = viewModel<ViewModel>()
+
                 viewModel.init(TYPE.ANIMAL)
-                AnimalScreen(viewModel, LocalLifecycleOwner.current)
+                val title = stringResource(id = R.string.animal_title)
+
+                val backgroundImageId = R.drawable.back_icon
+
+                NavigateScreen(
+                    viewModel,
+                    LocalLifecycleOwner.current,
+                    { navController.navigateUp() }, title, backgroundImageId
+                )
             }
 
             composable(HomeGroup.BUG.nameType) {
-                val viewModel = viewModel<ViewModel>()
+
                 viewModel.init(TYPE.BUG)
-                BugScreen(viewModel, LocalLifecycleOwner.current)
+                val title = stringResource(id = R.string.bugs_title)
+                val backgroundImageId = R.drawable.back_birds3
+
+                NavigateScreen(
+                    viewModel,
+                    LocalLifecycleOwner.current,
+                    { navController.navigateUp() }, title, backgroundImageId
+                )
             }
 
             composable(HomeGroup.AQUATIC.nameType) {
-                val viewModel = viewModel<ViewModel>()
+
                 viewModel.init(TYPE.AQUATIC)
-                AquaticScreen(viewModel, LocalLifecycleOwner.current)
+                val title = stringResource(id = R.string.ocean_title)
+                val backgroundImageId = R.drawable.back_aquatic
+
+                NavigateScreen(
+                    viewModel,
+                    LocalLifecycleOwner.current,
+                    { navController.navigateUp() }, title, backgroundImageId
+                )
             }
         }
     }
 
+
+    @Composable
+    fun BackEvent(navController: NavHostController) {
+        navController.navigateUp()
+    }
 
     override fun onDestroy() {
         super.onDestroy()

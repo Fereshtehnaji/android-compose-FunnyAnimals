@@ -16,7 +16,8 @@ import com.naji.funnyAnimals.ui.theme.LightBlue200
 fun AppToolbar(
     modifier: Modifier,
     title: String,
-    icon: @Composable () -> Unit
+    icon: @Composable () -> Unit,
+    backHandler: () -> Unit
 ) {
 
     RightTopAppBar(modifier = modifier,
@@ -40,7 +41,7 @@ fun AppToolbar(
             icon()
         },
         navigationIcon = {
-            IconButton(onClick = {/* Do Something*/ }) {
+            IconButton(onClick = {backHandler()}) {
                 Icon(Icons.Filled.ArrowForward, null)
             }
         }

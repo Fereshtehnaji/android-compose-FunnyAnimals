@@ -6,8 +6,6 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.*
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
@@ -19,11 +17,11 @@ import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.naji.funnyAnimals.R
 import com.naji.funnyAnimals.data.Animal
 import com.naji.funnyAnimals.ui.util.MusicManager
+
 
 @Composable
 fun AnimalItem(animal: Animal, onClickHandler: (Animal) -> Unit) {
@@ -33,12 +31,14 @@ fun AnimalItem(animal: Animal, onClickHandler: (Animal) -> Unit) {
         modifier = Modifier.padding(all = 8.dp)
     ) {
 
-        ShowImage(animal, onClickHandler)
+        Box(contentAlignment = Alignment.Center) {
 
-        Spacer(modifier = Modifier.height(4.dp))
+            ShowImage(animal, onClickHandler)
 
-//        ShowNameText(animal)
+            Spacer(modifier = Modifier.height(4.dp))
 
+            ShowLabel(animal.label, visibility = animal.isClicked)
+        }
     }
 }
 
@@ -47,92 +47,79 @@ fun ShowImage(animal: Animal, onClickHandler: (Animal) -> Unit) {
 
     val context = LocalContext.current
     val imageSize = dimensionResource(id = R.dimen._70sdp)
-
-
-    val angle = GetAnimationType(isClicked = animal.isClicked)
-
+    val animationDegree = GetRotateAnimationDegree(isClicked = animal.isClicked)
     val scale = GetScaleAnimation(isClicked = animal.isClicked)
 
-    Box(contentAlignment = Alignment.Center) {
-        Image(
-            painter = painterResource(animal.picture),
-            contentDescription = "this is sample picture",
-            modifier = Modifier
-                .size(imageSize)
-                .clickable(   interactionSource = remember { MutableInteractionSource() },
-                    indication = null) {
-                    stopSound(context = context)
-                    playSound(context = context, sound = animal.sound)
-                    onClickHandler(animal)
-                }
+    Image(
+        painter = painterResource(animal.picture),
+        contentDescription = "",
+        modifier = Modifier
+            .size(imageSize)
+            .clickable(
+                interactionSource = remember { MutableInteractionSource() },
+                indication = null
+            ) {
+                stopSound(context = context)
+                playSound(context = context, sound = animal.sound)
+                onClickHandler(animal)
+            }
 
-                .scale(scale)
-                .rotate(angle)
-        )
-        Spacer(modifier = Modifier.height(4.dp))
-
-
-        if (animal.isClicked)
-            ShowLabel(animal.label)
-    }
-}
-
-
-@Composable
-fun ShowNameText(animal: Animal) {
-    Text(
-        text = " ${animal.name}",
-        color = MaterialTheme.colors.secondaryVariant,
-        style = MaterialTheme.typography.subtitle2,
-        modifier = Modifier.defaultMinSize(40.dp),
-        textAlign = TextAlign.Center
+            .scale(scale)
+            .rotate(animationDegree)
+//            .graphicsLayer(rotationZ = angle, scaleX = scale, scaleY = scale, translationX = 0.5f)
     )
 }
 
 
-fun playSound(context: Context, sound: Int) {
-
-    MusicManager.getInstance(context).play(sound)
-}
-
-fun stopSound(context: Context) {
-
-    MusicManager.getInstance(context).stop()
-}
-
-
 @Composable
-fun ShowLabel(label: Int) {
-    Image(
-        painter = painterResource(label),
-        contentDescription = "this is sample picture",
-        modifier = Modifier
-            .size(70.dp, 70.dp)
-            .padding(top = 25.dp)
-            , alignment = Alignment.BottomCenter
+fun ShowLabel(label: Int, visibility: Boolean) {
+
+    val imageSize = dimensionResource(id = R.dimen._70sdp)
+    val paddingTop = dimensionResource(id = R.dimen._26sdp)
+
+//    AnimatedVisibility(
+//        visible = visibility,
+//        enter = expandHorizontally(),
+//        exit = shrinkHorizontally() + fadeOut()
+//    ) {
+    if (visibility)
+        Image(
+            painter = painterResource(label),
+            contentDescription = "",
+            modifier = Modifier
+                .size(imageSize, imageSize)
+                .padding(top = paddingTop), alignment = Alignment.BottomCenter
 
         )
+//    }
+
+
 }
 
 @Composable
 fun GetScaleAnimation(isClicked: Boolean): Float {
     val clickedAnimation by animateFloatAsState(
         targetValue = if (isClicked) 1.5F else 1f,
-        animationSpec = repeatable(
-            iterations = 1,
-            animation = tween(
-                durationMillis = 500,
-                easing = FastOutSlowInEasing
-            ),
-            repeatMode = RepeatMode.Reverse
-        ), finishedListener = {
-        }
+        animationSpec = spring(
+            dampingRatio = Spring.DampingRatioHighBouncy,
+            stiffness = Spring.StiffnessVeryLow
+        )
+
+//                animationSpec = repeatable(
+//            iterations = 1,
+//            animation = tween(
+//                durationMillis = 500,
+//                easing = FastOutSlowInEasing
+//            ),
+//            repeatMode = RepeatMode.Reverse
+//        ), finishedListener = {
+//        }
     )
     return clickedAnimation
 }
 
 @Composable
-fun GetAnimationType(isClicked: Boolean): Float {
+fun GetRotateAnimationDegree(isClicked: Boolean): Float {
     val infiniteTransition = rememberInfiniteTransition()
 
     val rotateInDegreeAnimation by infiniteTransition.animateFloat(
@@ -140,7 +127,8 @@ fun GetAnimationType(isClicked: Boolean): Float {
         targetValue = -20F,
         animationSpec = infiniteRepeatable(
             animation = tween(
-                1500, easing = FastOutSlowInEasing
+                durationMillis = 1500,
+                easing = FastOutSlowInEasing
             ),
             repeatMode = RepeatMode.Reverse
         )
@@ -158,6 +146,15 @@ fun GetAnimationType(isClicked: Boolean): Float {
     return if (isClicked) rotateInDegreeAnimation else 0f
 }
 
+fun playSound(context: Context, sound: Int) {
+
+    MusicManager.getInstance(context).play(sound)
+}
+
+fun stopSound(context: Context) {
+
+    MusicManager.getInstance(context).stop()
+}
 
 @Composable
 fun GetScreenWidth(): Int {
