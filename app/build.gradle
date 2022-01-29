@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
 }
+apply plugin: 'kotlin-android'
 
 android {
     compileSdk 31
@@ -123,4 +124,9 @@ dependencies {
     implementation 'com.intuit.ssp:ssp-android:1.0.6'
 
     implementation "androidx.preference:preference-ktx:1.1.1"
+    implementation "androidx.core:core-ktx:+"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+}
+repositories {
+    mavenCentral()
 }
