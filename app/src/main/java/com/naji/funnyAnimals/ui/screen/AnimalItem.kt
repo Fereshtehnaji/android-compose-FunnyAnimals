@@ -134,7 +134,6 @@ fun GetRotateAnimationDegree(isClicked: Boolean): Float {
         )
     )
 
-
     val rotateAnim by animateFloatAsState(
         targetValue = if (isClicked) 360F else 0f,
         animationSpec = tween(durationMillis = 2500),
@@ -145,6 +144,96 @@ fun GetRotateAnimationDegree(isClicked: Boolean): Float {
 
     return if (isClicked) rotateInDegreeAnimation else 0f
 }
+
+/*
+ enum class ComponentState { Pressed, Released }
+@Composable
+fun MyTest(isClicked: Boolean) {
+
+    var isAnimated by remember { mutableStateOf(false) }
+    val transition = updateTransition(targetState = isAnimated, label = "")
+
+    val rocketOffset by transition.animateOffset(transitionSpec = {
+        if (this.targetState) {
+            tween(1000)
+        } else {
+            tween(3000)
+            //spring(dampingRatio = Spring.DampingRatioLowBouncy) - I want this spec too
+        }
+
+    }, label = "rocket offset") { animated ->
+        if (animated) Offset(200f, 0f) else Offset(200f, 500f)
+    }
+
+    var useRed by remember { mutableStateOf(false) }
+    var toState by remember { mutableStateOf(ComponentState.Released) }
+
+    val modifier = Modifier.pointerInput(Unit) {
+        detectTapGestures(
+            onPress = {
+                toState = ComponentState.Pressed
+                tryAwaitRelease()
+                toState = ComponentState.Released
+            }
+        )
+    }
+
+// Defines a transition of `ComponentState`, and updates the transition when the provided
+// [targetState] changes. The tran
+// sition will run all of the child animations towards the new
+// [targetState] in response to the [targetState] change.
+    val transition: Transition<Float> = GetRotateAnimationDegree(isClicked = isClicked)
+// Defines a float animation as a child animation the transition. The current animation value
+// can be read from the returned State<Float>.
+    val scale: Float by transition.animateFloat(
+        // Defines a transition spec that uses the same low-stiffness spring for *all*
+        // transitions of this float, no matter what the target is.
+        transitionSpec = { spring(stiffness = 50f) }, label = ""
+    ) { state ->
+        // This code block declares a mapping from state to value.
+        if (state ==0f && isClicked) 2f else 1f
+    }
+
+// Defines a color animation as a child animation of the transition.
+    val color: Color by transition.animateColor(
+        transitionSpec = {
+            when {
+                ComponentState.Pressed isTransitioningTo ComponentState.Released ->
+                    // Uses spring for the transition going from pressed to released
+                    spring(stiffness = 50f)
+                else ->
+                    // Uses tween for all the other transitions. (In this case there is
+                    // only one other transition. i.e. released -> pressed.)
+                    tween(durationMillis = 500)
+            }
+        }
+    ) { state ->
+        when (state) {
+            // Similar to the float animation, we need to declare the target values
+            // for each state. In this code block we can access theme colors.
+            ComponentState.Pressed -> MaterialTheme.colors.primary
+            // We can also have the target value depend on other mutableStates,
+            // such as `useRed` here. Whenever the target value changes, transition
+            // will automatically animate to the new value even if it has already
+            // arrived at its target state.
+            ComponentState.Released -> if (useRed) Color.Red else MaterialTheme.colors.secondary
+        }
+    }
+    Column {
+        Button(
+            modifier = Modifier.padding(10.dp).align(Alignment.CenterHorizontally),
+            onClick = { useRed = !useRed }
+        ) {
+            Text("Change Color")
+        }
+        Box(
+            modifier.fillMaxSize().wrapContentSize(Alignment.Center)
+                .size((100 * scale).dp).background(color)
+        )
+    }
+
+}
+*/
 
 fun playSound(context: Context, sound: Int) {
 
