@@ -16,6 +16,10 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
 
     val backgroundMusicPlaying: LiveData<Boolean> by lazy { _backgroundMusicPlaying }
     private var _backgroundMusicPlaying: MutableLiveData<Boolean> = MutableLiveData()
+
+    val appLanguage: LiveData<String> by lazy { _appLanguage }
+    private var _appLanguage: MutableLiveData<String> = MutableLiveData()
+
     private val pref = PreferenceProvider(application)
 
     private fun changeAnimation(animal: Animal) {
@@ -42,10 +46,11 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
 
     fun musicIconClickHandler() {
 
-        val musicStatus=isMusicPlaying()
+        val musicStatus = isMusicPlaying()
         _backgroundMusicPlaying.value = !musicStatus
         saveMusicPlayerStatus(!musicStatus)
     }
+
 
     fun isMusicPlaying(): Boolean {
         return pref.getMusicBackgroundStatus()
@@ -53,6 +58,25 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
 
     fun saveMusicPlayerStatus(isPlay: Boolean) {
         pref.saveMusicBackgroundStatus(isPlay)
+    }
+
+
+    fun languageIconHandler() {
+        val appLanguage = getLanguageOfApp()
+        var changedLanguage: String = if (appLanguage == "fa")
+            "en"
+        else "fa"
+        _appLanguage.value = changedLanguage
+        saveLanguageStatus(changedLanguage)
+    }
+
+    fun getLanguageOfApp(): String {
+        return pref.getLanguageStatus()
+    }
+
+    private fun saveLanguageStatus(language: String) {
+        pref.saveLanguageStatus(language)
+
     }
 
     fun init(type: TYPE) {

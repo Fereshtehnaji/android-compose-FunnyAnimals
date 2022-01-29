@@ -1,5 +1,6 @@
 package com.naji.funnyAnimals.ui.screen
 
+import android.content.Context
 import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -12,14 +13,14 @@ import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.MusicNote
-import androidx.compose.material.icons.filled.MusicOff
+import androidx.compose.material.icons.filled.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
@@ -29,12 +30,10 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.naji.funnyAnimals.R
-import com.naji.funnyAnimals.data.animalenum.ServiceCommand
 import com.naji.funnyAnimals.data.CardHome
 import com.naji.funnyAnimals.data.HomeCardData
-import com.naji.funnyAnimals.ui.theme.Black
-import com.naji.funnyAnimals.ui.theme.Orange50
-import com.naji.funnyAnimals.ui.theme.Orange500
+import com.naji.funnyAnimals.data.animalenum.ServiceCommand
+import com.naji.funnyAnimals.ui.theme.*
 import com.naji.funnyAnimals.ui.theme.Orange900
 import com.naji.funnyAnimals.ui.util.startMusicService
 
@@ -51,9 +50,13 @@ fun HomeScreen(navController: NavController, viewModel: ViewModel) {
 
 
         val isMusicPlay: Boolean by viewModel.backgroundMusicPlaying.observeAsState(initial = viewModel.isMusicPlaying())
+        val languageLabel: String by viewModel.appLanguage.observeAsState(initial =viewModel.getLanguageOfApp())
 
-        Header(musicIconClickHandler = { viewModel.musicIconClickHandler() }, isMusicPlay)
+        Header(musicIconClickHandler = { viewModel.musicIconClickHandler() },
+            {viewModel.languageIconHandler()}, isMusicPlay, languageLabel)
+
         Spacer(modifier = Modifier.height(24.dp))
+
         GridHome(HomeCardData.HomeCardList, navController = navController)
     }
 }
@@ -95,7 +98,10 @@ fun GridHome(cardList: List<CardHome>, navController: NavController) {
 }
 
 @Composable
-fun Header(musicIconClickHandler: () -> Unit, isMusicPlay: Boolean) {
+fun Header(
+    musicIconClickHandler: () -> Unit, languageIconHandler: () -> Unit,
+    isMusicPlay: Boolean, language: String
+) {
 
     val context = LocalContext.current
 
@@ -116,7 +122,9 @@ fun Header(musicIconClickHandler: () -> Unit, isMusicPlay: Boolean) {
 
 
             )
+
         Spacer(modifier = Modifier.height(16.dp))
+
         Text(
             text = stringResource(R.string.home_title),
             color = Black,
@@ -124,25 +132,36 @@ fun Header(musicIconClickHandler: () -> Unit, isMusicPlay: Boolean) {
             modifier = Modifier.defaultMinSize(50.dp),
             textAlign = TextAlign.Center,
         )
+
         Spacer(modifier = Modifier.height(4.dp))
+
         Row {
 
-            val icon = if (isMusicPlay) {
-                context.startMusicService(ServiceCommand.START.nameType)
-                Icons.Filled.MusicNote
-            } else {
-                context.startMusicService(ServiceCommand.STOP.nameType)
-                Icons.Filled.MusicOff
-            }
 
-            Icon(icon,
-                contentDescription = "music on", tint = Orange900,
+            val languageIcon = GetLanguageIcon(language = language)
+            Icon(languageIcon,
+                contentDescription = "change language en to fa", tint = Orange700,
+                modifier = Modifier
+                    .clickable {
+                        languageIconHandler()
+                    }
+
+            )
+
+            Spacer(modifier = Modifier.height(4.dp))
+
+            val musicIcon =GetMusicIcon(isMusicPlay,context)
+            Icon(musicIcon,
+                contentDescription = "music on", tint = Orange700,
                 modifier = Modifier
                     .clickable {
                         musicIconClickHandler()
                     }
 
             )
+
+            Spacer(modifier = Modifier.height(4.dp))
+
 
             Text(
                 text = stringResource(R.string.home_body),
@@ -156,6 +175,26 @@ fun Header(musicIconClickHandler: () -> Unit, isMusicPlay: Boolean) {
 
         }
     }
+}
+
+@Composable
+fun GetMusicIcon(musicPlay: Boolean, context: Context): ImageVector {
+
+   return if (musicPlay) {
+        context.startMusicService(ServiceCommand.START.nameType)
+        Icons.Filled.MusicNote
+    } else {
+        context.startMusicService(ServiceCommand.STOP.nameType)
+        Icons.Filled.MusicOff
+    }
+}
+
+@Composable
+fun GetLanguageIcon(language: String): ImageVector {
+    return if (language == "fa")
+        Icons.Filled.Translate
+    else Icons.Filled.GTranslate
+
 }
 
 

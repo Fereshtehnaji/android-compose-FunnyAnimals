@@ -5,6 +5,7 @@ import android.content.SharedPreferences
 import androidx.preference.PreferenceManager
 
 private const val KEY_BACK_MUSIC_STATUS = "back_music_status"
+private const val KEY_LANGUAGE_STATUS = "language_status"
 
 class PreferenceProvider(val context: Context) {
     private val appContext = context.applicationContext
@@ -19,5 +20,13 @@ class PreferenceProvider(val context: Context) {
 
     fun getMusicBackgroundStatus(): Boolean {
         return sharedPreferences.getBoolean(KEY_BACK_MUSIC_STATUS, true)
+    }
+
+    fun saveLanguageStatus(name: String) {
+        sharedPreferences.edit().putString(KEY_LANGUAGE_STATUS, name).apply()
+    }
+
+    fun getLanguageStatus(): String {
+        return sharedPreferences.getString(KEY_LANGUAGE_STATUS, "fa")!!
     }
 }
