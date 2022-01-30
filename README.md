@@ -1,6 +1,6 @@
 # 🦊 Jetpack Compose Funny Animals App with sound of Animals🎵
 
-A simple Jetpack Compose application for kids.
+This repository contains a simple Jetpack Compose application for kids.
 
 Technologies use in application:
 1. MVVM architecture
