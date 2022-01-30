@@ -26,14 +26,26 @@ import com.naji.funnyAnimals.ui.util.MusicManager
 @Composable
 fun AnimalItem(animal: Animal, onClickHandler: (Animal) -> Unit) {
 
+    val context = LocalContext.current
+
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier.padding(all = 8.dp)
     ) {
 
-        Box(contentAlignment = Alignment.Center) {
+        Box(contentAlignment = Alignment.Center,
+            modifier = Modifier
+                .clickable(
+                    interactionSource = remember { MutableInteractionSource() },
+                    indication = null
+                ) {
+                    stopSound(context = context)
+                    playSound(context = context, sound = animal.sound)
+                    onClickHandler(animal)
+                }
+        ) {
 
-            ShowImage(animal, onClickHandler)
+            ItemAnimation(animal.picture, animal.isClicked)
 
             Spacer(modifier = Modifier.height(4.dp))
 
@@ -43,31 +55,29 @@ fun AnimalItem(animal: Animal, onClickHandler: (Animal) -> Unit) {
 }
 
 @Composable
-fun ShowImage(animal: Animal, onClickHandler: (Animal) -> Unit) {
+fun ItemAnimation(image: Int, isClicked: Boolean) {
 
-    val context = LocalContext.current
+    val animationDegree = GetRotateAnimationDegree(isClicked)
+    val scale = GetScaleAnimation(isClicked)
+
+    ShowImage(image, animationDegree, scale)
+}
+
+@Composable
+fun ShowImage(image: Int, rotationDegrees: Float = 0f, scaleValue: Float = 0f) {
+
     val imageSize = dimensionResource(id = R.dimen._70sdp)
-    val animationDegree = GetRotateAnimationDegree(isClicked = animal.isClicked)
-    val scale = GetScaleAnimation(isClicked = animal.isClicked)
 
     Image(
-        painter = painterResource(animal.picture),
+        painter = painterResource(image),
         contentDescription = "",
         modifier = Modifier
             .size(imageSize)
-            .clickable(
-                interactionSource = remember { MutableInteractionSource() },
-                indication = null
-            ) {
-                stopSound(context = context)
-                playSound(context = context, sound = animal.sound)
-                onClickHandler(animal)
-            }
-
-            .scale(scale)
-            .rotate(animationDegree)
+            .scale(scaleValue)
+            .rotate(rotationDegrees)
 //            .graphicsLayer(rotationZ = angle, scaleX = scale, scaleY = scale, translationX = 0.5f)
     )
+
 }
 
 
