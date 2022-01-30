@@ -134,13 +134,13 @@ fun GetRotateAnimationDegree(isClicked: Boolean): Float {
         )
     )
 
-    val rotateAnim by animateFloatAsState(
-        targetValue = if (isClicked) 360F else 0f,
-        animationSpec = tween(durationMillis = 2500),
-        finishedListener = {
-        }
+//    val rotateAnim by animateFloatAsState(
+//        targetValue = if (isClicked) 360F else 0f,
+//        animationSpec = tween(durationMillis = 2500),
+//        finishedListener = {
+//        }
 
-    )
+//    )
 
     return if (isClicked) rotateInDegreeAnimation else 0f
 }

@@ -35,13 +35,13 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
 
     }
 
-    private fun showLabel(item: Animal) {
+    private fun showLabel() {
 
     }
 
     fun clickHandler(item: Animal) {
         changeAnimation(item)
-        showLabel(item)
+        showLabel()
     }
 
     fun musicIconClickHandler() {
