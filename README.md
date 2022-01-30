@@ -19,3 +19,11 @@ Technologies use in application:
 The caller (AnimalActivity) is reponsible for figuring out where and how to hold this state.
 Animal screen  is completely decoupled from how state is managed.
 
+### Exploring the code
+
+The funny animals code contains four packages:
+
+- ui – Contains themes and app screens
+- util – Contains helper code for the project and music class we are building
+- data – The package containing the data for the list
+
