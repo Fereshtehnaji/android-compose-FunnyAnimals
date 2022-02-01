@@ -8,8 +8,10 @@ import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
 import androidx.compose.material.Surface
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.GTranslate
 import androidx.compose.material.icons.filled.MusicNote
 import androidx.compose.material.icons.filled.MusicOff
+import androidx.compose.material.icons.filled.Translate
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
@@ -22,9 +24,10 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.LifecycleOwner
-import com.naji.funnyAnimals.data.animalenum.ServiceCommand
 import com.naji.funnyAnimals.data.Animal
 import com.naji.funnyAnimals.data.AnimalData
+import com.naji.funnyAnimals.data.animalenum.Language
+import com.naji.funnyAnimals.data.animalenum.ServiceCommand
 import com.naji.funnyAnimals.ui.components.AppToolbar
 import com.naji.funnyAnimals.ui.util.HandleResourceOnLifeCycle
 import com.naji.funnyAnimals.ui.util.startMusicService
@@ -55,11 +58,23 @@ fun NavigateScreen(
 
         val items: List<Animal> by viewModel.animalItems.observeAsState(listOf())
         val isMusicPlay: Boolean by viewModel.backgroundMusicPlaying.observeAsState(initial = viewModel.isMusicPlaying())
+        val languageLabel: String by viewModel.appLanguage.observeAsState(initial = viewModel.getLanguageOfApp())
 
-        Column() {
+        Column {
             AppToolbar(modifier = Modifier.height(50.dp),
                 title = title,
-                icon = { MusicIcon({ viewModel.musicIconClickHandler() }, isMusicPlay) },
+                icon1 = {
+                    MusicIcon(
+                        { viewModel.musicIconClickHandler() },
+                        isMusicPlay
+                    )
+                },
+                icon2 = {
+                    LanguageIcon(
+                        onEventHandler = { viewModel.languageIconHandler() },
+                        language = languageLabel
+                    )
+                },
                 backHandler = { onBackHandler() })
             AnimalGrid(animals = items, onClickHandler = { viewModel.clickHandler(it) })
         }
@@ -73,6 +88,7 @@ fun NavigateScreen(
 fun PreviewAnimalGrid() {
     AnimalGrid(animals = AnimalData.AnimalData, onClickHandler = {})
 }
+
 
 @Composable
 fun MusicIcon(onEventHandler: () -> Unit, isMusicPlay: Boolean) {
@@ -98,7 +114,24 @@ fun MusicIcon(onEventHandler: () -> Unit, isMusicPlay: Boolean) {
     }
 }
 
+@Composable
+fun LanguageIcon(onEventHandler: () -> Unit, language: String) {
 
+    val icon = if (language == Language.FA.nameType) {
+        Icons.Filled.Translate
+    } else {
+        Icons.Filled.GTranslate
+    }
+    IconButton(onClick = {
+        onEventHandler()
+    }) {
+        Icon(
+            icon,
+            "",
+            tint = Color.White,
+        )
+    }
+}
 
 
 

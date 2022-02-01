@@ -6,6 +6,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.naji.funnyAnimals.data.Animal
 import com.naji.funnyAnimals.data.AnimalData
+import com.naji.funnyAnimals.data.animalenum.Language
 import com.naji.funnyAnimals.data.animalenum.TYPE
 import com.naji.funnyAnimals.data.preferences.PreferenceProvider
 
@@ -56,16 +57,16 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
         return pref.getMusicBackgroundStatus()
     }
 
-    fun saveMusicPlayerStatus(isPlay: Boolean) {
+    private fun saveMusicPlayerStatus(isPlay: Boolean) {
         pref.saveMusicBackgroundStatus(isPlay)
     }
 
 
     fun languageIconHandler() {
         val appLanguage = getLanguageOfApp()
-        var changedLanguage: String = if (appLanguage == "fa")
-            "en"
-        else "fa"
+        val changedLanguage: String = if (appLanguage == Language.FA.nameType)
+            Language.EN.nameType
+        else Language.FA.nameType
         _appLanguage.value = changedLanguage
         saveLanguageStatus(changedLanguage)
     }
@@ -80,17 +81,26 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     fun init(type: TYPE) {
-        _animalItems.value = getAnimalListFromRepo(type)
+        _animalItems.value = getAnimalListFromRepo(type, getLanguageOfApp())
     }
 
 
-    private fun getAnimalListFromRepo(type: TYPE): List<Animal> {
+    private fun getAnimalListFromRepo(type: TYPE, language: String): List<Animal> {
 
-        return when (type) {
-            TYPE.ANIMAL -> AnimalData.AnimalData
-            TYPE.BIRD -> AnimalData.BirdData
-            TYPE.BUG -> AnimalData.BugData
-            TYPE.AQUATIC -> AnimalData.AquaticData
+        return if (language == Language.FA.nameType) {
+            when (type) {
+                TYPE.ANIMAL -> AnimalData.AnimalData
+                TYPE.BIRD -> AnimalData.BirdData
+                TYPE.BUG -> AnimalData.BugData
+                TYPE.AQUATIC -> AnimalData.AquaticData
+            }
+        } else {
+            when (type) {
+                TYPE.ANIMAL -> AnimalData.AnimalDataEn
+                TYPE.BIRD -> AnimalData.BirdDataEn
+                TYPE.BUG -> AnimalData.BugDataEn
+                TYPE.AQUATIC -> AnimalData.AquaticDataEn
+            }
         }
     }
 
