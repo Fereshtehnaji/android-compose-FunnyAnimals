@@ -16,7 +16,10 @@ import com.naji.funnyAnimals.ui.theme.LightBlue200
 fun AppToolbar(
     modifier: Modifier,
     title: String,
-    icon: @Composable () -> Unit,
+    icon1: @Composable (() -> Unit)? = null,
+    icon2: @Composable (() -> Unit)? = null,
+    icon3: @Composable (() -> Unit)? = null,
+    icon4: @Composable (() -> Unit)? = null,
     backHandler: () -> Unit
 ) {
 
@@ -38,7 +41,10 @@ fun AppToolbar(
 
         },
         actions = {
-            icon()
+            icon1?.invoke()
+            icon2?.invoke()
+            icon3?.invoke()
+            icon4?.invoke()
         },
         navigationIcon = {
             IconButton(onClick = {backHandler()}) {
