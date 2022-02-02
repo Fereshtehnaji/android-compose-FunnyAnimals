@@ -20,10 +20,12 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalLifecycleOwner
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.LifecycleOwner
+import com.naji.funnyAnimals.R
 import com.naji.funnyAnimals.data.Animal
 import com.naji.funnyAnimals.data.AnimalData
 import com.naji.funnyAnimals.data.animalenum.Language
@@ -51,8 +53,7 @@ fun NavigateScreen(
         Image(
             painter = painterResource(id = backgroundImageId),
             contentDescription = null,
-            modifier = Modifier
-                .fillMaxSize(),
+            modifier = Modifier.fillMaxSize(),
             contentScale = ContentScale.Crop
         )
 
@@ -61,7 +62,7 @@ fun NavigateScreen(
         val languageLabel: String by viewModel.appLanguage.observeAsState(initial = viewModel.getLanguageOfApp())
 
         Column {
-            AppToolbar(modifier = Modifier.height(50.dp),
+            AppToolbar(modifier = Modifier.height(dimensionResource(id = R.dimen._50sdp)),
                 title = title,
                 icon1 = {
                     MusicIcon(

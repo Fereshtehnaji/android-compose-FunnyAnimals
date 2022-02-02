@@ -6,7 +6,9 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.unit.dp
+import com.naji.funnyAnimals.R
 import com.naji.funnyAnimals.data.Animal
 
 
@@ -22,11 +24,12 @@ fun AnimalGrid(animals: List<Animal>, onClickHandler: (Animal) -> Unit) {
 
 
         items(items = animals.chunked(numberOfItemsByRow)) { rowItems ->
-            Spacer(Modifier.height(14.dp))
+
+            Spacer(Modifier.height(dimensionResource(id = R.dimen._14sdp)))
 
             Row(
-                horizontalArrangement = Arrangement.spacedBy(14.dp),
-                modifier = Modifier.padding(horizontal = 16.dp)
+                horizontalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen._14sdp)),
+                modifier = Modifier.padding(horizontal = dimensionResource(id = R.dimen._16sdp))
             ) {
 
                 for (animal in rowItems) {

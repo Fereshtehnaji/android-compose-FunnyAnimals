@@ -30,7 +30,7 @@ fun AnimalItem(animal: Animal, onClickHandler: (Animal) -> Unit) {
 
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = Modifier.padding(all = 8.dp)
+        modifier = Modifier.padding(all = dimensionResource(id = R.dimen._8sdp))
     ) {
 
         Box(contentAlignment = Alignment.Center,
@@ -39,7 +39,6 @@ fun AnimalItem(animal: Animal, onClickHandler: (Animal) -> Unit) {
                     interactionSource = remember { MutableInteractionSource() },
                     indication = null
                 ) {
-                    stopSound(context = context)
                     playSound(context = context, sound = animal.sound)
                     onClickHandler(animal)
                 }
@@ -47,7 +46,7 @@ fun AnimalItem(animal: Animal, onClickHandler: (Animal) -> Unit) {
 
             ItemAnimation(animal.picture, animal.isClicked)
 
-            Spacer(modifier = Modifier.height(4.dp))
+            Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen._4sdp)))
 
             ShowLabel(animal.label, visibility = animal.isClicked)
         }
@@ -87,11 +86,6 @@ fun ShowLabel(label: Int, visibility: Boolean) {
     val imageSize = dimensionResource(id = R.dimen._70sdp)
     val paddingTop = dimensionResource(id = R.dimen._26sdp)
 
-//    AnimatedVisibility(
-//        visible = visibility,
-//        enter = expandHorizontally(),
-//        exit = shrinkHorizontally() + fadeOut()
-//    ) {
     if (visibility)
         Image(
             painter = painterResource(label),
@@ -101,9 +95,6 @@ fun ShowLabel(label: Int, visibility: Boolean) {
                 .padding(top = paddingTop), alignment = Alignment.BottomCenter
 
         )
-//    }
-
-
 }
 
 @Composable

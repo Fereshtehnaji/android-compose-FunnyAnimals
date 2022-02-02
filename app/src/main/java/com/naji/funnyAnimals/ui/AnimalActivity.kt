@@ -117,12 +117,6 @@ class AnimalActivity : AppCompatActivity() {
         }
     }
 
-
-    @Composable
-    fun BackEvent(navController: NavHostController) {
-        navController.navigateUp()
-    }
-
     override fun onDestroy() {
         super.onDestroy()
         val intent = Intent(this, MusicService::class.java)

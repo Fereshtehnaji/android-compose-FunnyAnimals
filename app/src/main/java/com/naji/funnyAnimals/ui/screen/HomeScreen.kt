@@ -13,7 +13,10 @@ import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.*
+import androidx.compose.material.icons.filled.GTranslate
+import androidx.compose.material.icons.filled.MusicNote
+import androidx.compose.material.icons.filled.MusicOff
+import androidx.compose.material.icons.filled.Translate
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
@@ -33,8 +36,10 @@ import com.naji.funnyAnimals.R
 import com.naji.funnyAnimals.data.CardHome
 import com.naji.funnyAnimals.data.HomeCardData
 import com.naji.funnyAnimals.data.animalenum.ServiceCommand
-import com.naji.funnyAnimals.ui.theme.*
-import com.naji.funnyAnimals.ui.theme.Orange900
+import com.naji.funnyAnimals.ui.theme.Black
+import com.naji.funnyAnimals.ui.theme.Orange50
+import com.naji.funnyAnimals.ui.theme.Orange500
+import com.naji.funnyAnimals.ui.theme.Orange700
 import com.naji.funnyAnimals.ui.util.startMusicService
 
 
@@ -50,14 +55,88 @@ fun HomeScreen(navController: NavController, viewModel: ViewModel) {
 
 
         val isMusicPlay: Boolean by viewModel.backgroundMusicPlaying.observeAsState(initial = viewModel.isMusicPlaying())
-        val languageLabel: String by viewModel.appLanguage.observeAsState(initial =viewModel.getLanguageOfApp())
+        val languageLabel: String by viewModel.appLanguage.observeAsState(initial = viewModel.getLanguageOfApp())
 
-        Header(musicIconClickHandler = { viewModel.musicIconClickHandler() },
-            {viewModel.languageIconHandler()}, isMusicPlay, languageLabel)
+        Header(
+            musicIconClick = { viewModel.musicIconClickHandler() },
+            languageIconClick = { viewModel.languageIconHandler() },
+            isMusicPlay, languageLabel
+        )
 
         Spacer(modifier = Modifier.height(24.dp))
 
         GridHome(HomeCardData.HomeCardList, navController = navController)
+    }
+}
+
+@Composable
+fun Header(
+    musicIconClick: () -> Unit,
+    languageIconClick: () -> Unit,
+    isMusicPlay: Boolean, language: String
+) {
+
+    val context = LocalContext.current
+
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = Modifier.padding(all = dimensionResource(id = R.dimen._8sdp))
+    )
+    {
+        Image(
+            painter = painterResource(id = R.drawable.animal_lion),
+            contentDescription = stringResource(R.string.content_description_main_icon),
+            modifier = Modifier
+                .size(dimensionResource(id = R.dimen._80sdp))
+                .clip(CircleShape)
+                .background(Orange50)
+                .padding(all = dimensionResource(id = R.dimen._6sdp)),
+        )
+
+        Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen._16sdp)))
+
+        Text(
+            text = stringResource(R.string.home_title),
+            color = Black,
+            style = MaterialTheme.typography.body2,
+            modifier = Modifier.defaultMinSize(dimensionResource(id = R.dimen._50sdp)),
+            textAlign = TextAlign.Center,
+        )
+
+        Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen._4sdp)))
+
+        Row {
+
+
+            val languageIcon = GetLanguageIcon(language = language)
+            Icon(languageIcon,
+                contentDescription = "change language en to fa", tint = Orange700,
+                modifier = Modifier
+                    .clickable { languageIconClick() }
+            )
+
+            Spacer(modifier = Modifier.height(4.dp))
+
+            val musicIcon = GetMusicIcon(isMusicPlay, context)
+            Icon(musicIcon,
+                contentDescription = "music on", tint = Orange700,
+                modifier = Modifier.clickable { musicIconClick() }
+            )
+
+            Spacer(modifier = Modifier.height(4.dp))
+
+
+            Text(
+                text = stringResource(R.string.home_body),
+                color = Orange500,
+                style = MaterialTheme.typography.body2,
+                textAlign = TextAlign.Center,
+                fontWeight = FontWeight.Bold
+
+            )
+
+
+        }
     }
 }
 
@@ -67,8 +146,8 @@ fun GridHome(cardList: List<CardHome>, navController: NavController) {
     LazyColumn {
         items(items = cardList.chunked(2)) { rowItems ->
             Row(
-                horizontalArrangement = Arrangement.spacedBy(8.dp),
-                modifier = Modifier.padding(horizontal = 8.dp),
+                horizontalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen._8sdp)),
+                modifier = Modifier.padding(horizontal = dimensionResource(id = R.dimen._8sdp)),
             )
             {
                 for (item in rowItems) {
@@ -91,96 +170,16 @@ fun GridHome(cardList: List<CardHome>, navController: NavController) {
 
                 }
             }
-            Spacer(Modifier.height(8.dp))
+            Spacer(Modifier.height(dimensionResource(id = R.dimen._8sdp)))
         }
 
-    }
-}
-
-@Composable
-fun Header(
-    musicIconClickHandler: () -> Unit, languageIconHandler: () -> Unit,
-    isMusicPlay: Boolean, language: String
-) {
-
-    val context = LocalContext.current
-
-    Column(
-        horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = Modifier
-            .padding(all = 8.dp)
-    )
-    {
-        Image(
-            painter = painterResource(id = R.drawable.animal_lion),
-            contentDescription = stringResource(R.string.content_description_main_icon),
-            modifier = Modifier
-                .size(80.dp)
-                .clip(CircleShape)
-                .background(Orange50)
-                .padding(all = 6.dp),
-
-
-            )
-
-        Spacer(modifier = Modifier.height(16.dp))
-
-        Text(
-            text = stringResource(R.string.home_title),
-            color = Black,
-            style = MaterialTheme.typography.body2,
-            modifier = Modifier.defaultMinSize(50.dp),
-            textAlign = TextAlign.Center,
-        )
-
-        Spacer(modifier = Modifier.height(4.dp))
-
-        Row {
-
-
-            val languageIcon = GetLanguageIcon(language = language)
-            Icon(languageIcon,
-                contentDescription = "change language en to fa", tint = Orange700,
-                modifier = Modifier
-                    .clickable {
-                        languageIconHandler()
-                    }
-
-            )
-
-            Spacer(modifier = Modifier.height(4.dp))
-
-            val musicIcon =GetMusicIcon(isMusicPlay,context)
-            Icon(musicIcon,
-                contentDescription = "music on", tint = Orange700,
-                modifier = Modifier
-                    .clickable {
-                        musicIconClickHandler()
-                    }
-
-            )
-
-            Spacer(modifier = Modifier.height(4.dp))
-
-
-            Text(
-                text = stringResource(R.string.home_body),
-                color = Orange500,
-                style = MaterialTheme.typography.body2,
-                textAlign = TextAlign.Center,
-                fontWeight = FontWeight.Bold
-
-            )
-
-
-        }
     }
 }
 
 @Composable
 fun GetMusicIcon(musicPlay: Boolean, context: Context): ImageVector {
 
-   return if (musicPlay) {
+    return if (musicPlay) {
         context.startMusicService(ServiceCommand.START.nameType)
         Icons.Filled.MusicNote
     } else {
@@ -216,7 +215,7 @@ fun HomeCard(cardHome: CardHome) {
     ) {
         Image(
             painter = painterResource(id = cardHome.icon),
-            contentDescription = "this is sample picture",
+            contentDescription = null,
             modifier = Modifier
                 .size(imageSize)
                 .clip(CircleShape)
