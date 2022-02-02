@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">حیوانات بامزه</string>
     <string name="home_title">آشنایی با حیوانات بامزه</string>
-    <string name="home_body">!یک گروه را انتخاب کن</string>
+    <string name="home_body">!یک گروه رو انتخاب کن</string>
     <string name="content_description_main_icon">Main Icon</string>
     <string name="animal_title">حیوانات</string>
     <string name="birds_title">پرندگان</string>
