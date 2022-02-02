@@ -23,6 +23,8 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
 
     private val pref = PreferenceProvider(application)
 
+
+
     private fun changeAnimation(animal: Animal) {
 
         val animals: MutableList<Animal>? = _animalItems.value?.toMutableList()
@@ -36,13 +38,9 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
 
     }
 
-    private fun showLabel() {
-
-    }
 
     fun clickHandler(item: Animal) {
         changeAnimation(item)
-        showLabel()
     }
 
     fun musicIconClickHandler() {
