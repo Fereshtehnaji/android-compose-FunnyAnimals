@@ -62,7 +62,7 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
 
     fun languageIconHandler() {
         val appLanguage = getLanguageOfApp()
-        val changedLanguage: String = if (appLanguage == Language.FA.nameType)
+        val changedLanguage = if (appLanguage == Language.FA.nameType)
             Language.EN.nameType
         else Language.FA.nameType
         _appLanguage.value = changedLanguage

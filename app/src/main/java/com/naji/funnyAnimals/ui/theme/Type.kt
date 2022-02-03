@@ -27,44 +27,45 @@ import com.naji.funnyAnimals.R
 /**
  * https://fonts.google.com/specimen/Montserrat
  */
-private val Montserrat = FontFamily(
-    Font(R.font.iransans_fa),
-    Font(R.font.iransans_fa_light, FontWeight.W500),
-    Font(R.font.iransans_fa_medium, FontWeight.W600)
+private val Yekan_bakh = FontFamily(
+    Font(R.font.yekan_bakh_regular),
+    Font(R.font.yekan_bakh_light, FontWeight.W500),
+    Font(R.font.yekan_bakh_medium, FontWeight.W600),
+    Font(R.font.yekan_bakh_bold, FontWeight.Bold)
 )
 
 /**
  * https://fonts.google.com/specimen/Domine
  */
 private val Domine = FontFamily(
-    Font(R.font.iransans_fa),
-    Font(R.font.iransans_fa_medium, FontWeight.Bold)
+    Font(R.font.yekan_bakh_regular),
+    Font(R.font.yekan_bakh_bold, FontWeight.Bold)
 )
 
-val JetnewsTypography = Typography(
+val AnimalTypography = Typography(
     h4 = TextStyle(
-        fontFamily = Montserrat,
+        fontFamily = Yekan_bakh,
         fontWeight = FontWeight.W600,
         fontSize = 30.sp
     ),
     h5 = TextStyle(
-        fontFamily = Montserrat,
-        fontWeight = FontWeight.W600,
+        fontFamily = Yekan_bakh,
+        fontWeight = FontWeight.W900,
         fontSize = 24.sp
     ),
     h6 = TextStyle(
-        fontFamily = Montserrat,
+        fontFamily = Yekan_bakh,
         fontWeight = FontWeight.W600,
         fontSize = 20.sp
     ),
     subtitle1 = TextStyle(
-        fontFamily = Montserrat,
+        fontFamily = Yekan_bakh,
         fontWeight = FontWeight.W600,
         fontSize = 16.sp
     ),
     subtitle2 = TextStyle(
-        fontFamily = Montserrat,
-        fontWeight = FontWeight.W500,
+        fontFamily = Yekan_bakh,
+        fontWeight = FontWeight.W400,
         fontSize = 14.sp
     ),
     body1 = TextStyle(
@@ -73,21 +74,21 @@ val JetnewsTypography = Typography(
         fontSize = 16.sp
     ),
     body2 = TextStyle(
-        fontFamily = Montserrat,
+        fontFamily = Yekan_bakh,
         fontSize = 14.sp
     ),
     button = TextStyle(
-        fontFamily = Montserrat,
+        fontFamily = Yekan_bakh,
         fontWeight = FontWeight.W500,
         fontSize = 14.sp
     ),
     caption = TextStyle(
-        fontFamily = Montserrat,
-        fontWeight = FontWeight.Normal,
-        fontSize = 12.sp
+        fontFamily = Yekan_bakh,
+        fontWeight = FontWeight.ExtraBold,
+        fontSize = 16.sp
     ),
     overline = TextStyle(
-        fontFamily = Montserrat,
+        fontFamily = Yekan_bakh,
         fontWeight = FontWeight.W500,
         fontSize = 12.sp
     )
