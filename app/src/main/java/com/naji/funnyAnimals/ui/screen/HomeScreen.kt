@@ -11,6 +11,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Icon
+import androidx.compose.material.IconButton
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.MusicNote
@@ -21,6 +22,7 @@ import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.dimensionResource
@@ -67,12 +69,14 @@ fun PreviewHomeScreen() {
 @Composable
 fun HomeScreen(navController: NavController, viewModel: ViewModel) {
 
-    val padding = dimensionResource(R.dimen._30sdp)
+    val topPadding = dimensionResource(R.dimen._16sdp)
+    val startPadding = dimensionResource(R.dimen._28sdp)
+    val endPadding = dimensionResource(R.dimen._28sdp)
 
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
-            .padding(top = padding, start = padding, end = padding)
+            .padding(top = topPadding, start = startPadding, end = endPadding)
             .fillMaxSize()
     ) {
 
@@ -86,7 +90,7 @@ fun HomeScreen(navController: NavController, viewModel: ViewModel) {
             isMusicPlay, languageLabel
         )
 
-        Spacer(modifier = Modifier.height(24.dp))
+        Spacer(modifier = Modifier.height(dimensionResource(R.dimen._20sdp)))
 
         GridHome(HomeCardData.HomeCardList, navController = navController)
     }
@@ -110,20 +114,26 @@ fun Header(
             horizontalArrangement = Arrangement.Start
         ) {
 
-            val musicIcon = GetMusicIcon(isMusicPlay, context)
-            Icon(musicIcon,
-                contentDescription = "music on", tint = Green500,
-                modifier = Modifier
-                    .padding(end = dimensionResource(id = R.dimen._4sdp))
-                    .clickable { musicIconClick() }
-            )
 
-            val languageIcon = GetLanguageIcon(language = language)
-            Icon(languageIcon,
-                contentDescription = "change language en to fa", tint = Cyan500,
-                modifier = Modifier
-                    .clickable { languageIconClick() }
-            )
+            IconButton(onClick = {
+                musicIconClick() },
+            ) {
+                Icon(
+                    GetMusicIcon(isMusicPlay, context), null,
+                    tint = Green500,
+                )
+            }
+
+
+            IconButton(onClick = {
+                languageIconClick()
+            }) {
+                Icon(
+                    GetLanguageIcon(language = language), null,
+                    tint = Cyan500,
+                )
+            }
+
 
         }
         Image(
@@ -209,6 +219,7 @@ fun GetMusicIcon(musicPlay: Boolean, context: Context): ImageVector {
 
 @Composable
 fun GetLanguageIcon(language: String): ImageVector {
+
     return if (language == Language.FA.nameType)
         ImageVector.vectorResource(id = R.drawable.ic_fa)
     else ImageVector.vectorResource(id = R.drawable.ic_en)
@@ -220,8 +231,8 @@ fun GetLanguageIcon(language: String): ImageVector {
 fun HomeCard(cardHome: CardHome) {
 
     val verySmallPadding = dimensionResource(R.dimen._4sdp)
-    val mediumPadding = dimensionResource(R.dimen._8sdp)
-    val largePadding = dimensionResource(R.dimen._16sdp)
+    val mediumPadding = dimensionResource(R.dimen._6sdp)
+    val largePadding = dimensionResource(R.dimen._14sdp)
     val imageSize = dimensionResource(R.dimen._70sdp)
 
 
@@ -246,7 +257,7 @@ fun HomeCard(cardHome: CardHome) {
         Text(
             text = cardHome.title,
             color = cardHome.titleColor,
-            style = AnimalTypography.h5,
+            style = AnimalTypography.caption,
             textAlign = TextAlign.Right,
             fontWeight = FontWeight.Bold
         )

@@ -65,7 +65,7 @@ val AnimalTypography = Typography(
     ),
     subtitle2 = TextStyle(
         fontFamily = Yekan_bakh,
-        fontWeight = FontWeight.W400,
+        fontWeight = FontWeight.W600,
         fontSize = 14.sp
     ),
     body1 = TextStyle(
@@ -85,7 +85,7 @@ val AnimalTypography = Typography(
     caption = TextStyle(
         fontFamily = Yekan_bakh,
         fontWeight = FontWeight.ExtraBold,
-        fontSize = 16.sp
+        fontSize = 18.sp
     ),
     overline = TextStyle(
         fontFamily = Yekan_bakh,
