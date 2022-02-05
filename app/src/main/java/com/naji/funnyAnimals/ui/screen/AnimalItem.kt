@@ -3,14 +3,17 @@ package com.naji.funnyAnimals.ui.screen
 import android.content.Context
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.draw.scale
 import androidx.compose.ui.platform.LocalConfiguration
@@ -20,6 +23,9 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.naji.funnyAnimals.R
 import com.naji.funnyAnimals.data.Animal
+import com.naji.funnyAnimals.ui.theme.Green200
+import com.naji.funnyAnimals.ui.theme.Orange100
+import com.naji.funnyAnimals.ui.theme.Orange50
 import com.naji.funnyAnimals.ui.util.MusicManager
 
 
@@ -30,7 +36,7 @@ fun AnimalItem(animal: Animal, onClickHandler: (Animal) -> Unit) {
 
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = Modifier.padding(all = dimensionResource(id = R.dimen._8sdp))
+        modifier = Modifier.padding(all = dimensionResource(id = R.dimen._6sdp))
     ) {
 
         Box(contentAlignment = Alignment.Center,
@@ -65,7 +71,7 @@ fun ItemAnimation(image: Int, isClicked: Boolean) {
 @Composable
 fun ShowImage(image: Int, rotationDegrees: Float = 0f, scaleValue: Float = 0f) {
 
-    val imageSize = dimensionResource(id = R.dimen._70sdp)
+    val imageSize = dimensionResource(id = R.dimen._60sdp)
 
     Image(
         painter = painterResource(image),
@@ -74,6 +80,9 @@ fun ShowImage(image: Int, rotationDegrees: Float = 0f, scaleValue: Float = 0f) {
             .size(imageSize)
             .scale(scaleValue)
             .rotate(rotationDegrees)
+            .clip(CircleShape)
+            .background(Green200)
+            .padding(all=4.dp)
 //            .graphicsLayer(rotationZ = angle, scaleX = scale, scaleY = scale, translationX = 0.5f)
     )
 

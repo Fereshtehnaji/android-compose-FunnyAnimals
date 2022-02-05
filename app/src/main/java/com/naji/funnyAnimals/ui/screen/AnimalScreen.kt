@@ -8,6 +8,7 @@ import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
@@ -53,30 +54,41 @@ fun NavigateScreen(
         val isMusicPlay: Boolean by viewModel.backgroundMusicPlaying.observeAsState(initial = viewModel.isMusicPlaying())
         val languageLabel: String by viewModel.appLanguage.observeAsState(initial = viewModel.getLanguageOfApp())
 
-        Column {
-            AppToolbar(modifier = Modifier.height(dimensionResource(id = R.dimen._50sdp)),
-                title = title,
-                icon1 = {
-                    MusicButton(
-                        { viewModel.musicButtonHandler() },
-                        isMusicPlay,Color.White
-                    )
-                },
-                icon2 = {
-                    LanguageButton(
-                        onClick = { viewModel.languageButtonHandler() },
-                        language = languageLabel,Color.White
-                    )
-                },
-                backHandler = {
-                    NavigationBackButton(onClick = onBackHandler)
-                }
-            )
+        Column(horizontalAlignment = Alignment.CenterHorizontally) {
+
+            ShowToolbar(viewModel, title, isMusicPlay, languageLabel, onBackHandler)
+
             AnimalGrid(animals = items, onClickHandler = { viewModel.clickHandler(it) })
         }
 
 
     }
+}
+
+@Composable
+fun ShowToolbar(
+    viewModel: ViewModel, title: String, isMusicPlay: Boolean,
+    languageLabel: String, onBackHandler: () -> Unit
+) {
+
+    AppToolbar(modifier = Modifier.height(dimensionResource(id = R.dimen._50sdp)),
+        title = title,
+        icon1 = {
+            MusicButton(
+                { viewModel.musicButtonHandler() },
+                isMusicPlay, Color.White
+            )
+        },
+        icon2 = {
+            LanguageButton(
+                onClick = { viewModel.languageButtonHandler() },
+                language = languageLabel, Color.White
+            )
+        },
+        backHandler = {
+            NavigationBackButton(onClick = onBackHandler)
+        }
+    )
 }
 
 @Preview
