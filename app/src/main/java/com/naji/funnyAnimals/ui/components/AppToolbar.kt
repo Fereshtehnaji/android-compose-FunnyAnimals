@@ -1,31 +1,34 @@
 package com.naji.funnyAnimals.ui.components
 
-import androidx.compose.material.Icon
-import androidx.compose.material.IconButton
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowForward
+import androidx.compose.material.contentColorFor
+import androidx.compose.material.primarySurface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.dp
 import com.naji.funnyAnimals.ui.theme.LightBlue200
 
 @Composable
 fun AppToolbar(
     modifier: Modifier,
     title: String,
+    backgroundColor: Color = MaterialTheme.colors.primarySurface,
+    contentColor: Color = contentColorFor(backgroundColor),
     icon1: @Composable (() -> Unit)? = null,
     icon2: @Composable (() -> Unit)? = null,
     icon3: @Composable (() -> Unit)? = null,
     icon4: @Composable (() -> Unit)? = null,
-    backHandler: () -> Unit
-) {
+    backHandler: @Composable (() -> Unit)? = null,
 
-    RightTopAppBar(modifier = modifier,
-        backgroundColor = MaterialTheme.colors.primary,
-        contentColor = Color.White,
+    ) {
+
+    RightTopAppBar(
+        modifier = modifier,
+        backgroundColor = backgroundColor,
+        contentColor = contentColor,
         title = {
             Text(
                 text = title,
@@ -47,10 +50,9 @@ fun AppToolbar(
             icon4?.invoke()
         },
         navigationIcon = {
-            IconButton(onClick = {backHandler()}) {
-                Icon(Icons.Filled.ArrowForward, null)
-            }
-        }
+
+            backHandler?.invoke()
+        }, elevation = 0.dp
     )
 
 }

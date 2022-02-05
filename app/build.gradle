@@ -112,7 +112,7 @@ dependencies {
     annotationProcessor("androidx.lifecycle:lifecycle-compiler:$viewmodel_compose_version")
 
     // Kotlin
-    implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
+//    implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
     implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
 
     // Feature module Support
@@ -121,7 +121,9 @@ dependencies {
     // Testing Navigation
     androidTestImplementation("androidx.navigation:navigation-testing:$nav_version")
 
+    //in the one moment one of this api work--|
     implementation("androidx.navigation:navigation-compose:2.5.0-alpha01")
+//    implementation "com.google.accompanist:accompanist-navigation-animation:0.16.1"
 
 
     //sdp
@@ -131,4 +133,15 @@ dependencies {
     implementation "androidx.preference:preference-ktx:1.2.0"
     implementation "androidx.core:core-ktx:1.7.0"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+}
+
+
+// Compiler flag to use experimental Compose APIs
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
+    kotlinOptions {
+        jvmTarget = "1.8"
+        freeCompilerArgs += [
+                "-Xopt-in=kotlin.RequiresOptIn"
+        ]
+    }
 }

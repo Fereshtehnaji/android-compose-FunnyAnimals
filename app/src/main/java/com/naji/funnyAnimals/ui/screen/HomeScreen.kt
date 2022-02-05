@@ -1,6 +1,5 @@
 package com.naji.funnyAnimals.ui.screen
 
-import android.content.Context
 import androidx.compose.animation.animateColor
 import androidx.compose.animation.animateContentSize
 import androidx.compose.animation.core.*
@@ -13,31 +12,20 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Icon
-import androidx.compose.material.IconButton
 import androidx.compose.material.Text
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.MusicNote
-import androidx.compose.material.icons.filled.MusicOff
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
+import androidx.compose.runtime.*
 import androidx.compose.runtime.livedata.observeAsState
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -46,47 +34,20 @@ import androidx.navigation.NavController
 import com.naji.funnyAnimals.R
 import com.naji.funnyAnimals.data.CardHome
 import com.naji.funnyAnimals.data.HomeCardData
-import com.naji.funnyAnimals.data.animalenum.Language
-import com.naji.funnyAnimals.data.animalenum.ServiceCommand
+import com.naji.funnyAnimals.ui.components.AppToolbar
+import com.naji.funnyAnimals.ui.components.LanguageButton
+import com.naji.funnyAnimals.ui.components.MusicButton
 import com.naji.funnyAnimals.ui.theme.*
-import com.naji.funnyAnimals.ui.util.startMusicService
 import kotlinx.coroutines.delay
 
-@ExperimentalComposeUiApi
-@Preview
-@Composable
-fun PreviewHomeScreen() {
-    val context = LocalContext.current
-
-    Column(
-        horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = Modifier
-            .padding(dimensionResource(id = R.dimen._30sdp))
-            .fillMaxSize()
-    ) {
-        Header(
-            onClickMusicButton = {},
-            onClickLanguageButton = {},
-            true, "fa"
-        )
-
-        Spacer(modifier = Modifier.height(24.dp))
-
-        GridHome(HomeCardData.HomeCardList, navController = NavController(context))
-    }
-}
 @ExperimentalComposeUiApi
 @Composable
 fun HomeScreen(navController: NavController, viewModel: ViewModel) {
 
-    val topPadding = dimensionResource(R.dimen._16sdp)
-    val startPadding = dimensionResource(R.dimen._28sdp)
-    val endPadding = dimensionResource(R.dimen._28sdp)
 
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
-            .padding(top = topPadding, start = startPadding, end = endPadding)
             .fillMaxSize()
     ) {
 
@@ -117,39 +78,32 @@ fun Header(
     isMusicPlay: Boolean, language: String
 ) {
 
-    val context = LocalContext.current
+    val topPadding = dimensionResource(R.dimen._8sdp)
+    val startPadding = dimensionResource(R.dimen._8sdp)
+
 
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
-    )
-    {
-        Row(
-            modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.Start
-        ) {
+        modifier = Modifier.padding(top = topPadding, start = startPadding)
+    ) {
 
-
-            IconButton(onClick = {
-                onClickMusicButton() },
-            ) {
-                Icon(
-                    GetMusicIcon(isMusicPlay, context), null,
-                    tint = Green500,
+        AppToolbar(modifier = Modifier.height(dimensionResource(id = R.dimen._50sdp)),
+            title = "",
+            backgroundColor = White,
+            icon1 = {
+                MusicButton(
+                    onClick = { onClickMusicButton() },
+                    isMusicPlay, Green500
                 )
-            }
-
-
-            IconButton(onClick = {
-                onClickLanguageButton()
-            }) {
-                Icon(
-                    GetLanguageIcon(language = language), null,
-                    tint = Cyan500,
+            },
+            icon2 = {
+                LanguageButton(
+                    onClick = { onClickLanguageButton() },
+                    language = language, Cyan500
                 )
-            }
+            })
 
 
-        }
         Image(
             painter = painterResource(id = R.drawable.animal_lion),
             contentDescription = stringResource(R.string.content_description_main_icon),
@@ -191,7 +145,14 @@ enum class BounceState { Pressed, Released }
 @Composable
 fun GridHome(cardList: List<CardHome>, navController: NavController) {
 
-    LazyColumn {
+    val startPadding = dimensionResource(R.dimen._28sdp)
+    val endPadding = dimensionResource(R.dimen._28sdp)
+
+    LazyColumn(
+        modifier = Modifier
+            .padding(start = startPadding, end = endPadding)
+    ) {
+
         items(items = cardList.chunked(2)) { rowItems ->
             Row(
                 horizontalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen._16sdp)),
@@ -201,12 +162,15 @@ fun GridHome(cardList: List<CardHome>, navController: NavController) {
 
                     var currentState: BounceState by remember { mutableStateOf(BounceState.Released) }
 
-                    val transition = updateTransition(targetState = currentState, label = "animation")
+                    val transition =
+                        updateTransition(targetState = currentState, label = "animation")
                     val scale: Float by transition.animateFloat(
-                        transitionSpec = { tween(
-                            durationMillis = 50,
-                            easing = FastOutSlowInEasing
-                        ) }, label = ""
+                        transitionSpec = {
+                            tween(
+                                durationMillis = 50,
+                                easing = FastOutSlowInEasing
+                            )
+                        }, label = ""
                     ) { state ->
 
                         if (state == BounceState.Pressed) {
@@ -242,13 +206,13 @@ fun GridHome(cardList: List<CardHome>, navController: NavController) {
                                         currentState = BounceState.Released
                                         delay(100)
                                         navController.navigate(item.route)
-                                    },)
+                                    },
+                                )
                             }
-                            .scale(scale = scale)
+                            .scale(scale = scale),
+                        Alignment.Center,
 
-                        ,Alignment.Center,
-
-                    ) {
+                        ) {
 
                         HomeCard(item)
                     }
@@ -259,27 +223,6 @@ fun GridHome(cardList: List<CardHome>, navController: NavController) {
         }
 
     }
-}
-
-@Composable
-fun GetMusicIcon(musicPlay: Boolean, context: Context): ImageVector {
-
-    return if (musicPlay) {
-        context.startMusicService(ServiceCommand.START.nameType)
-        Icons.Filled.MusicNote
-    } else {
-        context.startMusicService(ServiceCommand.STOP.nameType)
-        Icons.Filled.MusicOff
-    }
-}
-
-@Composable
-fun GetLanguageIcon(language: String): ImageVector {
-
-    return if (language == Language.FA.nameType)
-        ImageVector.vectorResource(id = R.drawable.ic_fa)
-    else ImageVector.vectorResource(id = R.drawable.ic_en)
-
 }
 
 
@@ -323,3 +266,27 @@ fun HomeCard(cardHome: CardHome) {
     }
 }
 
+
+@ExperimentalComposeUiApi
+@Preview
+@Composable
+fun PreviewHomeScreen() {
+    val context = LocalContext.current
+
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = Modifier
+            .padding(dimensionResource(id = R.dimen._30sdp))
+            .fillMaxSize()
+    ) {
+        Header(
+            onClickMusicButton = {},
+            onClickLanguageButton = {},
+            true, "fa"
+        )
+
+        Spacer(modifier = Modifier.height(24.dp))
+
+        GridHome(HomeCardData.HomeCardList, navController = NavController(context))
+    }
+}

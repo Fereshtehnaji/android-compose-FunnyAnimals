@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -24,6 +25,7 @@ import com.naji.funnyAnimals.ui.theme.AnimalAppTheme
 import com.naji.funnyAnimals.ui.util.MusicService
 
 
+@ExperimentalComposeUiApi
 @ExperimentalFoundationApi
 class AnimalActivity : AppCompatActivity() {
 

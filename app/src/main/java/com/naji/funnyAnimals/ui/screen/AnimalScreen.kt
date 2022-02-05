@@ -4,34 +4,27 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
-import androidx.compose.material.Icon
-import androidx.compose.material.IconButton
 import androidx.compose.material.Surface
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.MusicNote
-import androidx.compose.material.icons.filled.MusicOff
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.LifecycleOwner
 import com.naji.funnyAnimals.R
 import com.naji.funnyAnimals.data.Animal
 import com.naji.funnyAnimals.data.AnimalData
-import com.naji.funnyAnimals.data.animalenum.Language
-import com.naji.funnyAnimals.data.animalenum.ServiceCommand
 import com.naji.funnyAnimals.ui.components.AppToolbar
+import com.naji.funnyAnimals.ui.components.LanguageButton
+import com.naji.funnyAnimals.ui.components.MusicButton
+import com.naji.funnyAnimals.ui.components.NavigationBackButton
 import com.naji.funnyAnimals.ui.util.HandleResourceOnLifeCycle
-import com.naji.funnyAnimals.ui.util.startMusicService
 
 
 const val SCREEN_CONST = 120
@@ -64,18 +57,21 @@ fun NavigateScreen(
             AppToolbar(modifier = Modifier.height(dimensionResource(id = R.dimen._50sdp)),
                 title = title,
                 icon1 = {
-                    MusicIcon(
+                    MusicButton(
                         { viewModel.musicButtonHandler() },
-                        isMusicPlay
+                        isMusicPlay,Color.White
                     )
                 },
                 icon2 = {
-                    LanguageIcon(
-                        onEventHandler = { viewModel.languageButtonHandler() },
-                        language = languageLabel
+                    LanguageButton(
+                        onClick = { viewModel.languageButtonHandler() },
+                        language = languageLabel,Color.White
                     )
                 },
-                backHandler = { onBackHandler() })
+                backHandler = {
+                    NavigationBackButton(onClick = onBackHandler)
+                }
+            )
             AnimalGrid(animals = items, onClickHandler = { viewModel.clickHandler(it) })
         }
 
@@ -89,48 +85,6 @@ fun PreviewAnimalGrid() {
     AnimalGrid(animals = AnimalData.AnimalData, onClickHandler = {})
 }
 
-
-@Composable
-fun MusicIcon(onEventHandler: () -> Unit, isMusicPlay: Boolean) {
-
-    val context = LocalContext.current
-
-    val icon = if (isMusicPlay) {
-        context.startMusicService(ServiceCommand.START.nameType)
-        Icons.Filled.MusicNote
-    } else {
-        context.startMusicService(ServiceCommand.STOP.nameType)
-        Icons.Filled.MusicOff
-    }
-    IconButton(onClick = {
-        onEventHandler()
-//        onEventHandler.invoke(NewGameEvent.OnDonePressed)
-    }) {
-        Icon(
-            icon,
-            "",
-            tint = Color.White,
-        )
-    }
-}
-
-@Composable
-fun LanguageIcon(onEventHandler: () -> Unit, language: String) {
-    val icon = if (language == Language.FA.nameType) {
-        ImageVector.vectorResource(id = R.drawable.ic_fa)
-    } else {
-        ImageVector.vectorResource(id = R.drawable.ic_en)
-    }
-    IconButton(onClick = {
-        onEventHandler()
-    }) {
-        Icon(
-            icon,
-            "",
-            tint = Color.White,
-        )
-    }
-}
 
 
 
