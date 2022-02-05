@@ -43,7 +43,7 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
         changeAnimation(item)
     }
 
-    fun musicIconClickHandler() {
+    fun musicButtonHandler() {
 
         val musicStatus = isMusicPlaying()
         _backgroundMusicPlaying.value = !musicStatus
@@ -60,7 +60,7 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
     }
 
 
-    fun languageIconHandler() {
+    fun languageButtonHandler() {
         val appLanguage = getLanguageOfApp()
         val changedLanguage = if (appLanguage == Language.FA.nameType)
             Language.EN.nameType

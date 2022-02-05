@@ -8,10 +8,8 @@ import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
 import androidx.compose.material.Surface
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.GTranslate
 import androidx.compose.material.icons.filled.MusicNote
 import androidx.compose.material.icons.filled.MusicOff
-import androidx.compose.material.icons.filled.Translate
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
@@ -25,7 +23,6 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import androidx.lifecycle.LifecycleOwner
 import com.naji.funnyAnimals.R
 import com.naji.funnyAnimals.data.Animal
@@ -68,13 +65,13 @@ fun NavigateScreen(
                 title = title,
                 icon1 = {
                     MusicIcon(
-                        { viewModel.musicIconClickHandler() },
+                        { viewModel.musicButtonHandler() },
                         isMusicPlay
                     )
                 },
                 icon2 = {
                     LanguageIcon(
-                        onEventHandler = { viewModel.languageIconHandler() },
+                        onEventHandler = { viewModel.languageButtonHandler() },
                         language = languageLabel
                     )
                 },

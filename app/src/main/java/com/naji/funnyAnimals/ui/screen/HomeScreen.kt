@@ -1,10 +1,13 @@
 package com.naji.funnyAnimals.ui.screen
 
 import android.content.Context
+import androidx.compose.animation.animateColor
 import androidx.compose.animation.animateContentSize
+import androidx.compose.animation.core.*
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -19,11 +22,17 @@ import androidx.compose.material.icons.filled.MusicOff
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
@@ -41,8 +50,9 @@ import com.naji.funnyAnimals.data.animalenum.Language
 import com.naji.funnyAnimals.data.animalenum.ServiceCommand
 import com.naji.funnyAnimals.ui.theme.*
 import com.naji.funnyAnimals.ui.util.startMusicService
+import kotlinx.coroutines.delay
 
-
+@ExperimentalComposeUiApi
 @Preview
 @Composable
 fun PreviewHomeScreen() {
@@ -51,12 +61,12 @@ fun PreviewHomeScreen() {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
-            .padding(30.dp)
+            .padding(dimensionResource(id = R.dimen._30sdp))
             .fillMaxSize()
     ) {
         Header(
-            musicIconClick = {},
-            languageIconClick = {},
+            onClickMusicButton = {},
+            onClickLanguageButton = {},
             true, "fa"
         )
 
@@ -65,7 +75,7 @@ fun PreviewHomeScreen() {
         GridHome(HomeCardData.HomeCardList, navController = NavController(context))
     }
 }
-
+@ExperimentalComposeUiApi
 @Composable
 fun HomeScreen(navController: NavController, viewModel: ViewModel) {
 
@@ -81,12 +91,15 @@ fun HomeScreen(navController: NavController, viewModel: ViewModel) {
     ) {
 
 
-        val isMusicPlay: Boolean by viewModel.backgroundMusicPlaying.observeAsState(initial = viewModel.isMusicPlaying())
-        val languageLabel: String by viewModel.appLanguage.observeAsState(initial = viewModel.getLanguageOfApp())
+        val isMusicPlay: Boolean by
+        viewModel.backgroundMusicPlaying.observeAsState(initial = viewModel.isMusicPlaying())
+
+        val languageLabel: String by
+        viewModel.appLanguage.observeAsState(initial = viewModel.getLanguageOfApp())
 
         Header(
-            musicIconClick = { viewModel.musicIconClickHandler() },
-            languageIconClick = { viewModel.languageIconHandler() },
+            onClickMusicButton = { viewModel.musicButtonHandler() },
+            onClickLanguageButton = { viewModel.languageButtonHandler() },
             isMusicPlay, languageLabel
         )
 
@@ -96,10 +109,11 @@ fun HomeScreen(navController: NavController, viewModel: ViewModel) {
     }
 }
 
+
 @Composable
 fun Header(
-    musicIconClick: () -> Unit,
-    languageIconClick: () -> Unit,
+    onClickMusicButton: () -> Unit,
+    onClickLanguageButton: () -> Unit,
     isMusicPlay: Boolean, language: String
 ) {
 
@@ -116,7 +130,7 @@ fun Header(
 
 
             IconButton(onClick = {
-                musicIconClick() },
+                onClickMusicButton() },
             ) {
                 Icon(
                     GetMusicIcon(isMusicPlay, context), null,
@@ -126,7 +140,7 @@ fun Header(
 
 
             IconButton(onClick = {
-                languageIconClick()
+                onClickLanguageButton()
             }) {
                 Icon(
                     GetLanguageIcon(language = language), null,
@@ -170,6 +184,10 @@ fun Header(
     }
 }
 
+enum class BounceState { Pressed, Released }
+
+
+@ExperimentalComposeUiApi
 @Composable
 fun GridHome(cardList: List<CardHome>, navController: NavController) {
 
@@ -180,18 +198,56 @@ fun GridHome(cardList: List<CardHome>, navController: NavController) {
             )
             {
                 for (item in rowItems) {
+
+                    var currentState: BounceState by remember { mutableStateOf(BounceState.Released) }
+
+                    val transition = updateTransition(targetState = currentState, label = "animation")
+                    val scale: Float by transition.animateFloat(
+                        transitionSpec = { tween(
+                            durationMillis = 50,
+                            easing = FastOutSlowInEasing
+                        ) }, label = ""
+                    ) { state ->
+
+                        if (state == BounceState.Pressed) {
+                            0.80f
+
+                        } else {
+                            1f
+                        }
+                    }
+
+                    val backColor: Color by transition.animateColor(
+                        transitionSpec = { spring(stiffness = 900f) }, label = ""
+                    ) { state ->
+
+                        if (state == BounceState.Pressed) {
+                            item.backgroundDark
+
+                        } else {
+                            item.background
+                        }
+                    }
                     Box(
                         modifier = Modifier
                             .animateContentSize()
                             .weight(1f)
-                            .background(
-                                color = item.background,
-                                shape = RoundedCornerShape(20.dp)
-                            )
-                            .clickable {
-                                navController.navigate(item.route)
-                            },
-                        Alignment.Center
+                            .background(color = backColor, shape = RoundedCornerShape(20.dp))
+                            .clickable { navController.navigate(item.route) }
+                            .pointerInput(Unit) {
+                                detectTapGestures(
+                                    onPress = {
+                                        currentState = BounceState.Pressed
+                                        tryAwaitRelease()
+                                        currentState = BounceState.Released
+                                        delay(100)
+                                        navController.navigate(item.route)
+                                    },)
+                            }
+                            .scale(scale = scale)
+
+                        ,Alignment.Center,
+
                     ) {
 
                         HomeCard(item)
