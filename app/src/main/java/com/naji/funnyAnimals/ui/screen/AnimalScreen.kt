@@ -21,6 +21,7 @@ import androidx.lifecycle.LifecycleOwner
 import com.naji.funnyAnimals.R
 import com.naji.funnyAnimals.data.Animal
 import com.naji.funnyAnimals.data.AnimalData
+import com.naji.funnyAnimals.data.animalenum.TYPE
 import com.naji.funnyAnimals.ui.components.AppToolbar
 import com.naji.funnyAnimals.ui.components.LanguageButton
 import com.naji.funnyAnimals.ui.components.MusicButton
@@ -36,7 +37,8 @@ fun NavigateScreen(
     lifecycleOwner: LifecycleOwner = LocalLifecycleOwner.current,
     onBackHandler: () -> Unit,
     title: String,
-    backgroundImageId: Int
+    backgroundImageId: Int,
+    type: TYPE
 ) {
     val context = LocalContext.current
     HandleResourceOnLifeCycle(lifecycleOwner, {}, { stopSound(context) })
@@ -56,7 +58,7 @@ fun NavigateScreen(
 
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
 
-            ShowToolbar(viewModel, title, isMusicPlay, languageLabel, onBackHandler)
+            ShowToolbar(viewModel, title, isMusicPlay, languageLabel, onBackHandler,type)
 
             AnimalGrid(animals = items, onClickHandler = { viewModel.clickHandler(it) })
         }
@@ -68,7 +70,7 @@ fun NavigateScreen(
 @Composable
 fun ShowToolbar(
     viewModel: ViewModel, title: String, isMusicPlay: Boolean,
-    languageLabel: String, onBackHandler: () -> Unit
+    languageLabel: String, onBackHandler: () -> Unit,type:TYPE
 ) {
 
     AppToolbar(modifier = Modifier.height(dimensionResource(id = R.dimen._50sdp)),
@@ -81,7 +83,7 @@ fun ShowToolbar(
         },
         icon2 = {
             LanguageButton(
-                onClick = { viewModel.languageButtonHandler() },
+                onClick = { viewModel.changeListLanguage(type) },
                 language = languageLabel, Color.White
             )
         },

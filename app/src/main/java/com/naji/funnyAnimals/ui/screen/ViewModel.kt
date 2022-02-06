@@ -15,6 +15,7 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
     private var _animalItems = MutableLiveData(listOf<Animal>())
     val animalItems: LiveData<List<Animal>> = _animalItems
 
+
     val backgroundMusicPlaying: LiveData<Boolean> by lazy { _backgroundMusicPlaying }
     private var _backgroundMusicPlaying: MutableLiveData<Boolean> = MutableLiveData()
 
@@ -59,7 +60,6 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
         pref.saveMusicBackgroundStatus(isPlay)
     }
 
-
     fun languageButtonHandler() {
         val appLanguage = getLanguageOfApp()
         val changedLanguage = if (appLanguage == Language.FA.nameType)
@@ -67,6 +67,11 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
         else Language.FA.nameType
         _appLanguage.value = changedLanguage
         saveLanguageStatus(changedLanguage)
+    }
+
+    fun changeListLanguage(type:TYPE) {
+        languageButtonHandler()
+        init(type = type)
     }
 
     fun getLanguageOfApp(): String {

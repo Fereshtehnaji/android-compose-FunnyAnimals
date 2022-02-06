@@ -201,8 +201,8 @@ object AnimalData {
         Animal(
             R.drawable.animal_cat2,
             "گربه",
-            R.raw.animal_cat_fa,
-            R.drawable.label_animal_cat,
+            R.raw.animal_cat_en,
+            R.drawable.label_animal_dog,
             false
         ),
         Animal(

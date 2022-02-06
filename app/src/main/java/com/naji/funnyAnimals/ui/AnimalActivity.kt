@@ -73,7 +73,7 @@ class AnimalActivity : AppCompatActivity() {
                 NavigateScreen(
                     viewModel,
                     LocalLifecycleOwner.current,
-                    { navController.navigateUp() }, title, backgroundImageId
+                    { navController.navigateUp() }, title, backgroundImageId,TYPE.BIRD
                 )
             }
 
@@ -87,7 +87,7 @@ class AnimalActivity : AppCompatActivity() {
                 NavigateScreen(
                     viewModel,
                     LocalLifecycleOwner.current,
-                    { navController.navigateUp() }, title, backgroundImageId
+                    { navController.navigateUp() }, title, backgroundImageId,TYPE.ANIMAL
                 )
             }
 
@@ -100,7 +100,7 @@ class AnimalActivity : AppCompatActivity() {
                 NavigateScreen(
                     viewModel,
                     LocalLifecycleOwner.current,
-                    { navController.navigateUp() }, title, backgroundImageId
+                    { navController.navigateUp() }, title, backgroundImageId,TYPE.BUG
                 )
             }
 
@@ -113,7 +113,7 @@ class AnimalActivity : AppCompatActivity() {
                 NavigateScreen(
                     viewModel,
                     LocalLifecycleOwner.current,
-                    { navController.navigateUp() }, title, backgroundImageId
+                    { navController.navigateUp() }, title, backgroundImageId,TYPE.AQUATIC
                 )
             }
         }

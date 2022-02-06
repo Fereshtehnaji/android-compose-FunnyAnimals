@@ -46,7 +46,6 @@ fun HomeScreen(navController: NavController, viewModel: ViewModel) {
 
 
     Column(
-        horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
             .fillMaxSize()
     ) {
@@ -78,13 +77,9 @@ fun Header(
     isMusicPlay: Boolean, language: String
 ) {
 
-    val topPadding = dimensionResource(R.dimen._8sdp)
-    val startPadding = dimensionResource(R.dimen._8sdp)
-
 
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = Modifier.padding(top = topPadding, start = startPadding)
     ) {
 
         AppToolbar(modifier = Modifier.height(dimensionResource(id = R.dimen._50sdp)),
@@ -229,10 +224,10 @@ fun GridHome(cardList: List<CardHome>, navController: NavController) {
 @Composable
 fun HomeCard(cardHome: CardHome) {
 
-    val verySmallPadding = dimensionResource(R.dimen._4sdp)
+//    val verySmallPadding = dimensionResource(R.dimen._4sdp)
     val mediumPadding = dimensionResource(R.dimen._6sdp)
     val largePadding = dimensionResource(R.dimen._14sdp)
-    val imageSize = dimensionResource(R.dimen._70sdp)
+    val imageSize = dimensionResource(R.dimen._60sdp)
 
 
     Column(
@@ -249,7 +244,8 @@ fun HomeCard(cardHome: CardHome) {
                 .size(imageSize)
                 .clip(CircleShape)
                 .background(cardHome.backgroundIcon)
-                .padding(bottom = verySmallPadding)
+                .padding(all = dimensionResource(R.dimen._10sdp))
+
         )
         Spacer(modifier = Modifier.height(mediumPadding))
 
