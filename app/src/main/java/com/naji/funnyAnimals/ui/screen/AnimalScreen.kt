@@ -37,7 +37,7 @@ fun NavigateScreen(
     lifecycleOwner: LifecycleOwner = LocalLifecycleOwner.current,
     onBackHandler: () -> Unit,
     title: String,
-    backgroundImageId: Int,
+    backgroundImageId: Int?,
     type: TYPE
 ) {
     val context = LocalContext.current
@@ -45,12 +45,13 @@ fun NavigateScreen(
 
 
     Surface {
-        Image(
-            painter = painterResource(id = backgroundImageId),
-            contentDescription = null,
-            modifier = Modifier.fillMaxSize(),
-            contentScale = ContentScale.Crop
-        )
+        if (backgroundImageId != null)
+            Image(
+                painter = painterResource(id = backgroundImageId),
+                contentDescription = null,
+                modifier = Modifier.fillMaxSize(),
+                contentScale = ContentScale.Crop
+            )
 
         val items: List<Animal> by viewModel.animalItems.observeAsState(listOf())
         val isMusicPlay: Boolean by viewModel.backgroundMusicPlaying.observeAsState(initial = viewModel.isMusicPlaying())
@@ -58,9 +59,9 @@ fun NavigateScreen(
 
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
 
-            ShowToolbar(viewModel, title, isMusicPlay, languageLabel, onBackHandler,type)
+            ShowToolbar(viewModel, title, isMusicPlay, languageLabel, onBackHandler, type)
 
-            AnimalGrid(animals = items, onClickHandler = { viewModel.clickHandler(it) })
+            AnimalGrid(animals = items, onClickHandler = { viewModel.clickHandler(it) }, type)
         }
 
 
@@ -70,7 +71,7 @@ fun NavigateScreen(
 @Composable
 fun ShowToolbar(
     viewModel: ViewModel, title: String, isMusicPlay: Boolean,
-    languageLabel: String, onBackHandler: () -> Unit,type:TYPE
+    languageLabel: String, onBackHandler: () -> Unit, type: TYPE
 ) {
 
     AppToolbar(modifier = Modifier.height(dimensionResource(id = R.dimen._50sdp)),
@@ -96,7 +97,7 @@ fun ShowToolbar(
 @Preview
 @Composable
 fun PreviewAnimalGrid() {
-    AnimalGrid(animals = AnimalData.AnimalData, onClickHandler = {})
+    AnimalGrid(animals = AnimalData.AnimalData, onClickHandler = {}, TYPE.ANIMAL)
 }
 
 

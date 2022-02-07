@@ -7,19 +7,20 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
-import androidx.compose.ui.unit.dp
 import com.naji.funnyAnimals.R
 import com.naji.funnyAnimals.data.Animal
+import com.naji.funnyAnimals.data.animalenum.TYPE
 
 
 @Composable
-fun AnimalGrid(animals: List<Animal>, onClickHandler: (Animal) -> Unit) {
+fun AnimalGrid(animals: List<Animal>, onClickHandler: (Animal) -> Unit, type: TYPE) {
 
     val numberOfItemsByRow = GetScreenWidth() / SCREEN_CONST
 
 
     LazyColumn(
-        horizontalAlignment = Alignment.CenterHorizontally
+        horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = Modifier.fillMaxSize()
     ) {
 
 
@@ -30,10 +31,10 @@ fun AnimalGrid(animals: List<Animal>, onClickHandler: (Animal) -> Unit) {
             Row(
                 horizontalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen._18sdp)),
 
-            ) {
+                ) {
 
                 for (animal in rowItems) {
-                    AnimalItem(animal = animal, onClickHandler)
+                    AnimalItem(animal = animal, onClickHandler, type)
                 }
             }
         }

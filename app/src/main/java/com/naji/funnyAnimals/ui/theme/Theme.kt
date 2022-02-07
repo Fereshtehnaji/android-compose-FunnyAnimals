@@ -31,7 +31,7 @@ private val LightColors = lightColors(
     secondaryVariant = Orange900,
     onSecondary = Color.White,
     error = Red800,
-    surface = Green200
+    surface = White
 )
 
 private val DarkColors = darkColors(
@@ -41,7 +41,7 @@ private val DarkColors = darkColors(
     secondary = Orange300,
     onSecondary = Color.Black,
     error = Red200,
-    surface = Green200
+    surface = White
 
 )
 

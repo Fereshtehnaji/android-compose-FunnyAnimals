@@ -95,12 +95,15 @@ class AnimalActivity : AppCompatActivity() {
 
                 viewModel.init(TYPE.BUG)
                 val title = stringResource(id = R.string.bugs_title)
-                val backgroundImageId = R.drawable.back_birds3
+//                val backgroundImageId = R.drawable.back_birds3
 
                 NavigateScreen(
                     viewModel,
                     LocalLifecycleOwner.current,
-                    { navController.navigateUp() }, title, backgroundImageId,TYPE.BUG
+                    { navController.navigateUp() },
+                    title,
+                    null,
+                    TYPE.BUG
                 )
             }
 

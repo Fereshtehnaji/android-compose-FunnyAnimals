@@ -1,6 +1,7 @@
 package com.naji.funnyAnimals.data
 
 import com.naji.funnyAnimals.R
+import com.naji.funnyAnimals.data.animalenum.TYPE
 
 object AnimalData {
 
@@ -10,6 +11,7 @@ object AnimalData {
             "گوسفند",
             R.raw.animal_sheep_fa,
             R.drawable.label_animal_sheep,
+            TYPE.ANIMAL,
             false
         ),
         Animal(
@@ -17,6 +19,7 @@ object AnimalData {
             "گاو",
             R.raw.animal_cow_fa,
             R.drawable.label_animal_cow,
+            TYPE.ANIMAL,
             false
         ),
         Animal(
@@ -24,13 +27,23 @@ object AnimalData {
             "گربه",
             R.raw.animal_cat_fa,
             R.drawable.label_animal_cat,
+            TYPE.ANIMAL,
+            false
+        ),
+        Animal(
+            R.drawable.animal_chicken,
+            "مرغ",
+            R.raw.animal_chiken_fa,
+            R.drawable.label_animal_chicken,
+            TYPE.ANIMAL,
             false
         ),
         Animal(
             R.drawable.animal_mouse,
             "موش",
-            R.raw.animal_cat_fa,
+            R.raw.animal_mouse_fa,
             R.drawable.label_animal_mouse,
+            TYPE.ANIMAL,
             false
         ),
         Animal(
@@ -38,6 +51,7 @@ object AnimalData {
             "خرگوش",
             R.raw.animal_cat_fa,
             R.drawable.label_animal_rabbit,
+            TYPE.ANIMAL,
             false
         ),
         Animal(
@@ -45,6 +59,7 @@ object AnimalData {
             "سگ",
             R.raw.animal_dog_fa,
             R.drawable.label_animal_dog,
+            TYPE.ANIMAL,
             false
         ),
         Animal(
@@ -52,6 +67,7 @@ object AnimalData {
             "فیل",
             R.raw.animal_elephant_fa,
             R.drawable.label_animal_elephant,
+            TYPE.ANIMAL,
             false
         ),
         Animal(
@@ -59,6 +75,7 @@ object AnimalData {
             "تمساح",
             R.raw.animal_cat_fa,
             R.drawable.label_animal_fox,
+            TYPE.ANIMAL,
             false
         ),
         Animal(
@@ -66,6 +83,7 @@ object AnimalData {
             "خفاش",
             R.raw.animal_cat_fa,
             R.drawable.label_animal_fox,
+            TYPE.ANIMAL,
             false
         ),
         Animal(
@@ -73,6 +91,7 @@ object AnimalData {
             "خرس",
             R.raw.animal_cat_fa,
             R.drawable.label_animal_fox,
+            TYPE.ANIMAL,
             false
         ),
         Animal(
@@ -80,6 +99,7 @@ object AnimalData {
             "کوآلا",
             R.raw.animal_cat_fa,
             R.drawable.label_animal_fox,
+            TYPE.ANIMAL,
             false
         ),
         Animal(
@@ -87,6 +107,7 @@ object AnimalData {
             "زرافه",
             R.raw.animal_cat_fa,
             R.drawable.label_animal_fox,
+            TYPE.ANIMAL,
             false
         ),
         Animal(
@@ -94,6 +115,7 @@ object AnimalData {
             "روباه",
             R.raw.animal_fox_fa,
             R.drawable.label_animal_fox,
+            TYPE.ANIMAL,
             false
         ),
         Animal(
@@ -101,6 +123,7 @@ object AnimalData {
             "ماهی",
             R.raw.animal_cat_fa,
             R.drawable.label_animal_fox,
+            TYPE.ANIMAL,
             false
         ),
         Animal(
@@ -108,6 +131,7 @@ object AnimalData {
             "شیر",
             R.raw.animal_lion_en,
             R.drawable.label_animal_lion,
+            TYPE.ANIMAL,
             false
         ),
         Animal(
@@ -115,6 +139,7 @@ object AnimalData {
             "پلنگ",
             R.raw.animal_cat_fa,
             R.drawable.label_animal_fox,
+            TYPE.ANIMAL,
             false
         ),
         Animal(
@@ -122,6 +147,7 @@ object AnimalData {
             "کرگدن",
             R.raw.animal_rhino_fa,
             R.drawable.label_animal_fox,
+            TYPE.ANIMAL,
             false
         ),
         Animal(
@@ -129,6 +155,7 @@ object AnimalData {
             "پاندا",
             R.raw.animal_panda_fa,
             R.drawable.label_animal_fox,
+            TYPE.ANIMAL,
             false
         ),
         Animal(
@@ -136,6 +163,7 @@ object AnimalData {
             "ببر",
             R.raw.animal_tiger_fa,
             R.drawable.label_animal_tiger,
+            TYPE.ANIMAL,
             false
         ),
         Animal(
@@ -143,6 +171,7 @@ object AnimalData {
             "گورخر",
             R.raw.animal_zebra_fa,
             R.drawable.label_animal_fox,
+            TYPE.ANIMAL,
             false
         ),
         Animal(
@@ -150,6 +179,7 @@ object AnimalData {
             "کانگورو",
             R.raw.animal_cat_fa,
             R.drawable.label_animal_fox,
+            TYPE.ANIMAL,
             false
         ),
         Animal(
@@ -157,6 +187,7 @@ object AnimalData {
             "یونیکرن",
             R.raw.animal_cat_fa,
             R.drawable.label_animal_fox,
+            TYPE.ANIMAL,
             false
         ),
         Animal(
@@ -164,6 +195,7 @@ object AnimalData {
             "آفتاب پرست",
             R.raw.animal_cat_fa,
             R.drawable.label_animal_fox,
+            TYPE.ANIMAL,
             false
         ),
         Animal(
@@ -171,6 +203,7 @@ object AnimalData {
             "میمون",
             R.raw.animal_monkey_fa,
             R.drawable.label_animal_fox,
+            TYPE.ANIMAL,
             false
         ),
         Animal(
@@ -178,6 +211,7 @@ object AnimalData {
             "راکون",
             R.raw.animal_monkey_fa,
             R.drawable.label_animal_fox,
+            TYPE.ANIMAL,
             false
         ),
 
@@ -189,6 +223,7 @@ object AnimalData {
             "گوسفند",
             R.raw.animal_sheep_fa,
             R.drawable.label_animal_sheep,
+            TYPE.ANIMAL,
             false
         ),
         Animal(
@@ -196,6 +231,7 @@ object AnimalData {
             "گاو",
             R.raw.animal_cow_fa,
             R.drawable.label_animal_cow,
+            TYPE.ANIMAL,
             false
         ),
         Animal(
@@ -203,13 +239,23 @@ object AnimalData {
             "گربه",
             R.raw.animal_cat_en,
             R.drawable.label_animal_dog,
+            TYPE.ANIMAL,
+            false
+        ),
+        Animal(
+            R.drawable.animal_chicken,
+            "مرغ",
+            R.raw.animal_chiken_en,
+            R.drawable.label_animal_chicken,
+            TYPE.ANIMAL,
             false
         ),
         Animal(
             R.drawable.animal_mouse,
             "موش",
-            R.raw.animal_cat_fa,
+            R.raw.animal_mouse_en,
             R.drawable.label_animal_mouse,
+            TYPE.ANIMAL,
             false
         ),
         Animal(
@@ -217,6 +263,7 @@ object AnimalData {
             "خرگوش",
             R.raw.animal_cat_fa,
             R.drawable.label_animal_rabbit,
+            TYPE.ANIMAL,
             false
         ),
         Animal(
@@ -224,6 +271,7 @@ object AnimalData {
             "سگ",
             R.raw.animal_dog_fa,
             R.drawable.label_animal_dog,
+            TYPE.ANIMAL,
             false
         ),
         Animal(
@@ -231,6 +279,7 @@ object AnimalData {
             "فیل",
             R.raw.animal_elephant_fa,
             R.drawable.label_animal_elephant,
+            TYPE.ANIMAL,
             false
         ),
         Animal(
@@ -238,6 +287,7 @@ object AnimalData {
             "تمساح",
             R.raw.animal_cat_fa,
             R.drawable.label_animal_fox,
+            TYPE.ANIMAL,
             false
         ),
         Animal(
@@ -245,6 +295,7 @@ object AnimalData {
             "خفاش",
             R.raw.animal_cat_fa,
             R.drawable.label_animal_fox,
+            TYPE.ANIMAL,
             false
         ),
         Animal(
@@ -252,6 +303,7 @@ object AnimalData {
             "خرس",
             R.raw.animal_cat_fa,
             R.drawable.label_animal_fox,
+            TYPE.ANIMAL,
             false
         ),
         Animal(
@@ -259,6 +311,7 @@ object AnimalData {
             "کوآلا",
             R.raw.animal_cat_fa,
             R.drawable.label_animal_fox,
+            TYPE.ANIMAL,
             false
         ),
         Animal(
@@ -266,6 +319,7 @@ object AnimalData {
             "زرافه",
             R.raw.animal_cat_fa,
             R.drawable.label_animal_fox,
+            TYPE.ANIMAL,
             false
         ),
         Animal(
@@ -273,6 +327,7 @@ object AnimalData {
             "روباه",
             R.raw.animal_fox_fa,
             R.drawable.label_animal_fox,
+            TYPE.ANIMAL,
             false
         ),
         Animal(
@@ -280,6 +335,7 @@ object AnimalData {
             "ماهی",
             R.raw.animal_cat_fa,
             R.drawable.label_animal_fox,
+            TYPE.ANIMAL,
             false
         ),
         Animal(
@@ -287,6 +343,7 @@ object AnimalData {
             "شیر",
             R.raw.animal_lion_en,
             R.drawable.label_animal_lion,
+            TYPE.ANIMAL,
             false
         ),
         Animal(
@@ -294,6 +351,7 @@ object AnimalData {
             "پلنگ",
             R.raw.animal_cat_fa,
             R.drawable.label_animal_fox,
+            TYPE.ANIMAL,
             false
         ),
         Animal(
@@ -301,6 +359,7 @@ object AnimalData {
             "کرگدن",
             R.raw.animal_rhino_fa,
             R.drawable.label_animal_fox,
+            TYPE.ANIMAL,
             false
         ),
         Animal(
@@ -308,6 +367,7 @@ object AnimalData {
             "پاندا",
             R.raw.animal_panda_fa,
             R.drawable.label_animal_fox,
+            TYPE.ANIMAL,
             false
         ),
         Animal(
@@ -315,6 +375,7 @@ object AnimalData {
             "ببر",
             R.raw.animal_tiger_fa,
             R.drawable.label_animal_tiger,
+            TYPE.ANIMAL,
             false
         ),
         Animal(
@@ -322,6 +383,7 @@ object AnimalData {
             "گورخر",
             R.raw.animal_zebra_fa,
             R.drawable.label_animal_fox,
+            TYPE.ANIMAL,
             false
         ),
         Animal(
@@ -329,6 +391,7 @@ object AnimalData {
             "کانگورو",
             R.raw.animal_cat_fa,
             R.drawable.label_animal_fox,
+            TYPE.ANIMAL,
             false
         ),
         Animal(
@@ -336,6 +399,7 @@ object AnimalData {
             "یونیکرن",
             R.raw.animal_cat_fa,
             R.drawable.label_animal_fox,
+            TYPE.ANIMAL,
             false
         ),
         Animal(
@@ -343,6 +407,7 @@ object AnimalData {
             "آفتاب پرست",
             R.raw.animal_cat_fa,
             R.drawable.label_animal_fox,
+            TYPE.ANIMAL,
             false
         ),
         Animal(
@@ -350,6 +415,7 @@ object AnimalData {
             "میمون",
             R.raw.animal_monkey_fa,
             R.drawable.label_animal_fox,
+            TYPE.ANIMAL,
             false
         ),
         Animal(
@@ -357,6 +423,7 @@ object AnimalData {
             "راکون",
             R.raw.animal_monkey_fa,
             R.drawable.label_animal_fox,
+            TYPE.ANIMAL,
             false
         ),
 
@@ -368,14 +435,17 @@ object AnimalData {
             "مورچه",
             R.raw.animal_sheep_fa,
             R.drawable.label_bug_ant,
+            TYPE.BUG,
             false
         ),
-        Animal(R.drawable.bug_bee, "زنبور", R.raw.insect_bee_fa, R.drawable.label_bug_bee, false),
+        Animal(R.drawable.bug_bee, "زنبور", R.raw.insect_bee_fa, R.drawable.label_bug_bee,  TYPE.BUG,
+            false),
         Animal(
             R.drawable.bug_centiped,
             "هزارپا",
             R.raw.animal_cat_fa,
             R.drawable.label_bug_centiped,
+            TYPE.BUG,
             false
         ),
         Animal(
@@ -383,6 +453,7 @@ object AnimalData {
             "سوسک",
             R.raw.animal_cat_fa,
             R.drawable.label_bug_cockroach,
+            TYPE.BUG,
             false
         ),
         Animal(
@@ -390,6 +461,7 @@ object AnimalData {
             "جیرجیرک",
             R.raw.animal_cat_fa,
             R.drawable.label_bug_cricket,
+            TYPE.BUG,
             false
         ),
         Animal(
@@ -397,14 +469,17 @@ object AnimalData {
             "سنجاقک",
             R.raw.animal_cat_fa,
             R.drawable.label_bug_dragonfly,
+            TYPE.BUG,
             false
         ),
-        Animal(R.drawable.bug_fly, "مگس", R.raw.animal_cat_fa, R.drawable.label_bug_fly, false),
+        Animal(R.drawable.bug_fly, "مگس", R.raw.animal_cat_fa, R.drawable.label_bug_fly,  TYPE.BUG,
+            false),
         Animal(
             R.drawable.bug_locust,
             "ملخ",
             R.raw.animal_cat_fa,
             R.drawable.label_bug_locust,
+            TYPE.BUG,
             false
         ),
         Animal(
@@ -412,6 +487,7 @@ object AnimalData {
             "کرم ابریشم",
             R.raw.animal_cat_fa,
             R.drawable.label_bug_silkworm,
+            TYPE.ANIMAL,
             false
         ),
         Animal(
@@ -419,6 +495,7 @@ object AnimalData {
             "حلزون",
             R.raw.animal_cat_fa,
             R.drawable.label_bug_snail,
+            TYPE.BUG,
             false
         ),
         Animal(
@@ -426,6 +503,7 @@ object AnimalData {
             "عنکبوت",
             R.raw.animal_fox_fa,
             R.drawable.label_bug_spider,
+            TYPE.BUG,
             false
         ),
 
@@ -438,14 +516,17 @@ object AnimalData {
             "مورچه",
             R.raw.animal_sheep_fa,
             R.drawable.label_bug_ant,
+            TYPE.BUG,
             false
         ),
-        Animal(R.drawable.bug_bee, "زنبور", R.raw.insect_bee_fa, R.drawable.label_bug_bee, false),
+        Animal(R.drawable.bug_bee, "زنبور", R.raw.insect_bee_fa, R.drawable.label_bug_bee, TYPE.BUG,
+            false),
         Animal(
             R.drawable.bug_centiped,
             "هزارپا",
             R.raw.animal_cat_fa,
             R.drawable.label_bug_centiped,
+            TYPE.BUG,
             false
         ),
         Animal(
@@ -453,6 +534,7 @@ object AnimalData {
             "سوسک",
             R.raw.animal_cat_fa,
             R.drawable.label_bug_cockroach,
+            TYPE.BUG,
             false
         ),
         Animal(
@@ -460,6 +542,7 @@ object AnimalData {
             "جیرجیرک",
             R.raw.animal_cat_fa,
             R.drawable.label_bug_cricket,
+            TYPE.BUG,
             false
         ),
         Animal(
@@ -467,14 +550,17 @@ object AnimalData {
             "سنجاقک",
             R.raw.animal_cat_fa,
             R.drawable.label_bug_dragonfly,
+            TYPE.BUG,
             false
         ),
-        Animal(R.drawable.bug_fly, "مگس", R.raw.animal_cat_fa, R.drawable.label_bug_fly, false),
+        Animal(R.drawable.bug_fly, "مگس", R.raw.animal_cat_fa, R.drawable.label_bug_fly, TYPE.BUG,
+            false),
         Animal(
             R.drawable.bug_locust,
             "ملخ",
             R.raw.animal_cat_fa,
             R.drawable.label_bug_locust,
+            TYPE.BUG,
             false
         ),
         Animal(
@@ -482,6 +568,7 @@ object AnimalData {
             "کرم ابریشم",
             R.raw.animal_cat_fa,
             R.drawable.label_bug_silkworm,
+            TYPE.BUG,
             false
         ),
         Animal(
@@ -489,6 +576,7 @@ object AnimalData {
             "حلزون",
             R.raw.animal_cat_fa,
             R.drawable.label_bug_snail,
+            TYPE.BUG,
             false
         ),
         Animal(
@@ -496,6 +584,7 @@ object AnimalData {
             "عنکبوت",
             R.raw.animal_fox_fa,
             R.drawable.label_bug_spider,
+            TYPE.BUG,
             false
         ),
 
@@ -508,6 +597,7 @@ object AnimalData {
             "طوطی",
             R.raw.animal_sheep_fa,
             R.drawable.label_animal_fox,
+            TYPE.BIRD,
             false
         ),
         Animal(
@@ -515,14 +605,17 @@ object AnimalData {
             "غاز",
             R.raw.animal_sheep_fa,
             R.drawable.label_animal_fox,
+            TYPE.BIRD,
             false
         ),
-        Animal(R.drawable.bird_owl, "جغد", R.raw.bird_owl_en, R.drawable.label_animal_fox, false),
+        Animal(R.drawable.bird_owl, "جغد", R.raw.bird_owl_en, R.drawable.label_animal_fox, TYPE.BIRD,
+            false),
         Animal(
             R.drawable.bird_pelikan,
             "پلیکان",
             R.raw.animal_cat_fa,
             R.drawable.label_animal_fox,
+            TYPE.BIRD,
             false
         ),
         Animal(
@@ -530,6 +623,7 @@ object AnimalData {
             "خروس",
             R.raw.animal_cat_fa,
             R.drawable.label_animal_fox,
+            TYPE.BIRD,
             false
         ),
 
@@ -541,6 +635,7 @@ object AnimalData {
             "طوطی",
             R.raw.animal_sheep_fa,
             R.drawable.label_animal_fox,
+            TYPE.BIRD,
             false
         ),
         Animal(
@@ -548,14 +643,17 @@ object AnimalData {
             "غاز",
             R.raw.animal_sheep_fa,
             R.drawable.label_animal_fox,
+            TYPE.BIRD,
             false
         ),
-        Animal(R.drawable.bird_owl, "جغد", R.raw.bird_owl_en, R.drawable.label_animal_fox, false),
+        Animal(R.drawable.bird_owl, "جغد", R.raw.bird_owl_en, R.drawable.label_animal_fox, TYPE.BIRD,
+            false),
         Animal(
             R.drawable.bird_pelikan,
             "پلیکان",
             R.raw.animal_cat_fa,
             R.drawable.label_animal_fox,
+            TYPE.BIRD,
             false
         ),
         Animal(
@@ -563,6 +661,7 @@ object AnimalData {
             "خروس",
             R.raw.animal_cat_fa,
             R.drawable.label_animal_fox,
+            TYPE.BIRD,
             false
         ),
 
@@ -574,6 +673,7 @@ object AnimalData {
             "ماهی",
             R.raw.animal_sheep_fa,
             R.drawable.label_animal_fox,
+            TYPE.AQUATIC,
             false
         ),
         Animal(
@@ -581,6 +681,7 @@ object AnimalData {
             "قورباغه",
             R.raw.animal_sheep_fa,
             R.drawable.label_aquatic_frog,
+            TYPE.AQUATIC,
             false
         ),
         Animal(
@@ -588,6 +689,7 @@ object AnimalData {
             "دلفین",
             R.raw.animal_sheep_fa,
             R.drawable.label_animal_fox,
+            TYPE.AQUATIC,
             false
         ),
         Animal(
@@ -595,6 +697,7 @@ object AnimalData {
             "ستاره دریایی",
             R.raw.animal_sheep_fa,
             R.drawable.label_animal_fox,
+            TYPE.AQUATIC,
             false
         ),
         Animal(
@@ -602,6 +705,7 @@ object AnimalData {
             "گراز دریایی",
             R.raw.animal_sheep_fa,
             R.drawable.label_animal_fox,
+            TYPE.AQUATIC,
             false
         ),
         Animal(
@@ -609,6 +713,7 @@ object AnimalData {
             "بی نام",
             R.raw.animal_cat_fa,
             R.drawable.label_animal_fox,
+            TYPE.AQUATIC,
             false
         ),
         Animal(
@@ -616,6 +721,7 @@ object AnimalData {
             "لاک پشت",
             R.raw.animal_turtle_en,
             R.drawable.label_animal_fox,
+            TYPE.AQUATIC,
             false
         ),
 
@@ -627,6 +733,7 @@ object AnimalData {
             "ماهی",
             R.raw.animal_sheep_fa,
             R.drawable.label_animal_fox,
+            TYPE.AQUATIC,
             false
         ),
         Animal(
@@ -634,6 +741,7 @@ object AnimalData {
             "قورباغه",
             R.raw.animal_sheep_fa,
             R.drawable.label_aquatic_frog,
+            TYPE.AQUATIC,
             false
         ),
         Animal(
@@ -641,6 +749,7 @@ object AnimalData {
             "دلفین",
             R.raw.animal_sheep_fa,
             R.drawable.label_animal_fox,
+            TYPE.AQUATIC,
             false
         ),
         Animal(
@@ -648,6 +757,7 @@ object AnimalData {
             "ستاره دریایی",
             R.raw.animal_sheep_fa,
             R.drawable.label_animal_fox,
+            TYPE.AQUATIC,
             false
         ),
         Animal(
@@ -655,6 +765,7 @@ object AnimalData {
             "گراز دریایی",
             R.raw.animal_sheep_fa,
             R.drawable.label_animal_fox,
+            TYPE.AQUATIC,
             false
         ),
         Animal(
@@ -662,6 +773,7 @@ object AnimalData {
             "بی نام",
             R.raw.animal_cat_fa,
             R.drawable.label_animal_fox,
+            TYPE.AQUATIC,
             false
         ),
         Animal(
@@ -669,6 +781,7 @@ object AnimalData {
             "لاک پشت",
             R.raw.animal_turtle_en,
             R.drawable.label_animal_fox,
+            TYPE.AQUATIC,
             false
         ),
 
@@ -681,5 +794,6 @@ data class Animal(
     val name: String,
     val sound: Int,
     val label: Int,
+    val type:TYPE,
     var isClicked: Boolean
 )
