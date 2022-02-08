@@ -52,8 +52,6 @@ fun AnimalItem(animal: Animal, onClickHandler: (Animal) -> Unit,type:TYPE) {
 
             ItemAnimation(animal.picture, animal.isClicked,type)
 
-            Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen._4sdp)))
-
             ShowLabel(animal.label, visibility = animal.isClicked)
         }
     }
@@ -62,8 +60,8 @@ fun AnimalItem(animal: Animal, onClickHandler: (Animal) -> Unit,type:TYPE) {
 @Composable
 fun ItemAnimation(image: Int, isClicked: Boolean,type:TYPE) {
 
-    val animationDegree = GetRotateAnimationDegree(isClicked)
-    val scale = GetScaleAnimation(isClicked)
+    val animationDegree = getRotateAnimationDegree(isClicked)
+    val scale = getScaleAnimation(isClicked)
 
     ShowImage(image, animationDegree, scale,type)
 }
@@ -81,7 +79,7 @@ fun ShowImage(image: Int, rotationDegrees: Float = 0f, scaleValue: Float = 0f,ty
             .scale(scaleValue)
             .rotate(rotationDegrees)
             .clip(CircleShape)
-            .background(ColorBackground(type = type))
+            .background(colorBackground(type = type))
             .padding(all = 4.dp)
 //            .graphicsLayer(rotationZ = angle, scaleX = scale, scaleY = scale, translationX = 0.5f)
     )
@@ -89,7 +87,7 @@ fun ShowImage(image: Int, rotationDegrees: Float = 0f, scaleValue: Float = 0f,ty
 }
 
 @Composable
-fun ColorBackground(type:TYPE) : Color{
+fun colorBackground(type:TYPE) : Color{
    return when (type){
         TYPE.ANIMAL -> Green200
         TYPE.BUG -> Yellow300
@@ -102,22 +100,20 @@ fun ColorBackground(type:TYPE) : Color{
 @Composable
 fun ShowLabel(label: Int, visibility: Boolean) {
 
-    val imageSize = dimensionResource(id = R.dimen._70sdp)
-    val paddingTop = dimensionResource(id = R.dimen._26sdp)
+    val imageSize = dimensionResource(id = R.dimen._60sdp)
 
     if (visibility)
         Image(
             painter = painterResource(label),
             contentDescription = "",
             modifier = Modifier
-                .size(imageSize, imageSize)
-                .padding(top = paddingTop), alignment = Alignment.BottomCenter
+                .size(imageSize),alignment = Alignment.BottomCenter
 
         )
 }
 
 @Composable
-fun GetScaleAnimation(isClicked: Boolean): Float {
+fun getScaleAnimation(isClicked: Boolean): Float {
     val clickedAnimation by animateFloatAsState(
         targetValue = if (isClicked) 1.5F else 1f,
         animationSpec = spring(
@@ -139,12 +135,12 @@ fun GetScaleAnimation(isClicked: Boolean): Float {
 }
 
 @Composable
-fun GetRotateAnimationDegree(isClicked: Boolean): Float {
+fun getRotateAnimationDegree(isClicked: Boolean): Float {
     val infiniteTransition = rememberInfiniteTransition()
 
     val rotateInDegreeAnimation by infiniteTransition.animateFloat(
-        initialValue = 20F,
-        targetValue = -20F,
+        initialValue = 0F,
+        targetValue = 40F,
         animationSpec = infiniteRepeatable(
             animation = tween(
                 durationMillis = 1500,
@@ -178,7 +174,7 @@ fun stopSound(context: Context) {
 }
 
 @Composable
-fun GetScreenWidth(): Int {
+fun getScreenWidth(): Int {
     val configuration = LocalConfiguration.current
     return configuration.screenWidthDp
 }

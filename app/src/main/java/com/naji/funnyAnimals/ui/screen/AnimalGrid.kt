@@ -15,7 +15,7 @@ import com.naji.funnyAnimals.data.animalenum.TYPE
 @Composable
 fun AnimalGrid(animals: List<Animal>, onClickHandler: (Animal) -> Unit, type: TYPE) {
 
-    val numberOfItemsByRow = GetScreenWidth() / SCREEN_CONST
+    val numberOfItemsByRow = getScreenWidth() / SCREEN_CONST
 
 
     LazyColumn(
