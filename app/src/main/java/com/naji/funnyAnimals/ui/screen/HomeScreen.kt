@@ -34,6 +34,7 @@ import androidx.navigation.NavController
 import com.naji.funnyAnimals.R
 import com.naji.funnyAnimals.data.CardHome
 import com.naji.funnyAnimals.data.HomeCardData
+import com.naji.funnyAnimals.ui.AnimalViewModel
 import com.naji.funnyAnimals.ui.components.AppToolbar
 import com.naji.funnyAnimals.ui.components.LanguageButton
 import com.naji.funnyAnimals.ui.components.MusicButton
@@ -42,7 +43,7 @@ import kotlinx.coroutines.delay
 
 @ExperimentalComposeUiApi
 @Composable
-fun HomeScreen(navController: NavController, viewModel: ViewModel) {
+fun HomeScreen(navController: NavController, viewModel: AnimalViewModel) {
 
 
     Column(

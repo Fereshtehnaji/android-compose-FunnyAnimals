@@ -3,7 +3,7 @@ package com.naji.funnyAnimals.ui.screen
 import org.junit.Before
 import org.junit.Test
 
-class ViewModelTest {
+class MyViewModelTest {
 
 //    val context: MockContext()
 

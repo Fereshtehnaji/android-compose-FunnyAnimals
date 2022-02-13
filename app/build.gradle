@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-kapt'
+
 }
 apply plugin: 'kotlin-android'
 
@@ -30,13 +32,13 @@ android {
 
     kotlinOptions {
         // For Jetpack Compose
-        jvmTarget = '1.8'
+        jvmTarget = '1.8' //Some of the APIs you will use require 1.8 jvmTarget
         useIR = true
-        allWarningsAsErrors = true
+//        allWarningsAsErrors = true
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
     }
     buildFeatures {
         // Enables Jetpack Compose for this module
@@ -132,7 +134,12 @@ dependencies {
 
     implementation "androidx.preference:preference-ktx:1.2.0"
     implementation "androidx.core:core-ktx:1.7.0"
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    // Room components
+    implementation "androidx.room:room-ktx:$roomVersion"
+    kapt "androidx.room:room-compiler:$roomVersion"
+    androidTestImplementation "androidx.room:room-testing:$roomVersion"
+
 }
 
 
@@ -141,7 +148,7 @@ tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
     kotlinOptions {
         jvmTarget = "1.8"
         freeCompilerArgs += [
-                "-Xopt-in=kotlin.RequiresOptIn"
+                "-Xopt-in=kotlin.RequiresOptIn",'-Xjvm-default=enable'
         ]
     }
 }

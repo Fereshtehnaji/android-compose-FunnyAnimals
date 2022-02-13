@@ -22,6 +22,7 @@ import com.naji.funnyAnimals.R
 import com.naji.funnyAnimals.data.Animal
 import com.naji.funnyAnimals.data.AnimalData
 import com.naji.funnyAnimals.data.animalenum.TYPE
+import com.naji.funnyAnimals.ui.AnimalViewModel
 import com.naji.funnyAnimals.ui.components.AppToolbar
 import com.naji.funnyAnimals.ui.components.LanguageButton
 import com.naji.funnyAnimals.ui.components.MusicButton
@@ -33,7 +34,7 @@ const val SCREEN_CONST = 120
 
 @Composable
 fun NavigateScreen(
-    viewModel: ViewModel,
+    viewModel: AnimalViewModel,
     lifecycleOwner: LifecycleOwner = LocalLifecycleOwner.current,
     onBackHandler: () -> Unit,
     title: String,
@@ -53,7 +54,8 @@ fun NavigateScreen(
                 contentScale = ContentScale.Crop
             )
 
-        val items: List<Animal> by viewModel.animalItems.observeAsState(listOf())
+
+        val items: List<Animal> by viewModel.fetchAllAnimals().observeAsState(listOf())
         val isMusicPlay: Boolean by viewModel.backgroundMusicPlaying.observeAsState(initial = viewModel.isMusicPlaying())
         val languageLabel: String by viewModel.appLanguage.observeAsState(initial = viewModel.getLanguageOfApp())
 
@@ -70,7 +72,7 @@ fun NavigateScreen(
 
 @Composable
 fun ShowToolbar(
-    viewModel: ViewModel, title: String, isMusicPlay: Boolean,
+    myViewModel: AnimalViewModel, title: String, isMusicPlay: Boolean,
     languageLabel: String, onBackHandler: () -> Unit, type: TYPE
 ) {
 
@@ -78,13 +80,13 @@ fun ShowToolbar(
         title = title,
         icon1 = {
             MusicButton(
-                { viewModel.musicButtonHandler() },
+                { myViewModel.musicButtonHandler() },
                 isMusicPlay, Color.White
             )
         },
         icon2 = {
             LanguageButton(
-                onClick = { viewModel.changeListLanguage(type) },
+                onClick = { myViewModel.changeListLanguage(type) },
                 language = languageLabel, Color.White
             )
         },
