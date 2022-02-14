@@ -35,8 +35,6 @@ class AnimalActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-//        viewModel.load(TYPE.ANIMAL)
-
         setContent {
 
             val navController = rememberNavController()
@@ -56,13 +54,6 @@ class AnimalActivity : AppCompatActivity() {
     @Composable
     fun NavigationComponent(navController: NavHostController) {
 
-//        val viewModel = viewModel<MyViewModel>()
-
-//        animalViewModel.init(TYPE.ANIMAL)
-//        animalViewModel.getAllAnimals().observe(this, Observer<List<Animal>> { players ->
-//            Toast.makeText(this,players[3].name, Toast.LENGTH_LONG).show()
-//        })
-
         NavHost(
             navController = navController,
             startDestination = HomeGroup.HOME.nameType
@@ -76,7 +67,6 @@ class AnimalActivity : AppCompatActivity() {
 
             composable(HomeGroup.BIRD.nameType) {
 
-//                animalViewModel.init(TYPE.BIRD)
                 val title = stringResource(id = R.string.birds_title)
                 val backgroundImageId = R.drawable.back_birds4
 
@@ -89,7 +79,6 @@ class AnimalActivity : AppCompatActivity() {
 
             composable(HomeGroup.ANIMAL.nameType) {
 
-//                animalViewModel.init(TYPE.ANIMAL)
                 val title = stringResource(id = R.string.animal_title)
 
                 val backgroundImageId = R.drawable.back_icon
@@ -103,7 +92,6 @@ class AnimalActivity : AppCompatActivity() {
 
             composable(HomeGroup.BUG.nameType) {
 
-//                animalViewModel.init(TYPE.BUG)
                 val title = stringResource(id = R.string.bugs_title)
 //                val backgroundImageId = R.drawable.back_birds3
 
@@ -119,7 +107,6 @@ class AnimalActivity : AppCompatActivity() {
 
             composable(HomeGroup.AQUATIC.nameType) {
 
-//                animalViewModel.init(TYPE.AQUATIC)
                 val title = stringResource(id = R.string.ocean_title)
                 val backgroundImageId = R.drawable.back_aquatic
 
