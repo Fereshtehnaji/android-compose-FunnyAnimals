@@ -35,7 +35,7 @@ class AnimalActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        viewModel.load(TYPE.ANIMAL)
+//        viewModel.load(TYPE.ANIMAL)
 
         setContent {
 

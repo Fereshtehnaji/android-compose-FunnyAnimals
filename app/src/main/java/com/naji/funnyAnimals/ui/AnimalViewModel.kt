@@ -28,25 +28,25 @@ class AnimalViewModel(private val repository: AnimalRepository) : ViewModel() {
         return repository.getAllAnimalByType()
     }
 
+//    private fun changeAnimation3(animal: Animal) {
+//
+//        val animals: MutableList<Animal>? = fetchAllAnimals().value?.toMutableList()
+//
+//        animals?.forEachIndexed { index, it ->
+//            val mutableItem = it.copy()
+//            mutableItem.isClicked = it == animal
+//            animals[index] = mutableItem
+//            _animalItems.value = animals
+//        }
+//
+//    }
+
     private fun changeAnimation(animal: Animal) {
-
-        val animals: MutableList<Animal>? = fetchAllAnimals().value?.toMutableList()
-
-        animals?.forEachIndexed { index, it ->
-            val mutableItem = it.copy()
-            mutableItem.isClicked = it == animal
-            animals[index] = mutableItem
-            _animalItems.value = animals
-        }
-
-    }
-
-    private fun changeAnimation2(animal: Animal) {
 
 
         viewModelScope.launch {
 
-            repository.updateSelectedAnimals(isClicked = true, newIsClicked = false)
+            repository.updateLastSelectedItem(lastStatus = true, newStatus = false)
             animal.isClicked = true
             repository.updateAnimal(animal)
         }
@@ -54,9 +54,14 @@ class AnimalViewModel(private val repository: AnimalRepository) : ViewModel() {
 
     }
 
+    fun unSelectLastItem(){
+        viewModelScope.launch {
+            repository.updateLastSelectedItem(lastStatus = true, newStatus = false)
+        }
+    }
 
     fun clickHandler(item: Animal) {
-        changeAnimation2(item)
+        changeAnimation(item)
     }
 
     fun musicButtonHandler() {

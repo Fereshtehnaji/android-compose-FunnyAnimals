@@ -42,7 +42,10 @@ fun NavigateScreen(
     type: TYPE
 ) {
     val context = LocalContext.current
-    HandleResourceOnLifeCycle(lifecycleOwner, {}, { stopSound(context) })
+    HandleResourceOnLifeCycle(lifecycleOwner, {}, {
+        stopSound(context)
+        viewModel.unSelectLastItem()
+    })
 
 
     Surface {
@@ -56,12 +59,12 @@ fun NavigateScreen(
 
 
         val items: List<Animal> by viewModel.fetchAllAnimals().observeAsState(listOf())
-        val isMusicPlay: Boolean by viewModel.backgroundMusicPlaying.observeAsState(initial = viewModel.isMusicPlaying())
+        val musicStatus: Boolean by viewModel.backgroundMusicPlaying.observeAsState(initial = viewModel.isMusicPlaying())
         val languageLabel: String by viewModel.appLanguage.observeAsState(initial = viewModel.getLanguageOfApp())
 
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
 
-            ShowToolbar(viewModel, title, isMusicPlay, languageLabel, onBackHandler, type)
+            ShowToolbar(viewModel, title, musicStatus, languageLabel, onBackHandler, type)
 
             AnimalGrid(animals = items, onClickHandler = { viewModel.clickHandler(it) }, type)
         }

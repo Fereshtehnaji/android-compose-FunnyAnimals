@@ -9,8 +9,8 @@ interface AnimalDao {
     @Query("SELECT * FROM animal_table")
     fun getAnimalList(): LiveData<List<Animal>>
 
-    @Query("UPDATE animal_table SET isClicked= :newIsClicked  WHERE isClicked = :isClicked ")
-    suspend fun updateSelectedAnimals( isClicked: Boolean, newIsClicked:Boolean)
+    @Query("UPDATE animal_table SET isClicked= :newStatus  WHERE isClicked = :lastStatus ")
+    suspend fun updateSelectedAnimals( lastStatus: Boolean, newStatus:Boolean)
 
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)

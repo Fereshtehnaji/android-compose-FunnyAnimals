@@ -15,8 +15,8 @@ class AnimalRepository(
     fun getAllAnimalByType(): LiveData<List<Animal>> = animalDao.getAnimalList()
 
     @WorkerThread
-    suspend fun updateSelectedAnimals(isClicked:Boolean, newIsClicked:Boolean)
-    = animalDao.updateSelectedAnimals(isClicked,newIsClicked)
+    suspend fun updateLastSelectedItem(lastStatus:Boolean, newStatus:Boolean)
+    = animalDao.updateSelectedAnimals(lastStatus,newStatus)
 
     @WorkerThread
     suspend fun updateAnimal(animal: Animal) = animalDao.updateAnimal(animal)
