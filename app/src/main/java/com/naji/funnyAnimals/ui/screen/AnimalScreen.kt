@@ -16,11 +16,9 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.LifecycleOwner
 import com.naji.funnyAnimals.R
 import com.naji.funnyAnimals.data.Animal
-import com.naji.funnyAnimals.data.AnimalData
 import com.naji.funnyAnimals.data.animalenum.TYPE
 import com.naji.funnyAnimals.ui.AnimalViewModel
 import com.naji.funnyAnimals.ui.components.AppToolbar
@@ -89,7 +87,7 @@ fun ShowToolbar(
         },
         icon2 = {
             LanguageButton(
-                onClick = { myViewModel.changeListLanguage(type) },
+                onClick = { myViewModel.changeListLanguage() },
                 language = languageLabel, Color.White
             )
         },
@@ -98,12 +96,6 @@ fun ShowToolbar(
         }
     )
 }
-//
-//@Preview
-//@Composable
-//fun PreviewAnimalGrid() {
-//    AnimalGrid(animals = AnimalData.AnimalData, onClickHandler = {}, TYPE.ANIMAL)
-//}
 
 
 

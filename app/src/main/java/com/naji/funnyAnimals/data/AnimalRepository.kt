@@ -13,7 +13,7 @@ class AnimalRepository(
 
 
     fun getAllAnimalByType(type: String, language: String): LiveData<List<Animal>> =
-        animalDao.getAnimalList(language)
+        animalDao.getAnimalList(type,language)
 
     @WorkerThread
     suspend fun updateLastSelectedItem(lastStatus: Boolean, newStatus: Boolean) =
@@ -23,8 +23,8 @@ class AnimalRepository(
     suspend fun updateAnimal(animal: Animal) = animalDao.updateAnimal(animal)
 
     @WorkerThread
-    suspend fun updateAnimal2(animal: String, status: Boolean) =
-        animalDao.updateAnimal2(animal, status)
+    suspend fun updateSelectedItem(name: String, status: Boolean) =
+        animalDao.updateSelectedItem(name, status)
 
     fun isMusicPlaying(): Boolean {
         return pref.getMusicBackgroundStatus()

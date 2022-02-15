@@ -9,47 +9,24 @@ import kotlinx.coroutines.launch
 
 class AnimalViewModel(private val repository: AnimalRepository) : ViewModel() {
 
-    var _animalItems = MutableLiveData(listOf<Animal>())
-        private set
-    val animalItems: LiveData<List<Animal>> = _animalItems
-
-
     val backgroundMusicPlaying: LiveData<Boolean> by lazy { _backgroundMusicPlaying }
     private var _backgroundMusicPlaying: MutableLiveData<Boolean> = MutableLiveData()
 
     val appLanguage: LiveData<String> by lazy { _appLanguage }
     private var _appLanguage: MutableLiveData<String> = MutableLiveData()
 
-    fun load(type: TYPE) {
-        _animalItems.value = repository.getAllAnimalByType(type.name,getLanguageOfApp()).value
-    }
-
     fun fetchAllAnimals(type: TYPE): LiveData<List<Animal>> {
-        return repository.getAllAnimalByType(type.name,getLanguageOfApp())
+        return repository.getAllAnimalByType(type.nameType,getLanguageOfApp())
     }
 
-//    private fun changeAnimation3(animal: Animal) {
-//
-//        val animals: MutableList<Animal>? = fetchAllAnimals().value?.toMutableList()
-//
-//        animals?.forEachIndexed { index, it ->
-//            val mutableItem = it.copy()
-//            mutableItem.isClicked = it == animal
-//            animals[index] = mutableItem
-//            _animalItems.value = animals
-//        }
-//
-//    }
 
     private fun changeAnimation(animal: Animal) {
-
-
         viewModelScope.launch {
 
             repository.updateLastSelectedItem(lastStatus = true, newStatus = false)
             val mutableItem :Animal = animal.copy()
             mutableItem.isClicked = true
-            repository.updateAnimal2(mutableItem.animal,true)
+            repository.updateSelectedItem(mutableItem.name,true)
         }
 
 
@@ -82,9 +59,8 @@ class AnimalViewModel(private val repository: AnimalRepository) : ViewModel() {
         repository.saveLanguageStatus(changedLanguage)
     }
 
-    fun changeListLanguage(type: TYPE) {
+    fun changeListLanguage() {
         languageButtonHandler()
-        load(type = type)
     }
 
 

@@ -50,7 +50,7 @@ fun AnimalItem(animal: Animal, onClickHandler: (Animal) -> Unit,type:TYPE) {
                 }
         ) {
 
-            ItemAnimation(animal.picture, animal.isClicked,type)
+            ItemAnimation(animal.shape, animal.isClicked,type)
 
             ShowLabel(animal.label, visibility = animal.isClicked)
         }
