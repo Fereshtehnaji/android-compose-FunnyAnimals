@@ -21,11 +21,11 @@ class AnimalViewModel(private val repository: AnimalRepository) : ViewModel() {
     private var _appLanguage: MutableLiveData<String> = MutableLiveData()
 
     fun load(type: TYPE) {
-        _animalItems.value = repository.getAllAnimalByType().value
+        _animalItems.value = repository.getAllAnimalByType(type.name,getLanguageOfApp()).value
     }
 
-    fun fetchAllAnimals(): LiveData<List<Animal>> {
-        return repository.getAllAnimalByType()
+    fun fetchAllAnimals(type: TYPE): LiveData<List<Animal>> {
+        return repository.getAllAnimalByType(type.name,getLanguageOfApp())
     }
 
 //    private fun changeAnimation3(animal: Animal) {
@@ -47,8 +47,9 @@ class AnimalViewModel(private val repository: AnimalRepository) : ViewModel() {
         viewModelScope.launch {
 
             repository.updateLastSelectedItem(lastStatus = true, newStatus = false)
-            animal.isClicked = true
-            repository.updateAnimal(animal)
+            val mutableItem :Animal = animal.copy()
+            mutableItem.isClicked = true
+            repository.updateAnimal2(mutableItem.animal,true)
         }
 
 

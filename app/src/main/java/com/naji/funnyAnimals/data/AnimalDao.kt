@@ -6,11 +6,12 @@ import androidx.room.*
 @Dao
 interface AnimalDao {
 
-    @Query("SELECT * FROM animal_table")
-    fun getAnimalList(): LiveData<List<Animal>>
+    //    @Query("SELECT * FROM animal_table WHERE type = :type AND language = :language")
+    @Query("SELECT * FROM animal_table WHERE language = :language")
+    fun getAnimalList(language: String): LiveData<List<Animal>>
 
     @Query("UPDATE animal_table SET isClicked= :newStatus  WHERE isClicked = :lastStatus ")
-    suspend fun updateSelectedAnimals( lastStatus: Boolean, newStatus:Boolean)
+    suspend fun updateSelectedAnimals(lastStatus: Boolean, newStatus: Boolean)
 
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
@@ -21,4 +22,7 @@ interface AnimalDao {
 
     @Update()
     suspend fun updateAnimal(vararg animal: Animal)
+
+    @Query("UPDATE animal_table SET isClicked= :status WHERE animal= :animal")
+    suspend fun updateAnimal2(animal: String, status: Boolean)
 }

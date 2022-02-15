@@ -12,14 +12,19 @@ class AnimalRepository(
 //    val allAnimal: Flow<List<Animal>> = animalDao.getAnimals(type = type)
 
 
-    fun getAllAnimalByType(): LiveData<List<Animal>> = animalDao.getAnimalList()
+    fun getAllAnimalByType(type: String, language: String): LiveData<List<Animal>> =
+        animalDao.getAnimalList(language)
 
     @WorkerThread
-    suspend fun updateLastSelectedItem(lastStatus:Boolean, newStatus:Boolean)
-    = animalDao.updateSelectedAnimals(lastStatus,newStatus)
+    suspend fun updateLastSelectedItem(lastStatus: Boolean, newStatus: Boolean) =
+        animalDao.updateSelectedAnimals(lastStatus, newStatus)
 
     @WorkerThread
     suspend fun updateAnimal(animal: Animal) = animalDao.updateAnimal(animal)
+
+    @WorkerThread
+    suspend fun updateAnimal2(animal: String, status: Boolean) =
+        animalDao.updateAnimal2(animal, status)
 
     fun isMusicPlaying(): Boolean {
         return pref.getMusicBackgroundStatus()

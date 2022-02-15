@@ -54,6 +54,7 @@ class AnimalActivity : AppCompatActivity() {
     @Composable
     fun NavigationComponent(navController: NavHostController) {
 
+
         NavHost(
             navController = navController,
             startDestination = HomeGroup.HOME.nameType

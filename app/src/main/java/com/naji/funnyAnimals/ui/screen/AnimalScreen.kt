@@ -58,7 +58,7 @@ fun NavigateScreen(
             )
 
 
-        val items: List<Animal> by viewModel.fetchAllAnimals().observeAsState(listOf())
+        val items: List<Animal> by viewModel.fetchAllAnimals(type).observeAsState(listOf())
         val musicStatus: Boolean by viewModel.backgroundMusicPlaying.observeAsState(initial = viewModel.isMusicPlaying())
         val languageLabel: String by viewModel.appLanguage.observeAsState(initial = viewModel.getLanguageOfApp())
 
@@ -98,12 +98,12 @@ fun ShowToolbar(
         }
     )
 }
-
-@Preview
-@Composable
-fun PreviewAnimalGrid() {
-    AnimalGrid(animals = AnimalData.AnimalData, onClickHandler = {}, TYPE.ANIMAL)
-}
+//
+//@Preview
+//@Composable
+//fun PreviewAnimalGrid() {
+//    AnimalGrid(animals = AnimalData.AnimalData, onClickHandler = {}, TYPE.ANIMAL)
+//}
 
 
 

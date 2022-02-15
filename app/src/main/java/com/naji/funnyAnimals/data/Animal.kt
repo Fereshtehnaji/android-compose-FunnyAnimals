@@ -14,7 +14,7 @@ data class Animal(
     val picture: Int,
     val sound: Int,
     val label: Int,
-    val type: TYPE,
+    val type: String,
     var isClicked: Boolean
 ){
     @PrimaryKey(autoGenerate = true)

@@ -54,17 +54,15 @@ abstract class AnimalRoomDatabase : RoomDatabase() {
             // comment out the following line.
             INSTANCE?.let { database ->
                 scope.launch(Dispatchers.IO) {
-//                    populateDatabase(database.getAnimalDao())
-
-                    var animalDao = database.animalDao()
-
-                    val animalList = AnimalData.AnimalData
-
-                    for (animal in animalList)
-                        animalDao.insert(animal)
-
+                    populateDatabase(database.animalDao())
                 }
             }
+        }
+
+        override fun onOpen(db: SupportSQLiteDatabase) {
+            super.onOpen(db)
+
+
         }
 
         /**
@@ -76,7 +74,7 @@ abstract class AnimalRoomDatabase : RoomDatabase() {
             // Not needed if you only populate on creation.
 //            animalDao.deleteAll()
 
-            val animalList = AnimalData.AnimalData
+            val animalList = AnimalData.AquaticData
 
             for (animal in animalList)
                 animalDao.insert(animal)
