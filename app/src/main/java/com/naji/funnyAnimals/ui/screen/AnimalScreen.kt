@@ -62,7 +62,7 @@ fun NavigateScreen(
 
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
 
-            ShowToolbar(viewModel, title, musicStatus, languageLabel, onBackHandler, type)
+            ShowToolbar(viewModel, title, musicStatus, languageLabel, onBackHandler)
 
             AnimalGrid(animals = items, onClickHandler = { viewModel.clickHandler(it) }, type)
         }
@@ -74,7 +74,7 @@ fun NavigateScreen(
 @Composable
 fun ShowToolbar(
     myViewModel: AnimalViewModel, title: String, isMusicPlay: Boolean,
-    languageLabel: String, onBackHandler: () -> Unit, type: TYPE
+    languageLabel: String, onBackHandler: () -> Unit
 ) {
 
     AppToolbar(modifier = Modifier.height(dimensionResource(id = R.dimen._50sdp)),
