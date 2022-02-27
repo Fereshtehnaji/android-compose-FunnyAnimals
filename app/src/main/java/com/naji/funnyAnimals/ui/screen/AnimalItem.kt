@@ -74,24 +74,25 @@ fun ItemAnimation(image: Int, isClicked: Boolean, type: TYPE) {
 fun ShowImage(image: Int, rotationDegrees: Float = 0f, scaleValue: Float = 0f, type: TYPE) {
 
     val imageSize = dimensionResource(id = R.dimen._60sdp)
+    val backColor = remember {getColorBackground(type = type)}
+
 
     Image(
-        painter = painterResource(image),
+        painter = painterResource(remember {image}),
         contentDescription = "",
         modifier = Modifier
             .size(imageSize)
             .scale(scaleValue)
-            .rotate(rotationDegrees)
+            .rotate(remember {rotationDegrees})
             .clip(CircleShape)
-            .background(colorBackground(type = type))
+            .background(backColor)
             .padding(all = 4.dp)
 //            .graphicsLayer(rotationZ = angle, scaleX = scale, scaleY = scale, translationX = 0.5f)
     )
 
 }
 
-@Composable
-fun colorBackground(type: TYPE): Color {
+fun getColorBackground(type: TYPE): Color {
     return when (type) {
         TYPE.ANIMAL -> Green200
         TYPE.BUG -> Yellow300
@@ -158,8 +159,3 @@ fun stopSound(context: Context) {
     MusicManager.getInstance(context).stop()
 }
 
-@Composable
-fun getScreenWidth(): Int {
-    val configuration = LocalConfiguration.current
-    return configuration.screenWidthDp
-}
