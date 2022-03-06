@@ -5,6 +5,7 @@ import android.content.Intent
 import android.media.MediaPlayer
 import android.os.IBinder
 import com.naji.funnyAnimals.R
+import kotlin.math.ln
 
 class MusicService : Service() {
 
@@ -39,6 +40,12 @@ class MusicService : Service() {
 
         mMediaPlayer = MediaPlayer.create(this, soundResourceId)
         mMediaPlayer!!.isLooping = true
+        val maxVolume = 100.0f
+        val currVolume = 98.0f
+        val volume = (ln(maxVolume - currVolume) / ln(maxVolume.toDouble())).toFloat()
+        mMediaPlayer!!.setVolume(volume, volume)
+
+
 
         // if the instance could be created
         if (mMediaPlayer != null) {
