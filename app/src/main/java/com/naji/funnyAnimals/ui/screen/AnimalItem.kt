@@ -6,30 +6,29 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.runtime.*
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.naji.funnyAnimals.R
 import com.naji.funnyAnimals.data.Animal
+import com.naji.funnyAnimals.data.animalenum.Language
 import com.naji.funnyAnimals.data.animalenum.TYPE
-import com.naji.funnyAnimals.ui.theme.Cyan200
-import com.naji.funnyAnimals.ui.theme.Green200
-import com.naji.funnyAnimals.ui.theme.Orange200
-import com.naji.funnyAnimals.ui.theme.Yellow300
+import com.naji.funnyAnimals.ui.theme.*
 import com.naji.funnyAnimals.ui.util.MusicManager
 
 
@@ -43,8 +42,9 @@ fun AnimalItem(animal: Animal, onClickHandler: (Animal) -> Unit, type: TYPE) {
         modifier = Modifier.padding(all = dimensionResource(id = R.dimen._6sdp))
     ) {
 
-        Box(contentAlignment = Alignment.Center,
+        Box(
             modifier = Modifier
+                .align(Alignment.CenterHorizontally)
                 .clickable(
                     interactionSource = remember { MutableInteractionSource() },
                     indication = null
@@ -56,7 +56,23 @@ fun AnimalItem(animal: Animal, onClickHandler: (Animal) -> Unit, type: TYPE) {
 
             ItemAnimation(animal.shape, animal.isClicked, type)
 
-            ShowLabel(animal.label, visibility = animal.isClicked)
+            if (animal.isClicked) {
+                val imageSize = dimensionResource(id = R.dimen._60sdp)
+                val title = if (animal.language == Language.FA.nameType)
+                    animal.title else animal.name
+                Text(
+                    text = title,
+                    color = Black,
+                    style = AnimalTypography.subtitle2,
+                    modifier = Modifier
+                        .background(color = Orange800, shape = RoundedCornerShape(20.dp))
+
+                        .defaultMinSize(imageSize)
+                        .align(Alignment.BottomCenter),
+                    textAlign = TextAlign.Center,
+                )
+            }
+//            ShowLabel(animal.title, visibility = animal.isClicked)
         }
     }
 }
@@ -74,16 +90,16 @@ fun ItemAnimation(image: Int, isClicked: Boolean, type: TYPE) {
 fun ShowImage(image: Int, rotationDegrees: Float = 0f, scaleValue: Float = 0f, type: TYPE) {
 
     val imageSize = dimensionResource(id = R.dimen._60sdp)
-    val backColor = remember {getColorBackground(type = type)}
+    val backColor = remember { getColorBackground(type = type) }
 
 
     Image(
-        painter = painterResource(remember {image}),
+        painter = painterResource(remember { image }),
         contentDescription = "",
         modifier = Modifier
             .size(imageSize)
             .scale(scaleValue)
-            .rotate(remember {rotationDegrees})
+            .rotate(remember { rotationDegrees })
             .clip(CircleShape)
             .background(backColor)
             .padding(all = 4.dp)
@@ -99,22 +115,6 @@ fun getColorBackground(type: TYPE): Color {
         TYPE.BIRD -> Orange200
         TYPE.AQUATIC -> Cyan200
     }
-}
-
-
-@Composable
-fun ShowLabel(label: Int, visibility: Boolean) {
-
-    val imageSize = dimensionResource(id = R.dimen._60sdp)
-
-    if (visibility)
-        Image(
-            painter = painterResource(label),
-            contentDescription = "",
-            modifier = Modifier
-                .size(imageSize), alignment = Alignment.BottomCenter
-
-        )
 }
 
 @Composable

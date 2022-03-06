@@ -30,7 +30,7 @@ object HomeCardData {
         ),
         CardHome(
             "آبزیان", "آشنایی با آبزیان",
-            R.drawable.animal_fish, Cyan50,Cyan200, Cyan100,Cyan500, HomeGroup.AQUATIC.nameType
+            R.drawable.aquatic_fish, Cyan50,Cyan200, Cyan100,Cyan500, HomeGroup.AQUATIC.nameType
         )
     )
 
