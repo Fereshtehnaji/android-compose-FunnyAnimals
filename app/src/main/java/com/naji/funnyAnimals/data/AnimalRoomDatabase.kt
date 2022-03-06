@@ -24,10 +24,11 @@ abstract class AnimalRoomDatabase : RoomDatabase() {
             context: Context, scope: CoroutineScope
         ): AnimalRoomDatabase {
             return INSTANCE ?: synchronized(this) {
+
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     AnimalRoomDatabase::class.java,
-                    "animal_database2"
+                    "animal_database"
                 )
                     .addCallback(AnimalDatabaseCallback(scope))
                     .build()
