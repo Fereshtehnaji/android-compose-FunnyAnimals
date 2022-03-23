@@ -374,7 +374,7 @@ object AnimalData {
             R.raw.animal_cat_fa,  TYPE.BUG.nameType, false
         ),
         Animal(
-            "Bee", "زنبور", Language.FA.nameType, R.drawable.bug_bee,
+            "Bee", "زنبور", Language.FA.nameType, R.drawable.bug_bee2,
             R.raw.insect_bee_fa,  TYPE.BUG.nameType, false
         ),
         Animal(
@@ -428,10 +428,6 @@ object AnimalData {
         ),
         Animal(
             "Worm", "کرم", Language.FA.nameType, R.drawable.bug_worm,
-            R.raw.animal_cat_fa,  TYPE.BUG.nameType, false
-        ),
-        Animal(
-            "butterfly", "پروانه", Language.FA.nameType, R.drawable.bug_silkworm,
             R.raw.animal_cat_fa,  TYPE.BUG.nameType, false
         ),
 
@@ -753,16 +749,16 @@ object AnimalData {
 
 //bug EN
         Animal(
-            "ant", "مورچه", Language.EN.nameType, R.drawable.bug_antt,
-            R.raw.animal_sheep_fa, TYPE.BUG.nameType, false
+            "fly", "مگس", Language.EN.nameType, R.drawable.bug_fly,
+            R.raw.animal_cat_fa, TYPE.BUG.nameType, false
         ),
         Animal(
-            "bee", "زنبور", Language.EN.nameType, R.drawable.bug_bee,
+            "bee", "زنبور", Language.EN.nameType, R.drawable.bug_bee2,
             R.raw.insect_bee_fa, TYPE.BUG.nameType, false
         ),
         Animal(
-            "centipede", "هزارپا", Language.EN.nameType, R.drawable.bug_centiped,
-            R.raw.animal_cat_fa, TYPE.BUG.nameType, false
+            "ant", "مورچه", Language.EN.nameType, R.drawable.bug_antt,
+            R.raw.animal_sheep_fa, TYPE.BUG.nameType, false
         ),
         Animal(
             "cockroach", "سوسک", Language.EN.nameType, R.drawable.bug_cockroach,
@@ -777,8 +773,24 @@ object AnimalData {
             R.raw.animal_cat_fa, TYPE.BUG.nameType, false
         ),
         Animal(
-            "fly", "مگس", Language.EN.nameType, R.drawable.bug_fly,
+            "snail", "حلزون", Language.EN.nameType, R.drawable.bug_snail,
             R.raw.animal_cat_fa, TYPE.BUG.nameType, false
+        ),
+        Animal(
+            "Ladybird", "کفشدوزک", Language.EN.nameType, R.drawable.bug_ladybird,
+            R.raw.animal_cat_fa, TYPE.BUG.nameType, false
+        ),
+        Animal(
+            "Mosquito", "پشه", Language.EN.nameType, R.drawable.bug_mosquito,
+            R.raw.animal_cat_fa,  TYPE.BUG.nameType, false
+        ),
+        Animal(
+            "centipede", "هزارپا", Language.EN.nameType, R.drawable.bug_centiped,
+            R.raw.animal_cat_fa, TYPE.BUG.nameType, false
+        ),
+        Animal(
+            "spider", "عنکبوت", Language.EN.nameType, R.drawable.bug_spider,
+            R.raw.animal_fox_fa, TYPE.BUG.nameType, false
         ),
         Animal(
             "Grasshopper", "ملخ", Language.EN.nameType, R.drawable.bug_grasshopper,
@@ -788,16 +800,21 @@ object AnimalData {
             "silkworm", "کرم ابریشم", Language.EN.nameType, R.drawable.bug_silkworm,
             R.raw.animal_cat_fa, TYPE.BUG.nameType, false
         ),
+
         Animal(
-            "snail", "حلزون", Language.EN.nameType, R.drawable.bug_snail,
+            "butterfly", "پروانه", Language.EN.nameType, R.drawable.bug_butterfly,
             R.raw.animal_cat_fa, TYPE.BUG.nameType, false
         ),
         Animal(
-            "spider", "عنکبوت", Language.EN.nameType, R.drawable.bug_spider,
-            R.raw.animal_fox_fa, TYPE.BUG.nameType, false
+            "Worm", "کرم", Language.EN.nameType, R.drawable.bug_worm,
+            R.raw.animal_cat_fa,  TYPE.BUG.nameType, false
         ),
 
         )
+
+
+
+
 
 }
 
