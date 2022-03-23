@@ -10,7 +10,6 @@ data class Animal(
     val language: String,
     val shape: Int,
     val sound: Int,
-    val label: Int,
     val type: String,
     var isClicked: Boolean
 ) {
