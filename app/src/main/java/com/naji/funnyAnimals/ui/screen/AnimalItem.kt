@@ -21,9 +21,9 @@ import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.dimensionResource
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import coil.compose.rememberImagePainter
 import com.naji.funnyAnimals.R
 import com.naji.funnyAnimals.data.Animal
 import com.naji.funnyAnimals.data.animalenum.Language
@@ -91,10 +91,8 @@ fun ShowImage(image: Int, rotationDegrees: Float = 0f, scaleValue: Float = 0f, t
 
     val imageSize = dimensionResource(id = R.dimen._60sdp)
     val backColor = remember { getColorBackground(type = type) }
-
-
     Image(
-        painter = painterResource(remember { image }),
+        painter = rememberImagePainter(image),
         contentDescription = "",
         modifier = Modifier
             .size(imageSize)
@@ -102,9 +100,9 @@ fun ShowImage(image: Int, rotationDegrees: Float = 0f, scaleValue: Float = 0f, t
             .rotate(remember { rotationDegrees })
             .clip(CircleShape)
             .background(backColor)
-            .padding(all = 4.dp)
-//            .graphicsLayer(rotationZ = angle, scaleX = scale, scaleY = scale, translationX = 0.5f)
-    )
+            .padding(all = 4.dp),
+
+        )
 
 }
 
