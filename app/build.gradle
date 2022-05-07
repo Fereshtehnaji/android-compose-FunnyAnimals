@@ -62,8 +62,8 @@ dependencies {
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.1'
-    implementation 'androidx.databinding:viewbinding:7.1.1'
-    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'androidx.databinding:viewbinding:7.1.3'
+    implementation 'com.google.android.material:material:1.6.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
     implementation 'androidx.test:core-ktx:1.4.0'
     testImplementation 'junit:junit:4.13.2'
@@ -95,39 +95,29 @@ dependencies {
     implementation ("androidx.compose.animation:animation:$compose_version")
 
     // Integration with ViewModels
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-compose:2.4.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-compose:2.4.1'
     // UI Tests
-    androidTestImplementation 'androidx.compose.ui:ui-test-junit4:1.0.5'
+    androidTestImplementation "(androidx.compose.ui:ui-test-junit4:$compose_version)"
 
     implementation "androidx.compose.compiler:compiler:1.2.0-alpha02"
 
 
-    // ViewModel
+    // MVVM library
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$viewmodel_compose_version")
-    // ViewModel utilities for Compose
     implementation "androidx.lifecycle:lifecycle-viewmodel-compose:$viewmodel_compose_version"
-    // LiveData
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:$viewmodel_compose_version")
-    // Saved state module for ViewModel
     implementation("androidx.lifecycle:lifecycle-viewmodel-savedstate:$viewmodel_compose_version")
     // Annotation processor
     //noinspection LifecycleAnnotationProcessorWithJava8
     annotationProcessor("androidx.lifecycle:lifecycle-compiler:$viewmodel_compose_version")
 
-    // Kotlin
-//    implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
+    //Navigation
     implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
-
-    // Feature module Support
     implementation("androidx.navigation:navigation-dynamic-features-fragment:$nav_version")
-
-    // Testing Navigation
     androidTestImplementation("androidx.navigation:navigation-testing:$nav_version")
-
     //in the one moment one of this api work--|
     implementation("androidx.navigation:navigation-compose:2.5.0-alpha01")
 //    implementation "com.google.accompanist:accompanist-navigation-animation:0.16.1"
-
 
     //sdp
     implementation 'com.intuit.sdp:sdp-android:1.0.6'
@@ -144,6 +134,7 @@ dependencies {
     implementation "androidx.transition:transition:1.4.1"
     implementation "androidx.transition:transition-ktx:1.4.1"
 
+    //coil for loading image in background
     implementation "io.coil-kt:coil-compose:1.4.0"
 }
 
