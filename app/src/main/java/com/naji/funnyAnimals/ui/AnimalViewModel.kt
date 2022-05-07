@@ -5,6 +5,7 @@ import com.naji.funnyAnimals.data.Animal
 import com.naji.funnyAnimals.data.AnimalRepository
 import com.naji.funnyAnimals.data.animalenum.Language
 import com.naji.funnyAnimals.data.animalenum.TYPE
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class AnimalViewModel(private val repository: AnimalRepository) : ViewModel() {
@@ -15,13 +16,14 @@ class AnimalViewModel(private val repository: AnimalRepository) : ViewModel() {
     val appLanguage: LiveData<String> by lazy { _appLanguage }
     private var _appLanguage: MutableLiveData<String> = MutableLiveData()
 
+
     fun fetchAllAnimals(type: TYPE): LiveData<List<Animal>> {
-        return repository.getAllAnimalByType(type.nameType,getLanguageOfApp())
+        return  repository.getAllAnimalByType(type.nameType,getLanguageOfApp()).asLiveData()
     }
 
 
     private fun changeAnimation(animal: Animal) {
-        viewModelScope.launch {
+        viewModelScope.launch (Dispatchers.IO){
 
             repository.updateLastSelectedItem(lastStatus = true, newStatus = false)
             val mutableItem :Animal = animal.copy()
@@ -33,7 +35,7 @@ class AnimalViewModel(private val repository: AnimalRepository) : ViewModel() {
     }
 
     fun unSelectLastItem(){
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             repository.updateLastSelectedItem(lastStatus = true, newStatus = false)
         }
     }

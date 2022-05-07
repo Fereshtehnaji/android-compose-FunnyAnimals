@@ -109,7 +109,7 @@ object AnimalData {
             R.raw.animal_cat_fa,  TYPE.ANIMAL.nameType, false
         ),
         Animal(
-            "gazelle ", "آهو", Language.FA.nameType, R.drawable.animal_gazzele2,
+            "gazelle ", "آهو", Language.FA.nameType, R.drawable.animal_gazzele,
             R.raw.animal_cat_fa,  TYPE.ANIMAL.nameType, false
         ),
         Animal(
@@ -133,7 +133,7 @@ object AnimalData {
             R.raw.animal_cat_fa,  TYPE.ANIMAL.nameType, false
         ),
         Animal(
-            "snake", "مار", Language.FA.nameType, R.drawable.animal_snake,
+            "snake", "مار", Language.FA.nameType, R.drawable.animal_snake2,
             R.raw.animal_monkey_fa, TYPE.ANIMAL.nameType, false
         ),
 
@@ -167,7 +167,7 @@ object AnimalData {
         ),
 
         Animal(
-            "weasel", "راسو", Language.FA.nameType, R.drawable.animal_weasel,
+            "weasel", "راسو", Language.FA.nameType, R.drawable.animal_weasel2,
             R.raw.animal_monkey_fa,  TYPE.ANIMAL.nameType, false
         ),
 
@@ -198,7 +198,7 @@ object AnimalData {
             R.raw.animal_cat_fa,  TYPE.ANIMAL.nameType, false
         ),
         Animal(
-            "jaguar", "جگوار", Language.FA.nameType, R.drawable.animal_jaguar,
+            "jaguar", "جگوار", Language.FA.nameType, R.drawable.animal_jaguar2,
             R.raw.animal_cat_fa,  TYPE.ANIMAL.nameType, false
         ),
         Animal(
@@ -537,7 +537,7 @@ object AnimalData {
             R.raw.animal_sheep_fa, TYPE.AQUATIC.nameType, false
         ),
         Animal(
-            "frog", "قورباغه", Language.FA.nameType, R.drawable.aquatic_frog,
+            "frog", "قورباغه", Language.FA.nameType, R.drawable.animal_frog,
             R.raw.animal_sheep_fa, TYPE.AQUATIC.nameType, false
         ),
         Animal(

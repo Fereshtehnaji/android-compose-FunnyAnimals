@@ -3,16 +3,14 @@ package com.naji.funnyAnimals.data
 import androidx.annotation.WorkerThread
 import androidx.lifecycle.LiveData
 import com.naji.funnyAnimals.data.preferences.PreferenceProvider
+import kotlinx.coroutines.flow.Flow
 
 class AnimalRepository(
     private val animalDao: AnimalDao,
     private val pref: PreferenceProvider
 ) {
 
-//    val allAnimal: Flow<List<Animal>> = animalDao.getAnimals(type = type)
-
-
-    fun getAllAnimalByType(type: String, language: String): LiveData<List<Animal>> =
+    fun getAllAnimalByType(type: String, language: String): Flow<MutableList<Animal>> =
         animalDao.getAnimalList(type,language)
 
     @WorkerThread
