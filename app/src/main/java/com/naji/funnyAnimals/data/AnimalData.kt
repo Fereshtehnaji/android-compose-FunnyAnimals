@@ -700,23 +700,23 @@ object AnimalData {
         ),
         Animal(
             "Fish", "ماهی", Language.EN.nameType, R.drawable.aquatic_fish,
-            R.raw.animal_sheep_fa, TYPE.AQUATIC.nameType, false
+            R.raw.fish_en, TYPE.AQUATIC.nameType, false
         ),
         Animal(
             "Frog", "قورباغه", Language.FA.nameType, R.drawable.animal_frog,
-            R.raw.animal_sheep_fa, TYPE.AQUATIC.nameType, false
+            R.raw.animal_frog_fa, TYPE.AQUATIC.nameType, false
         ),
         Animal(
             "Frog", "قورباغه", Language.EN.nameType, R.drawable.aquatic_frog,
-            R.raw.animal_sheep_fa, TYPE.AQUATIC.nameType, false
+            R.raw.animal_frog_en, TYPE.AQUATIC.nameType, false
         ),
         Animal(
             "Dolphin", "دلفین", Language.FA.nameType, R.drawable.aquatic_dolphin,
-            R.raw.animal_sheep_fa, TYPE.AQUATIC.nameType, false
+            R.raw.dolphin_fa, TYPE.AQUATIC.nameType, false
         ),
         Animal(
             "Dolphin", "دلفین", Language.EN.nameType, R.drawable.aquatic_dolphin,
-            R.raw.animal_sheep_fa, TYPE.AQUATIC.nameType, false
+            R.raw.dolphin_en, TYPE.AQUATIC.nameType, false
         ),
         Animal(
             "Jellyfish", "ستاره دریایی", Language.FA.nameType, R.drawable.aquatic_jellyfish,
@@ -724,39 +724,39 @@ object AnimalData {
         ),
         Animal(
             "Jellyfish", "ستاره دریایی", Language.EN.nameType, R.drawable.aquatic_jellyfish,
-            R.raw.animal_sheep_fa, TYPE.AQUATIC.nameType, false
+            R.raw.jellyfish_en, TYPE.AQUATIC.nameType, false
         ),
         Animal(
             "Walrus", "گراز دریایی", Language.FA.nameType, R.drawable.aquatic_walrus,
-            R.raw.animal_sheep_fa, TYPE.AQUATIC.nameType, false
+            R.raw.walrus_fa, TYPE.AQUATIC.nameType, false
         ),
         Animal(
-            "Walrus-en", "گراز دریایی", Language.EN.nameType, R.drawable.aquatic_walrus,
-            R.raw.animal_sheep_fa, TYPE.AQUATIC.nameType, false
+            "Walrus", "گراز دریایی", Language.EN.nameType, R.drawable.aquatic_walrus,
+            R.raw.walrus_en, TYPE.AQUATIC.nameType, false
         ),
         Animal(
             "Turtle", "لاک پشت", Language.FA.nameType, R.drawable.aquatic_turtle,
-            R.raw.animal_turtle_en, TYPE.AQUATIC.nameType, false
+            R.raw.turtle_fa, TYPE.AQUATIC.nameType, false
         ),
         Animal(
-            "Turtle-en", "لاک پشت", Language.EN.nameType, R.drawable.aquatic_turtle,
+            "Turtle", "لاک پشت", Language.EN.nameType, R.drawable.aquatic_turtle,
             R.raw.animal_turtle_en, TYPE.AQUATIC.nameType, false
         ),
         Animal(
             "Octopus", "اختاپوس", Language.FA.nameType, R.drawable.aquatic_octopus,
-            R.raw.animal_turtle_en, TYPE.AQUATIC.nameType, false
+            R.raw.octopus_fa, TYPE.AQUATIC.nameType, false
         ),
         Animal(
             "Octopus", "اختاپوس", Language.EN.nameType, R.drawable.aquatic_octopus,
-            R.raw.animal_turtle_en, TYPE.AQUATIC.nameType, false
+            R.raw.octopus_en, TYPE.AQUATIC.nameType, false
         ),
         Animal(
             "Sealion", "شیردریایی", Language.FA.nameType, R.drawable.aquatic_sealion,
-            R.raw.animal_turtle_en, TYPE.AQUATIC.nameType, false
+            R.raw.sealion_fa, TYPE.AQUATIC.nameType, false
         ),
         Animal(
             "Sealion", "شیردریایی", Language.EN.nameType, R.drawable.aquatic_sealion,
-            R.raw.animal_turtle_en, TYPE.AQUATIC.nameType, false
+            R.raw.sealion_en, TYPE.AQUATIC.nameType, false
         ),
 
 //bug EN
