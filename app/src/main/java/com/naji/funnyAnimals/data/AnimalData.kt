@@ -10,11 +10,11 @@ object AnimalData {
     val AnimalData = listOf(
         Animal(
             "Sheep", "گوسفند", Language.FA.nameType, R.drawable.animal_white_sheep,
-            R.raw.animal_sheep_fa, TYPE.ANIMAL.nameType, false
+            R.raw.sheep_fa, TYPE.ANIMAL.nameType, false
         ),
         Animal(
             "Sheep", "گوسفند", Language.EN.nameType, R.drawable.animal_white_sheep,
-            R.raw.animal_sheep_en, TYPE.ANIMAL.nameType, false
+            R.raw.sheep_en, TYPE.ANIMAL.nameType, false
         ),
         Animal(
             "Cow", "گاو", Language.FA.nameType, R.drawable.animal_cow,
@@ -58,19 +58,19 @@ object AnimalData {
         ),
         Animal(
             "Rabbit", "خرگوش", Language.FA.nameType, R.drawable.animal_rabbit,
-            R.raw.cat_en, TYPE.ANIMAL.nameType, false
+            R.raw.rabbit_fa, TYPE.ANIMAL.nameType, false
         ),
         Animal(
             "Rabbit", "خرگوش", Language.EN.nameType, R.drawable.animal_rabbit,
-            R.raw.cat_en, TYPE.ANIMAL.nameType, false
+            R.raw.rabbit_en, TYPE.ANIMAL.nameType, false
         ),
         Animal(
             "Pig", "خوک", Language.FA.nameType, R.drawable.animal_pig,
-            R.raw.animal_pig_fa, TYPE.ANIMAL.nameType, false
+            R.raw.pig_fa, TYPE.ANIMAL.nameType, false
         ),
         Animal(
             "Pig", "خوک", Language.EN.nameType, R.drawable.animal_pig,
-            R.raw.animal_pig_en, TYPE.ANIMAL.nameType, false
+            R.raw.pig_en, TYPE.ANIMAL.nameType, false
         ),
         Animal(
             "Donkey", "الاغ", Language.FA.nameType, R.drawable.animal_donkey,
@@ -82,11 +82,11 @@ object AnimalData {
         ),
         Animal(
             "Squirrel", "سنجاب", Language.FA.nameType, R.drawable.animal_squirrel,
-            R.raw.dog_fa, TYPE.ANIMAL.nameType, false
+            R.raw.squirrel_fa, TYPE.ANIMAL.nameType, false
         ),
         Animal(
             "Squirrel", "سنجاب", Language.EN.nameType, R.drawable.animal_squirrel,
-            R.raw.dog_fa, TYPE.ANIMAL.nameType, false
+            R.raw.squirrel_en, TYPE.ANIMAL.nameType, false
         ),
         Animal(
             "Lamb", "بره", Language.FA.nameType, R.drawable.animal_sheep,
@@ -106,11 +106,11 @@ object AnimalData {
         ),
         Animal(
             "Panda", "پاندا", Language.FA.nameType, R.drawable.animal_panda,
-            R.raw.animal_panda_fa, TYPE.ANIMAL.nameType, false
+            R.raw.panda_fa, TYPE.ANIMAL.nameType, false
         ),
         Animal(
             "Panda", "پاندا", Language.EN.nameType, R.drawable.animal_panda,
-            R.raw.animal_panda_fa, TYPE.ANIMAL.nameType, false
+            R.raw.panda_en, TYPE.ANIMAL.nameType, false
         ),
         Animal(
             "Fox", "روباه", Language.FA.nameType, R.drawable.animal_fox,
@@ -130,11 +130,11 @@ object AnimalData {
         ),
         Animal(
             "Wolf", "گرگ", Language.FA.nameType, R.drawable.animal_wolf,
-            R.raw.animal_wolf_fa, TYPE.ANIMAL.nameType, false
+            R.raw.wolf_fa, TYPE.ANIMAL.nameType, false
         ),
         Animal(
             "Wolf", "گرگ", Language.EN.nameType, R.drawable.animal_wolf,
-            R.raw.animal_wolf_en, TYPE.ANIMAL.nameType, false
+            R.raw.wolf_en, TYPE.ANIMAL.nameType, false
         ),
         Animal(
             "Lion", "شیر", Language.FA.nameType, R.drawable.animal_lion,
@@ -154,11 +154,11 @@ object AnimalData {
         ),
         Animal(
             "Tiger", "ببر", Language.FA.nameType, R.drawable.animal_tiger,
-            R.raw.animal_tiger_fa, TYPE.ANIMAL.nameType, false
+            R.raw.tiger_fa, TYPE.ANIMAL.nameType, false
         ),
         Animal(
             "Tiger", "ببر", Language.EN.nameType, R.drawable.animal_tiger,
-            R.raw.animal_tiger_en, TYPE.ANIMAL.nameType, false
+            R.raw.tiger_en, TYPE.ANIMAL.nameType, false
         ),
         Animal(
             "Jackal", "شغال", Language.FA.nameType, R.drawable.animal_jackal,
@@ -186,11 +186,11 @@ object AnimalData {
         ),
         Animal(
             "Zebra", "گورخر", Language.FA.nameType, R.drawable.animal_zebra,
-            R.raw.animal_zebra_fa, TYPE.ANIMAL.nameType, false
+            R.raw.zebra_fa, TYPE.ANIMAL.nameType, false
         ),
         Animal(
             "Zebra", "گورخر", Language.EN.nameType, R.drawable.animal_zebra,
-            R.raw.animal_zebra_en, TYPE.ANIMAL.nameType, false
+            R.raw.zebra_en, TYPE.ANIMAL.nameType, false
         ),
         Animal(
             "Leopard", "پلنگ", Language.FA.nameType, R.drawable.animal_leopard,
@@ -234,11 +234,11 @@ object AnimalData {
         ),
         Animal(
             "Rhino", "کرگدن", Language.FA.nameType, R.drawable.animal_rhino,
-            R.raw.animal_rhino_fa, TYPE.ANIMAL.nameType, false
+            R.raw.rhino_fa, TYPE.ANIMAL.nameType, false
         ),
         Animal(
-            "rhino-en", "کرگدن", Language.EN.nameType, R.drawable.animal_rhino,
-            R.raw.animal_rhino_en, TYPE.ANIMAL.nameType, false
+            "Rhino", "کرگدن", Language.EN.nameType, R.drawable.animal_rhino,
+            R.raw.rhino_en, TYPE.ANIMAL.nameType, false
         ),
         Animal(
             "Coala", "کوآلا", Language.FA.nameType, R.drawable.animal_coala,
@@ -259,11 +259,11 @@ object AnimalData {
 
         Animal(
             "Snake", "مار", Language.FA.nameType, R.drawable.animal_snake2,
-            R.raw.animal_snake_fa, TYPE.ANIMAL.nameType, false
+            R.raw.snake_fa, TYPE.ANIMAL.nameType, false
         ),
         Animal(
             "Snake", "مار", Language.EN.nameType, R.drawable.animal_snake2,
-            R.raw.animal_snake_en, TYPE.ANIMAL.nameType, false
+            R.raw.snake_en, TYPE.ANIMAL.nameType, false
         ),
         Animal(
             "Lizard", "مارمولک", Language.FA.nameType, R.drawable.animal_lizard,
@@ -275,11 +275,11 @@ object AnimalData {
         ),
         Animal(
             "Raccoon", "راکون", Language.FA.nameType, R.drawable.animal_raccoon,
-            R.raw.lizard_fa, TYPE.ANIMAL.nameType, false
+            R.raw.racoon_fa, TYPE.ANIMAL.nameType, false
         ),
         Animal(
             "Raccoon", "راکون", Language.EN.nameType, R.drawable.animal_raccoon,
-            R.raw.lizard_en, TYPE.ANIMAL.nameType, false
+            R.raw.racoon_en, TYPE.ANIMAL.nameType, false
         ),
         Animal(
             "Marten", "سمور", Language.FA.nameType, R.drawable.animal_marten,
@@ -307,11 +307,11 @@ object AnimalData {
         ),
         Animal(
             "Weasel", "راسو", Language.FA.nameType, R.drawable.animal_weasel2,
-            R.raw.cat_fa, TYPE.ANIMAL.nameType, false
+            R.raw.weasel_fa, TYPE.ANIMAL.nameType, false
         ),
         Animal(
             "Weasel", "راسو", Language.EN.nameType, R.drawable.animal_weasel2,
-            R.raw.cat_fa, TYPE.ANIMAL.nameType, false
+            R.raw.weasel_en, TYPE.ANIMAL.nameType, false
         ),
         Animal(
             "Anteater", "مورچه خوار", Language.FA.nameType, R.drawable.animal_anteater,
@@ -492,11 +492,11 @@ object AnimalData {
 
         Animal(
             "Peacock", "طاووس", Language.FA.nameType, R.drawable.bird_peacock2,
-            R.raw.peafowl_fa, TYPE.BIRD.nameType, false
+            R.raw.peacock_fa, TYPE.BIRD.nameType, false
         ),
         Animal(
             "Peacock", "طاووس", Language.EN.nameType, R.drawable.bird_peacock2,
-            R.raw.peafowl_en, TYPE.BIRD.nameType, false
+            R.raw.peacock_en, TYPE.BIRD.nameType, false
         ),
 
         Animal(
@@ -638,11 +638,11 @@ object AnimalData {
             R.raw.swan_en, TYPE.BIRD.nameType, false
         ),
         Animal(
-            "African gray parrot", "کاسکو", Language.FA.nameType, R.drawable.bird_gray_parrot,
+            "Gray parrot", "کاسکو", Language.FA.nameType, R.drawable.bird_gray_parrot,
             R.raw.gray_parrot_fa, TYPE.BIRD.nameType, false
         ),
         Animal(
-            "African gray parrot", "کاسکو", Language.EN.nameType, R.drawable.bird_gray_parrot,
+            "Gray parrot", "کاسکو", Language.EN.nameType, R.drawable.bird_gray_parrot,
             R.raw.gray_parrot_en, TYPE.BIRD.nameType, false
         ),
 
@@ -656,11 +656,11 @@ object AnimalData {
         ),
         Animal(
             "Mynah", "مرغ مینا", Language.FA.nameType, R.drawable.bird_mynah,
-            R.raw.cat_fa, TYPE.BIRD.nameType, false
+            R.raw.myna_fa, TYPE.BIRD.nameType, false
         ),
         Animal(
             "Mynah", "مرغ مینا", Language.EN.nameType, R.drawable.bird_mynah,
-            R.raw.cat_fa, TYPE.BIRD.nameType, false
+            R.raw.myna_en, TYPE.BIRD.nameType, false
         ),
         Animal(
             "Starling", "سار", Language.FA.nameType, R.drawable.bird_starling3,
@@ -884,7 +884,7 @@ object AnimalData {
         ),
         Animal(
             "Turtle", "لاک پشت", Language.EN.nameType, R.drawable.aquatic_turtle,
-            R.raw.animal_turtle_en, TYPE.AQUATIC.nameType, false
+            R.raw.turtle_fa, TYPE.AQUATIC.nameType, false
         ),
         Animal(
             "Octopus", "اختاپوس", Language.FA.nameType, R.drawable.aquatic_octopus,
