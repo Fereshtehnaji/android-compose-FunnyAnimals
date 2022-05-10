@@ -69,8 +69,8 @@ val AnimalTypography = Typography(
         fontSize = 14.sp
     ),
     body1 = TextStyle(
-        fontFamily = Domine,
-        fontWeight = FontWeight.Normal,
+        fontFamily = Yekan_bakh,
+        fontWeight = FontWeight.Medium,
         fontSize = 16.sp
     ),
     body2 = TextStyle(
@@ -91,5 +91,6 @@ val AnimalTypography = Typography(
         fontFamily = Yekan_bakh,
         fontWeight = FontWeight.W500,
         fontSize = 12.sp
-    )
+    ),
+
 )

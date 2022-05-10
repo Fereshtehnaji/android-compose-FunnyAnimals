@@ -58,17 +58,19 @@ fun AnimalItem(animal: Animal, onClickHandler: (Animal) -> Unit, type: TYPE) {
 
             if (animal.isClicked) {
                 val imageSize = dimensionResource(id = R.dimen._60sdp)
+                val backColor = remember { getTextBackground(type = type) }
+
                 val title = if (animal.language == Language.FA.nameType)
                     animal.title else animal.name
                 Text(
                     text = title,
-                    color = Black,
-                    style = AnimalTypography.subtitle2,
+                    color = White,
+                    style = AnimalTypography.body1,
                     modifier = Modifier
-                        .background(color = Orange800, shape = RoundedCornerShape(20.dp))
-
-                        .defaultMinSize(imageSize)
-                        .align(Alignment.BottomCenter),
+                        .background(color = backColor, shape = RoundedCornerShape(20.dp))
+                        .defaultMinSize(minWidth = imageSize, minHeight = dimensionResource(R.dimen._20sdp))
+                        .align(Alignment.BottomCenter)
+                        .padding(2.dp),
                     textAlign = TextAlign.Center,
                 )
             }
@@ -108,10 +110,19 @@ fun ShowImage(image: Int, rotationDegrees: Float = 0f, scaleValue: Float = 0f, t
 
 fun getColorBackground(type: TYPE): Color {
     return when (type) {
-        TYPE.ANIMAL -> Green200
-        TYPE.BUG -> Yellow300
-        TYPE.BIRD -> Orange200
-        TYPE.AQUATIC -> Cyan200
+        TYPE.ANIMAL -> Green800Transparent50
+        TYPE.BUG -> Yellow6002
+        TYPE.BIRD -> Orange4002
+        TYPE.AQUATIC -> Cyan800Transparent50
+    }
+}
+
+fun getTextBackground(type: TYPE): Color {
+    return when (type) {
+        TYPE.ANIMAL -> Green800
+        TYPE.BUG -> AmberA700
+        TYPE.BIRD -> Orange600
+        TYPE.AQUATIC -> Cyan800
     }
 }
 

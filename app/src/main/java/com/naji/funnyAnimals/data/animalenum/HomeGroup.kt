@@ -5,6 +5,7 @@ enum class HomeGroup(val nameType: String) {
     ANIMAL("animal"),
     BIRD("bird"),
     BUG("bug"),
-    AQUATIC("Aquatic")
+    AQUATIC("Aquatic"),
+    SETTING("Setting")
 }
 

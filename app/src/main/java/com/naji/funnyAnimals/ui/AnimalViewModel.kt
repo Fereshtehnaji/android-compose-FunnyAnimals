@@ -17,24 +17,27 @@ class AnimalViewModel(private val repository: AnimalRepository) : ViewModel() {
     private var _appLanguage: MutableLiveData<String> = MutableLiveData()
 
 
+    val openSetting: LiveData<Boolean> by lazy { _openSetting }
+    private var _openSetting: MutableLiveData<Boolean> = MutableLiveData()
+
     fun fetchAllAnimals(type: TYPE): LiveData<List<Animal>> {
-        return  repository.getAllAnimalByType(type.nameType,getLanguageOfApp()).asLiveData()
+        return repository.getAllAnimalByType(type.nameType, getLanguageOfApp()).asLiveData()
     }
 
 
     private fun changeAnimation(animal: Animal) {
-        viewModelScope.launch (Dispatchers.IO){
+        viewModelScope.launch(Dispatchers.IO) {
 
             repository.updateLastSelectedItem(lastStatus = true, newStatus = false)
-            val mutableItem :Animal = animal.copy()
+            val mutableItem: Animal = animal.copy()
             mutableItem.isClicked = true
-            repository.updateSelectedItem(mutableItem.name,true)
+            repository.updateSelectedItem(mutableItem.name, true)
         }
 
 
     }
 
-    fun unSelectLastItem(){
+    fun unSelectLastItem() {
         viewModelScope.launch(Dispatchers.IO) {
             repository.updateLastSelectedItem(lastStatus = true, newStatus = false)
         }
@@ -72,6 +75,18 @@ class AnimalViewModel(private val repository: AnimalRepository) : ViewModel() {
 
     fun getLanguageOfApp(): String {
         return repository.getLanguageOfApp()
+    }
+
+    fun onClickSettingButton() {
+        _openSetting.value = true
+    }
+
+    fun openSettingFinished() {
+        _openSetting.value = false
+    }
+
+    fun updateSelectedSliderValue(value:Float){
+        // TODO: apply new volume
     }
 
 }

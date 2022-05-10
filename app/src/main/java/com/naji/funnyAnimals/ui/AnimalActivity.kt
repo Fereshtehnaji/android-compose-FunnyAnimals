@@ -20,6 +20,7 @@ import com.naji.funnyAnimals.data.animalenum.HomeGroup
 import com.naji.funnyAnimals.data.animalenum.TYPE
 import com.naji.funnyAnimals.ui.screen.HomeScreen
 import com.naji.funnyAnimals.ui.screen.NavigateScreen
+import com.naji.funnyAnimals.ui.screen.SettingScreen
 import com.naji.funnyAnimals.ui.theme.AnimalAppTheme
 import com.naji.funnyAnimals.ui.util.MusicService
 
@@ -74,7 +75,9 @@ class AnimalActivity : AppCompatActivity() {
                 NavigateScreen(
                     viewModel,
                     LocalLifecycleOwner.current,
-                    { navController.navigateUp() }, title, backgroundImageId, TYPE.BIRD
+                    { navController.navigateUp() },
+                    {navController.navigate(HomeGroup.SETTING.nameType)},
+                    title, backgroundImageId, TYPE.BIRD
                 )
             }
 
@@ -87,21 +90,24 @@ class AnimalActivity : AppCompatActivity() {
                 NavigateScreen(
                     viewModel,
                     LocalLifecycleOwner.current,
-                    { navController.navigateUp() }, title, backgroundImageId, TYPE.ANIMAL
+                    { navController.navigateUp() },
+                    {navController.navigate(HomeGroup.SETTING.nameType)},
+                    title, backgroundImageId, TYPE.ANIMAL
                 )
             }
 
             composable(HomeGroup.BUG.nameType) {
 
                 val title = stringResource(id = R.string.bugs_title)
-//                val backgroundImageId = R.drawable.back_birds3
+                val backgroundImageId = R.drawable.back_bug
 
                 NavigateScreen(
                     viewModel,
                     LocalLifecycleOwner.current,
                     { navController.navigateUp() },
+                    {navController.navigate(HomeGroup.SETTING.nameType)},
                     title,
-                    null,
+                    backgroundImageId,
                     TYPE.BUG
                 )
             }
@@ -114,8 +120,21 @@ class AnimalActivity : AppCompatActivity() {
                 NavigateScreen(
                     viewModel,
                     LocalLifecycleOwner.current,
-                    { navController.navigateUp() }, title, backgroundImageId, TYPE.AQUATIC
+                    { navController.navigateUp() },
+                    {navController.navigate(HomeGroup.SETTING.nameType)},
+                    title,
+                    backgroundImageId,
+                    TYPE.AQUATIC
                 )
+            }
+
+            composable(HomeGroup.SETTING.nameType){
+                val title = stringResource(id = R.string.setting_title)
+                val backgroundImageId = null
+                SettingScreen (viewModel,
+                    { navController.navigateUp() },title, backgroundImageId
+                )
+
             }
         }
     }

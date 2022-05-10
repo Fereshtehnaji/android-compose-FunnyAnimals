@@ -7,4 +7,7 @@
     <string name="birds_title">پرندگان</string>
     <string name="bugs_title">حشرات</string>
     <string name="ocean_title">دریایی</string>
+    <string name="setting_title">تنظیمات</string>
+    <string name="background_music_volume">میزان صدای پس زمینه</string>
+    <string name="animal_sound_volume">میزان صدای حیوانات</string>
 </resources>

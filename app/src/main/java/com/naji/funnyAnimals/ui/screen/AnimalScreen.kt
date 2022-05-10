@@ -17,14 +17,12 @@ import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.Observer
 import com.naji.funnyAnimals.R
 import com.naji.funnyAnimals.data.Animal
 import com.naji.funnyAnimals.data.animalenum.TYPE
 import com.naji.funnyAnimals.ui.AnimalViewModel
-import com.naji.funnyAnimals.ui.components.AppToolbar
-import com.naji.funnyAnimals.ui.components.LanguageButton
-import com.naji.funnyAnimals.ui.components.MusicButton
-import com.naji.funnyAnimals.ui.components.NavigationBackButton
+import com.naji.funnyAnimals.ui.components.*
 import com.naji.funnyAnimals.ui.util.HandleResourceOnLifeCycle
 
 
@@ -35,6 +33,7 @@ fun NavigateScreen(
     viewModel: AnimalViewModel,
     lifecycleOwner: LifecycleOwner = LocalLifecycleOwner.current,
     onBackHandler: () -> Unit,
+    onSettingClick: () -> Unit,
     title: String,
     backgroundImageId: Int?,
     type: TYPE
@@ -59,6 +58,13 @@ fun NavigateScreen(
         val items: List<Animal> by viewModel.fetchAllAnimals(type).observeAsState(listOf())
         val musicStatus: Boolean by viewModel.backgroundMusicPlaying.observeAsState(initial = viewModel.isMusicPlaying())
         val languageLabel: String by viewModel.appLanguage.observeAsState(initial = viewModel.getLanguageOfApp())
+
+        viewModel.openSetting.observe(lifecycleOwner, Observer { openSetting ->
+            if (openSetting) {
+                onSettingClick()
+                viewModel.openSettingFinished()
+            }
+        })
 
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
 
@@ -90,6 +96,9 @@ fun ShowToolbar(
                 onClick = { myViewModel.changeListLanguage() },
                 language = languageLabel, Color.White
             )
+        },
+        icon3 = {
+            SettingButton(onClick = { myViewModel.onClickSettingButton() }, color = Color.White)
         },
         backHandler = {
             NavigationBackButton(onClick = onBackHandler)
